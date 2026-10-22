@@ -1,0 +1,44 @@
+{
+  "version": "0.17.0",
+  "date": "2026-10-22",
+  "implementationDate": "2026-10-21",
+  "foundry": "14.364",
+  "system": {
+    "id": "n5eb",
+    "version": "3.1.1"
+  },
+  "taijutsu": {
+    "defaultEnabled": false,
+    "sourceFeatures": 135,
+    "subclasses": 14,
+    "guide": "TAIJUTSU-GRUPPENFASSUNG.md",
+    "checklist": "TAIJUTSU-SPECIALIST-CHECKLISTE.md",
+    "state": "IMPLEMENTATION_ROUND_COMPLETE_GROUP_VERIFICATION_PENDING"
+  },
+  "verification": {
+    "staticCheckDate": "2026-10-21",
+    "syntaxModules": 358,
+    "staticModuleLink": "passed; module code not evaluated",
+    "moduleJsonFiles": 3,
+    "unit": "NOT_RUN_USER_REQUEST",
+    "gameplay": "NOT_RUN_USER_REQUEST",
+    "foundryIntegration": "NOT_RUN_USER_REQUEST",
+    "browser": "NOT_RUN_USER_REQUEST",
+    "visual": "NOT_RUN_USER_REQUEST"
+  },
+  "limitations": [
+    "Action economy; map movement/physics and contextual alliances/ranges",
+    "Confirmed actual Grapple/Trip/Shove comparisons where native rules are not structured",
+    "Base stance abilities intentionally retained as manual by agreement",
+    "Unstructured foreign/compound effects and custom weapon/summon profiles",
+    "Actual learning prerequisites and downtime bookkeeping; module exposes verified time/ability context",
+    "Mixed protected/unprotected critical rolls and mixed Psychic/Chakra Iron Heart transfers",
+    "Concurrent special-hit workflows across classes require one agreed combined GM application, not duplicate applications"
+  ],
+  "installation": {
+    "scope": "own local enhancement module only",
+    "worldChanges": false,
+    "reloadPerformed": false,
+    "settingsChanged": false
+  }
+}

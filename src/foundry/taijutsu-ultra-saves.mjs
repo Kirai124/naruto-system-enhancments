@@ -1,0 +1,18 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {taijutsuFeature,taijutsuLevel,martialDie} from '../casting/taijutsu-context.mjs';
+import {ultraInstinct} from './taijutsu-ultra-instinct.mjs';
+import {withCastingActorLock,castingActorBusy} from './mode-adapter.mjs';
+import {martialDialog} from '../ui/martial-dialog.mjs';
+
+/** Add evaluated bonus terms to the evaluated native d20 through the public Foundry fromTerms API. */
+export function installUltraSaveBoost(game,ActorClass){const original=ActorClass.prototype.rollSavingThrow;ActorClass.prototype.rollSavingThrow=async function(config={},dialog={},message={}){
+ const stamp=foundry.utils.randomID(),eligible=!!ultraInstinct(game,this,'defensive')&&this.isOwner;
+ const rolls=await original.call(this,config,dialog,eligible?{...message,data:{...message.data,flags:{...message.data?.flags,[MODULE_ID]:{...message.data?.flags?.[MODULE_ID],taijutsuUltraSave:stamp}}}}:message);
+ if(!eligible||!rolls?.length||!ultraInstinct(game,this,'defensive'))return rolls;const initial=rolls[0],target=config.target??initial.options.target,pool=taijutsuFeature(this,'Martial Adept');if(!pool?.system.uses.value||Number.isFinite(target)&&initial.total>=target)return rolls;
+ if(castingActorBusy(this)){ui.notifications.info('Defensive Sign: parallelen Ressourcenablauf zuerst abschließen; dieser Save wurde noch nicht verstärkt.');return rolls;}
+ return withCastingActorLock(this,async()=>{
+  const c=await martialDialog('Defensive Sign · fehlgeschlagenen Save verstärken','Nativer Save '+initial.total+(Number.isFinite(target)?' / SG '+target:'; tatsächlichen Fehlschlag ausdrücklich bestätigen')+'. Beliebig viele verfügbare Martial Dice addieren. Die ursprünglichen Würfel werden unverändert übernommen und nicht neu gewürfelt. 0 = ohne Zusatz.',[{name:'dice',label:'Zu verbrauchende Martial Dice',min:0,max:pool.system.uses.value,value:0},...(!Number.isFinite(target)?[{name:'failed',type:'checkbox',label:'Dieser Save ist tatsächlich fehlgeschlagen',value:false}]:[])]);if(!c||c.dice===0)return rolls;if(!Number.isSafeInteger(c.dice)||c.dice<1||pool.system.uses.value<c.dice||!Number.isFinite(target)&&!c.failed)throw Error('Tatsächlichen Fehlschlag und verfügbare Dice bestätigen.');
+  const key='taijutsuSavePayments',entries=structuredClone(this.getFlag(MODULE_ID,key)??[]);if(entries.some(e=>['rolling','rolled','review'].includes(e.status)))throw Error('Unterbrochenen Save zuerst vom GM prüfen.');const entry={id:stamp,name:'Defensive Sign',status:'rolling',dice:c.dice,originalRoll:initial.toJSON(),at:game.time.worldTime};entries.push(entry);await this.setFlag(MODULE_ID,key,entries);
+  try{await pool.update({'system.uses.spent':pool.system.uses.spent+c.dice});const bonus=await new Roll(c.dice+'d'+martialDie(taijutsuLevel(this))).evaluate(),copy=Roll.fromJSON(initial.toJSON()),combined=CONFIG.Dice.D20Roll.fromTerms([...copy.terms,new foundry.dice.terms.OperatorTerm({operator:'+'}),...bonus.terms],{...initial.options,configured:true});entry.bonusRoll=bonus.toJSON();entry.combinedRoll=combined.toJSON();entry.status='rolled';await this.setFlag(MODULE_ID,key,entries);const card=[...game.messages].find(m=>m.getFlag(MODULE_ID,'taijutsuUltraSave')===stamp);if(card){if(!card.isOwner)throw Error('Native Save-Karte kann nicht aktualisiert werden; gespeicherten verstärkten Wurf vom GM übernehmen lassen.');await card.update({rolls:[combined.toJSON(),...rolls.slice(1).map(r=>r.toJSON())]});}entry.status='paid';await this.setFlag(MODULE_ID,key,entries);return [combined,...rolls.slice(1)];}catch(error){entry.status='review';entry.error=error.message;await this.setFlag(MODULE_ID,key,entries);throw error;}
+ });
+ };}

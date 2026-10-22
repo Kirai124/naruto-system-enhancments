@@ -1,0 +1,28 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {taijutsuEnabled,taijutsuFeature,taijutsuLevel} from '../casting/taijutsu-context.mjs';
+import {withCastingActorLock} from './mode-adapter.mjs';
+export const guardCapacity=level=>level<5?0:level>=17?5:level>=13?4:level>=9?3:2;
+const ranks=['d','c','b','a'],maxRank=level=>level>=17?3:level>=13?2:level>=9?1:0;
+export function guardActive(game,actor){return taijutsuEnabled(game)&&!!taijutsuFeature(actor,'Martial Defense')&&guardCapacity(taijutsuLevel(actor))>0&&![...actor.items].some(i=>i.type==='equipment'&&i.system.equipped&&['light','medium','heavy'].includes(i.system.type?.value))&&actor.system.attributes.ac.calc==='custom'&&String(actor.system.attributes.ac.formula).replace(/\s/g,'')==='10+@attributes.prof+@abilities.dex.mod';}
+function sealChanges(item){const automatic=[],manual=[];for(const effect of item.effects)for(const c of effect.system?.changes??[]){let key=c.key.replace(/^parent\./,'');if(key==='name')continue;if(/^system\.(abilities|attributes|skills|tools|traits|bonuses)\./.test(key)){automatic.push({...c,key,priority:1000});continue;}if(key==='system.armor.value'&&c.type==='add'){automatic.push({...c,key:'system.attributes.ac.bonus',priority:1000});continue;}if(key==='system.armor.dr'&&c.type==='add'){for(const type of ['bludgeoning','piercing','slashing'])automatic.push({...c,key:'system.traits.dm.amount.'+type,value:'-('+c.value+')',priority:1000});continue;}manual.push(key);}
+ return {automatic,manual};
+}
+export async function configureGuardSlots(game,actor){
+ if(!taijutsuEnabled(game)||!actor.isOwner||!taijutsuFeature(actor,'Martial Defense')||!guardCapacity(taijutsuLevel(actor)))throw Error('Eigener Martial-Defense-Wirker ab Stufe 5 erforderlich.');
+ return withCastingActorLock(actor,async()=>{const candidates=[...actor.items].filter(i=>game.n5eb.seals.isSeal(i)).map(i=>({uuid:i.uuid,name:i.name})),pack=game.packs.get('n5eb.items');if(pack)for(const i of await pack.getIndex({fields:['system.type.value']}))if(i.system?.type?.value==='aseal')candidates.push({uuid:'Compendium.n5eb.items.Item.'+i._id,name:i.name});const entries=[];
+  for(const candidate of [...new Map(candidates.map(c=>[c.uuid,c])).values()]){const item=await fromUuid(candidate.uuid),data=game.n5eb.seals.getSealData(item);if(data.target!=='armor'||!ranks.includes(data.rank)||ranks.indexOf(data.rank)>maxRank(taijutsuLevel(actor)))continue;entries.push({...candidate,...data,...sealChanges(item),description:item.system.description.value});}
+  const prior=actor.getFlag(MODULE_ID,'taijutsuGuards'),div=document.createElement('div'),p=document.createElement('p');p.textContent='Tatsächliche Full Rest bestätigen. Guard-Kapazität '+guardCapacity(taijutsuLevel(actor))+'. Native Siegelbelegung 1/2/3/4 Slots; gleiche Siegelgrundform nur einmal. Nur belegte strukturierte passive Werte werden automatisch angewendet. Aktivierbare, bedingte oder textbasierte Siegelwirkungen weiterhin anhand des Originaltexts ausführen.';div.append(p);
+  for(const [index,e]of entries.entries()){const label=document.createElement('label'),check=document.createElement('input');check.type='checkbox';check.name='guard';check.value=String(index);if(prior?.entries?.some(p=>p.uuid===e.uuid))check.setAttribute('checked','');label.append(check,document.createTextNode(e.name+' · '+e.slots+' Slots'+(!e.automatic.length||e.manual.length?' · zusätzliche Textwirkung manuell':'')));div.append(label,document.createElement('br'));}
+  const chosen=await foundry.applications.api.DialogV2.wait({window:{title:'Martial Defense · Guard Slots'},content:div.innerHTML,buttons:[{action:'save',label:'Full Rest und Siegelwahl bestätigen',callback:(_e,b)=>[...b.form.querySelectorAll('input[name="guard"]:checked')].map(c=>Number(c.value))}],rejectClose:false});if(!chosen)return;
+  const selected=chosen.map(i=>entries[i]);if(selected.some(e=>!e)||selected.reduce((n,e)=>n+e.slots,0)>guardCapacity(taijutsuLevel(actor))||new Set(selected.map(e=>e.baseKey)).size!==selected.length)throw Error('Zu viele Slots oder doppelte Siegelgrundform.');
+  // One actor flag update makes replacement atomic. Source profiles are never consumed or edited.
+  await actor.setFlag(MODULE_ID,'taijutsuGuards',{id:foundry.utils.randomID(),at:game.time.worldTime,entries:selected.map(({uuid,name,rank,slots,automatic,manual,description})=>({uuid,name,rank,slots,automatic,manual,description,enabled:false}))});actor.reset();
+ });
+}
+export function installGuardSlots(game,ActorClass){
+ const original=ActorClass.prototype.allApplicableEffects;
+ ActorClass.prototype.allApplicableEffects=function*(){yield*original.call(this);if(!taijutsuEnabled(game)||!taijutsuFeature(this,'Martial Defense'))return;const state=this.getFlag(MODULE_ID,'taijutsuGuards');if(!state)return;const entries=state.entries??[],capacity=guardCapacity(taijutsuLevel(this));if(entries.reduce((n,e)=>n+e.slots,0)>capacity||entries.some(e=>ranks.indexOf(e.rank)>maxRank(taijutsuLevel(this))))return;
+  for(const entry of entries){if(!entry.enabled||!entry.automatic.length)continue;yield new CONFIG.ActiveEffect.documentClass({_id:foundry.utils.randomID(),name:entry.name+' · Guard',type:'base',disabled:false,transfer:false,origin:taijutsuFeature(this,'Martial Defense').uuid,system:{changes:entry.automatic},flags:{[MODULE_ID]:{taijutsuGuard:state.id}}},{parent:this});}
+ };
+ const EffectClass=CONFIG.ActiveEffect.documentClass,apply=EffectClass.applyChange;EffectClass.applyChange=function(model,change,options){const state=change.effect?.getFlag(MODULE_ID,'taijutsuGuard');if(state&&(!guardActive(game,model)||model.getFlag(MODULE_ID,'taijutsuGuards')?.id!==state))return {};return apply.call(this,model,change,options);};
+}

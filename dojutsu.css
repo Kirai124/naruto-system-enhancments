@@ -1,0 +1,20 @@
+.n5ese-dojutsu { margin: 0 0 12px; }
+.n5ese-dojutsu > header { display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px; }
+.n5ese-dojutsu h3 { margin:0;border:0; }
+.n5ese-dojutsu-hint { font-size:11px;opacity:.75; }
+.n5ese-dojutsu-row { --dojutsu-accent:#18b7b5; display:grid;grid-template-columns:minmax(110px,1fr) minmax(145px,1.25fr) 100px;gap:10px;align-items:center;padding:8px 10px;margin:6px 0;border:1px solid color-mix(in srgb,var(--dojutsu-accent) 40%,transparent);border-radius:6px;background:color-mix(in srgb,var(--dojutsu-accent) 7%,var(--color-bg-option,#19181d)); }
+.n5ese-dojutsu-row[data-kind="sharingan"] { --dojutsu-accent:#d96664; }
+.n5ese-dojutsu-row[data-active="true"] { border-color:color-mix(in srgb,var(--dojutsu-accent) 75%,transparent);background:color-mix(in srgb,var(--dojutsu-accent) 13%,var(--color-bg-option,#19181d)); }
+.n5ese-dojutsu-identity { display:flex;align-items:center;gap:8px;min-width:0; }
+.n5ese-dojutsu-identity img { width:30px;height:30px;object-fit:cover;border-radius:5px;flex-shrink:0;border:0; }
+.n5ese-dojutsu-identity strong { font-size:12px;line-height:1.3; }
+.n5ese-dojutsu-detail { display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;min-width:0; }
+.n5ese-dojutsu-status { display:block;flex-basis:100%;font-size:11px;line-height:1.3; }
+.n5ese-dojutsu-stage { display:inline-flex;gap:6px;align-items:center;font-size:11px; }
+.n5ese-dojutsu-pips { display:flex;gap:3px; }
+.n5ese-dojutsu-pips i { width:7px;height:7px;border:1px solid var(--dojutsu-accent);border-radius:50%; }
+.n5ese-dojutsu-pips i.filled { background:var(--dojutsu-accent); }
+.n5ese-dojutsu-row .n5ese-dojutsu-unlock { width:auto;height:23px;min-height:23px;max-width:105px;font-size:10px;padding:0 4px; }
+.n5ese-dojutsu-row .n5ese-dojutsu-toggle { width:100%;height:32px;min-height:32px;font-size:11px;margin:0; }
+.n5ese-dojutsu-toggle[aria-pressed="true"] { border-color:var(--dojutsu-accent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--dojutsu-accent) 25%,transparent); }
+@container (max-width:480px) { .n5ese-dojutsu-row { grid-template-columns:minmax(110px,1fr) minmax(100px,1fr); } .n5ese-dojutsu-toggle { grid-column:2; } }

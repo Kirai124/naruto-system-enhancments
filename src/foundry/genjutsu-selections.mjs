@@ -1,0 +1,36 @@
+import {sourceOf} from '../casting/feature-rules.mjs';
+import {sensoryDefinition} from '../casting/genjutsu-sensory.mjs';
+import {MODULE_ID} from '../settings/register.mjs';
+import {genjutsuEnabled,ownedGenjutsuFeature,isGenjutsu} from '../casting/genjutsu-context.mjs';
+import {refreshActorPreparation} from './actor-preparation.mjs';
+const KEY='genjutsuSelections',releases=['earth','wind','fire','water','lightning'];
+const definitions=[
+ {id:'elemental',name:'Elemental Manifestation',category:'Choose Inception',limit:()=>Infinity,eligible:i=>i.type==='spell'&&i._source.system.jutsu?.type==='ninjutsu'},
+ {id:'unaware',name:'Out Of Sight',category:'Unseen Dream',limit:a=>Math.ceil(a.system.attributes.prof/2),eligible:i=>isGenjutsu(i)&&!new Set(i._source.system.jutsu?.keywords??[]).has('unaware')},
+ {id:'psyche',name:'Psyche Breaker',category:'Corrupt Thoughts',limit:()=>2,eligible:i=>isGenjutsu(i)&&[...i.system.activities].some(a=>a.damage?.parts?.length)},
+ {id:'twisted',name:'Twisted Casting',category:'Beguiler',limit:()=>2,eligible:isGenjutsu},
+ {id:'rage',name:'Illusionary Rage',category:'Illusionist',limit:()=>1,eligible:i=>isGenjutsu(i)&&i.effects.some(e=>[...e.statuses].some(s=>game.n5eb.conditions.getConditionConfig(s)?.category==='mental'))}
+];
+export const genjutsuSelections=actor=>actor.getFlag(MODULE_ID,KEY)??{};
+export async function configureGenjutsuSelection(game,actor,id){
+ const rule=definitions.find(r=>r.id===id),feature=rule&&ownedGenjutsuFeature(actor,rule.name,rule.category);if(!genjutsuEnabled(game)||!actor.isOwner||!feature)throw Error('Eigene belegte Auswahlfähigkeit erforderlich.');
+ const state=structuredClone(genjutsuSelections(actor));if(id!=='elemental'&&state[id]?.length&&!game.user.isGM&&!state.unlock?.[id])throw Error('Auswahl festgelegt; Änderung nur bei erlaubter langer Rast oder GM-Korrektur.');
+ const div=document.createElement('div'),p=document.createElement('p');p.textContent=rule.name+': tatsächlich bekannte Jutsu wählen, maximal '+(Number.isFinite(rule.limit(actor))?rule.limit(actor):'beliebig viele passende')+'. Keine Jutsu oder Lernrechte werden gewährt.';div.append(p);
+ if(id==='elemental'){const select=document.createElement('select');select.name='release';for(const release of releases){const o=document.createElement('option');o.value=release;o.textContent=release;if(release===state.release)o.setAttribute('selected','');select.append(o);}div.append(select);p.append(document.createTextNode(' Gewählte bekannte Ninjutsu müssen das ausgewählte Release besitzen. Ihre Originaldaten bleiben erhalten; Genjutsu/Tactile/Visual gelten bei aktiver Automation.'));}
+ const candidates=[...actor.items].filter(rule.eligible);for(const item of candidates){const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.name='jutsu';input.value=item.id;if(state[id]?.includes(item.id))input.setAttribute('checked','');label.append(input,document.createTextNode(item.name));div.append(label,document.createElement('br'));}
+ const choice=await foundry.applications.api.DialogV2.wait({window:{title:rule.name},content:div.innerHTML,buttons:[{action:'save',label:'Auswahl speichern',callback:(_e,b)=>({ids:[...b.form.querySelectorAll('input[name="jutsu"]:checked')].map(i=>i.value),release:b.form.elements.release?.value})}],rejectClose:false});if(!choice)return;
+ if(choice.ids.length>rule.limit(actor)||choice.ids.some(id=>!candidates.some(i=>i.id===id)))throw Error('Ungültige Jutsu-Auswahl.');
+ if(id==='elemental'){if(!releases.includes(choice.release)||choice.ids.some(id=>!actor.items.get(id).system.jutsu.keywords.has(choice.release)))throw Error('Alle Jutsu müssen das gewählte Nature-Release besitzen.');if(state.release&&state.release!==choice.release&&!game.user.isGM)throw Error('Nature-Release ist festgelegt; Änderung nur durch GM-Korrektur.');state.release=choice.release;}
+ state[id]=choice.ids;state.unlock={...state.unlock,[id]:false};await actor.setFlag(MODULE_ID,KEY,state);refreshActorPreparation(actor);actor.sheet?.render(false);
+}
+export function installGenjutsuSelections(game,SpellModel){
+ const previous=new WeakMap(),p=SpellModel.prototype,derive=p.prepareDerivedData;
+ p.prepareDerivedData=function(...args){
+  const before=previous.get(this);if(before&&before.field===this.jutsu){this.jutsu.type=before.type;this.jutsu.keywords=before.keywords;this.rank=before.rank;this.level=before.level;this.jutsu.countsKnown=before.countsKnown;}previous.delete(this);
+  const actor=this.parent.actor;if(actor&&genjutsuEnabled(game)){const state=genjutsuSelections(actor),elemental=ownedGenjutsuFeature(actor,'Elemental Manifestation','Choose Inception')&&releases.includes(state.release)&&state.elemental?.includes(this.parent.id)&&this.jutsu.type==='ninjutsu'&&this.jutsu.keywords.has(state.release),unaware=ownedGenjutsuFeature(actor,'Out Of Sight','Unseen Dream')&&state.unaware?.includes(this.parent.id)&&state.unaware.length<=Math.ceil(actor.system.attributes.prof/2);
+   const sensory=sensoryDefinition(this.parent);if(elemental||unaware||sensory){previous.set(this,{field:this.jutsu,type:this.jutsu.type,keywords:this.jutsu.keywords,rank:this.rank,level:this.level,countsKnown:this.jutsu.countsKnown});this.jutsu.keywords=new Set(this.jutsu.keywords);if(elemental){this.jutsu.type='genjutsu';this.jutsu.keywords.delete('ninjutsu');for(const k of ['genjutsu','tactile','visual'])this.jutsu.keywords.add(k);}if(unaware)this.jutsu.keywords.add('unaware');if(sensory){this.jutsu.type='genjutsu';this.jutsu.keywords.delete('ninjutsu');this.jutsu.keywords.add('genjutsu');if(sensory.kind==='kagura'){this.rank='b';this.level=5;}const root=this.parent.getFlag('n5eb','advancementRoot')??this.parent.getFlag('n5eb','advancementOrigin');if(root&&sourceOf(actor.items.get(root.split('.')[0])??{})==='Compendium.n5eb.t7-subclass.Item.uiyOSAB3j4Bw3H7n')this.jutsu.countsKnown=false;}}
+  }return derive.apply(this,args);
+ };
+ Hooks.on('renderCharacterActorSheet',(sheet,html)=>{const root=html instanceof HTMLElement?html:sheet.element,actor=sheet.actor??sheet.document;root?.querySelector('.n5ese-genjutsu-selections')?.remove();if(!genjutsuEnabled(game))return;const available=definitions.filter(r=>ownedGenjutsuFeature(actor,r.name,r.category)),host=root?.querySelector('section[data-tab="features"]');if(!available.length||!host)return;const panel=document.createElement('details');panel.className='n5ese-ninjutsu-card n5ese-genjutsu-selections';const summary=document.createElement('summary');summary.textContent='Genjutsu · gespeicherte Jutsu-Auswahlen';panel.append(summary);for(const r of available){const b=document.createElement('button');b.type='button';b.textContent=r.name+': '+((genjutsuSelections(actor)[r.id]??[]).map(id=>actor.items.get(id)?.name??'fehlendes Jutsu').join(', ')||'auswählen');b.disabled=!actor.isOwner;b.addEventListener('click',()=>configureGenjutsuSelection(game,actor,r.id).catch(e=>ui.notifications.warn(e.message)));panel.append(b);}host.prepend(panel);});
+ Hooks.on('dnd5e.restCompleted',async(actor,_result,config)=>{if(!actor.isOwner||!genjutsuEnabled(game)||!['long','full'].includes(config.type))return;const state=genjutsuSelections(actor);await actor.setFlag(MODULE_ID,KEY,{...state,unlock:{...state.unlock,twisted:true}});});
+}

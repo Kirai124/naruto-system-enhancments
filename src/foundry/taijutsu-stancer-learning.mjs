@@ -1,0 +1,13 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {sourceOf} from '../casting/feature-rules.mjs';
+import {TAI_STANCES} from '../casting/taijutsu-stances.mjs';
+import {taijutsuEnabled,taijutsuFeature} from '../casting/taijutsu-context.mjs';
+import {withCastingActorLock} from './mode-adapter.mjs';
+import {martialDialog} from '../ui/martial-dialog.mjs';
+export async function learnStancerStance(game,actor){if(!actor.isOwner||!taijutsuEnabled(game))throw Error('Eigentümerrechte erforderlich.');return withCastingActorLock(actor,async()=>{
+ const entries=structuredClone(actor.getFlag(MODULE_ID,'taijutsuStanceLearning')??[]),feature=['Mixed Martial Arts','Stance Blending'].find(name=>taijutsuFeature(actor,name,'Stancer')&&!entries.some(e=>e.feature===name));if(!feature)throw Error('Alle freigeschalteten Stancer-Lernwahlen bereits gespeichert.');if(entries.some(e=>e.status==='creating'))throw Error('Unterbrochenen Lernvorgang vom GM prüfen; keine doppelte Stance erzeugen.');
+ const profiles=TAI_STANCES.filter(p=>!p.clan),c=await martialDialog(feature+' · Stance lernen / bestehende Wahl erfassen','Eine tatsächlich zulässige Taijutsu-Stance wählen. Voraussetzungen und tatsächliche Lernwahl ausdrücklich bestätigen. Eine schon regulär gelernte Stance wird lediglich verknüpft; keine Kopie. Die Stance-Grundfähigkeiten bleiben manuell.',[{name:'source',label:'Bestätigte Stance',options:profiles.map(p=>({value:p.source,label:p.name}))}]);if(!c)return;const profile=profiles.find(p=>p.source===c.source);if(!profile)throw Error('Ungültige Stance.');const existing=[...actor.items].find(i=>sourceOf(i)===profile.source);if(entries.some(e=>e.source===profile.source))throw Error('Diese Stance bereits über die andere Lernwahl erfasst.');
+ const entry={id:foundry.utils.randomID(),feature,source:profile.source,status:existing?'linked':'creating',itemId:existing?.id};entries.push(entry);await actor.setFlag(MODULE_ID,'taijutsuStanceLearning',entries);if(existing)return entry;
+ const original=await fromUuid(profile.source);if(original?.type!=='feat')throw Error('Originale Stance fehlt; GM muss gespeicherten Lernvorgang prüfen.');const data=original.toObject();delete data._id;data._stats??={};data._stats.compendiumSource=profile.source;data.flags??={};data.flags[MODULE_ID]={...data.flags[MODULE_ID],taijutsuStanceGrant:entry.id};
+ const [created]=await actor.createEmbeddedDocuments('Item',[data]);if(!created)throw Error('Stance-Erstellung unterbrochen; GM-Prüfung erforderlich.');entry.status='linked';entry.itemId=created.id;await actor.setFlag(MODULE_ID,'taijutsuStanceLearning',entries);return entry;
+ });}

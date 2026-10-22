@@ -1,0 +1,39 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {medicalFeature,medicalLevel,medicalRankValue} from '../casting/medical-context.mjs';
+import {activeMedicalCompanions} from './medical-companions.mjs';
+import {medicalConstructTarget} from './medical-constructive.mjs';
+import {grantMedicalTempHP} from './medical-temp-hp.mjs';
+import {applyMedicalHealing} from './medical-healing.mjs';
+import {applyMedicalDamage} from './medical-receipts.mjs';
+import {ninjutsuEffect,ninjutsuEffectData,upsertNinjutsuEffect} from '../effects/ninjutsu-effects.mjs';
+export function companionActionFields(game,source,rule,host){
+ const select=document.createElement('select');select.name='companion';const kind=rule.guardian?'summon':rule.golemCommand?'golem':'diamond';for(const e of activeMedicalCompanions(source).filter(e=>e.kind===kind)){const o=document.createElement('option');o.value=e.id;o.textContent=e.name;select.append(o);}host.append(select);if(rule.restoration){const s=document.createElement('select');s.name='restoreMode';for(const [value,label]of [['hp','HP wiederherstellen'],['temp','Unmittelbar verlorene ursprüngliche temporäre HP wiederherstellen']]){const o=document.createElement('option');o.value=value;o.textContent=label;s.append(o);}host.append(s);}
+ if(rule.collision){const s=document.createElement('select');s.name='object';for(const actor of game.actors){const mark=actor.effects.find(e=>e.getFlag(MODULE_ID,'ninjutsuEffect')?.metadata?.genjutsu?.restorationMark&&e.getFlag(MODULE_ID,'ninjutsuEffect').sourceActorUuid===source.uuid);if(!mark)continue;const o=document.createElement('option');o.value=actor.uuid;o.textContent=actor.name;s.append(o);}host.append(s);}
+}
+export async function validateCompanionAction(game,source,targets,entry,rule){
+ const link=activeMedicalCompanions(source).find(e=>e.id===entry.companion);if(!link||link.kind!==(rule.guardian?'summon':rule.golemCommand?'golem':'diamond'))throw Error('Passender tatsächlich aktiver eigener Begleiter erforderlich.');const companion=await fromUuid(link.target.uuid);if(!companion)throw Error('Verknüpfter Begleiter fehlt.');
+ if(rule.guardian){const count=companion.getFlag(MODULE_ID,'medicalGuardianUses')??0;if(count>=2)throw Error('Guardian hat seine zwei Nutzungen bis zur eigenen kurzen Rast verbraucht.');if(!medicalRankValue(companion.system.details.summon?.rank))throw Error('Tatsächlicher Summon-Rang fehlt.');}
+ if(rule.kindSoul&&(target=>target.system.attributes.hp.value>0)(targets[0]))throw Error('Kind Soul setzt den gerade tatsächlich tödlichen Treffer und 0 HP voraus.');
+ if(rule.cover&&!link.iron.includes('echoes')||rule.kindSoul&&!link.iron.includes('kind'))throw Error('Gewählter Fist-of-Iron-Vorteil nicht freigeschaltet.');
+ if(rule.auraHealing&&!game.combat?.started)throw Error('Unbreakable-Aura nur am tatsächlichen eigenen Zugbeginn im Kampf.');
+ if(rule.restoration||rule.mark)for(const target of targets)if(!medicalConstructTarget(game,target)&&!(rule.restoration&&(target.getFlag(MODULE_ID,'medicalLastDamage')?.reserves??[]).some(r=>r.sourceActorUuid===source.uuid&&r.expiresAt>game.time.worldTime&&r.hp+r.temp>0)))throw Error('Tatsächliches Construct-/Strukturziel oder aktive Constructive-Healing-Reserve erforderlich.');
+ if(rule.collision){const object=await fromUuid(entry.restorationObject);if(!object||!medicalConstructTarget(game,object)||!object.effects.some(e=>e.getFlag(MODULE_ID,'ninjutsuEffect')?.metadata?.genjutsu?.restorationMark&&e.getFlag(MODULE_ID,'ninjutsuEffect').sourceActorUuid===source.uuid))throw Error('Eigene markierte Struktur / Construct erforderlich.');const size=object.system.traits.size;if(!['tiny','sm','med','lg','huge','grg'].includes(size))throw Error('Strukturgröße nicht eindeutig auslesbar.');}
+ return {link,companion};
+}
+export async function applyCompanionAction(game,source,target,entry,rule,feature,plan){
+ const {companion}=await validateCompanionAction(game,source,[target],entry,rule);
+ if(rule.guardian){const amount=5*medicalRankValue(companion.system.details.summon.rank);return {tempGrantId:await grantMedicalTempHP(target,{sourceActorUuid:source.uuid,rule:'guardian-summoner',amount})};}
+ if(rule.auraHealing)return applyMedicalHealing(target,5,{n5eseMedicalRequest:entry.id,n5eseMedicalSource:source.uuid});
+ if(rule.restoration){const last=target.getFlag(MODULE_ID,'medicalLastDamage');if(entry.restoreMode==='temp'){if(target.system.attributes.hp.temp>0||!(last?.temp>0))throw Error('Gerade verlorene ursprüngliche temporäre HP erforderlich.');if(!['construct','structure'].includes(target.system.details.type?.value)&&!target.system.details.summon?.enabled)throw Error('Constructive-Healing-Verbündete erhalten durch diese Notfallwirkung ausschließlich die erlaubte halbe HP-Wiederherstellung.');const update={'system.attributes.hp.temp':last.temp};for(const [k,state]of Object.entries(last.ledgers??{}))if(state!==undefined)update['flags.'+MODULE_ID+'.'+k]=state;await target.update(update,{n5eseTemporaryHPKeepOthers:true});await clearRestorationConditions(target);return {restoredTemp:last.temp};}if(target.system.attributes.hp.value>0)throw Error('Die tatsächliche gerade bevorstehende Zerstörung / Reduktion auf 0 HP bestätigen und vor weiteren Heilungen behandeln.');const temporary=(target.getFlag(MODULE_ID,'medicalConstructReserves')??[]).some(r=>r.hp+r.temp>0&&r.sourceActorUuid===source.uuid&&r.expiresAt>game.time.worldTime)||(last?.reserves??[]).some(r=>r.sourceActorUuid===source.uuid&&r.expiresAt>game.time.worldTime&&r.hp+r.temp>0),amount=temporary?Math.floor(target.system.attributes.hp.effectiveMax/2):target.system.attributes.hp.effectiveMax;const receipt=await applyMedicalHealing(target,Math.max(0,amount-target.system.attributes.hp.value),{n5eseMedicalRequest:entry.id,n5eseMedicalSource:source.uuid});await clearRestorationConditions(target);return {receipt,constructive:temporary};}
+ if(rule.kindSoul){await target.update({'system.attributes.hp.value':Math.max(0,target.system.attributes.hp.value),'system.attributes.death.failure':0,'system.attributes.death.success':3});await target.toggleStatusEffect('unconscious',{active:true});return {stabilized:true};}
+ if(rule.collision){if(plan.success)return {save:plan.save};const object=await fromUuid(entry.restorationObject),receipt=await applyMedicalDamage(target,[{type:'bludgeoning',value:plan.amount,properties:new Set()}],{n5eseMedicalRequest:entry.id});return {receipt,objectUuid:object.uuid,shatterRequiresConfirmation:true};}
+ const changes=[],payload={medical:true,ruleId:rule.id,conditions:[]};
+ if(rule.cover){changes.push({key:'system.attributes.ac.bonus',type:'add',value:1,priority:20});payload.rolls=[{kind:'save',ability:'dex',bonus:1}];payload.coverConfirmation=true;}
+ if(rule.mark)payload.restorationMark=true;
+ if(rule.golemCommand)payload.golemFreeCommand=true;
+ const lifetime=rule.seconds?{expiresAt:game.time.worldTime+rule.seconds}:{};
+ const effect=await upsertNinjutsuEffect(target,ninjutsuEffectData({name:feature.name,id:rule.cover?'medical-echoes-cover':entry.id,sourceActorUuid:source.uuid,sourceItemUuid:feature.uuid,lifetime,setting:'medicalClassAutomation',changes,metadata:{genjutsu:payload}}));return {effectId:effect.id};
+}
+export const restorationCollisionFormula=size=>({tiny:'1d6',sm:'2d6',med:'3d6',lg:'5d6',huge:'5d8',grg:'5d12'}[size]);
+
+async function clearRestorationConditions(target){const conditions=target.effects.filter(e=>!e.disabled&&!e.transfer&&e.statuses.size);for(const e of conditions){const marker=ninjutsuEffect(e);if(marker?.metadata?.genjutsu?.conditions){const copy=structuredClone(marker);copy.metadata.genjutsu.conditions=[];delete copy.metadata.genjutsu.medicalRepeat;await e.setFlag(MODULE_ID,'ninjutsuEffect',copy);}else if(!e.system?.changes?.length||e.getFlag('n5eb','condition'))await e.delete();}}

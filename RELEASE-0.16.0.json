@@ -1,0 +1,38 @@
+{
+  "version": "0.16.0",
+  "date": "2026-10-18",
+  "foundry": "14.364",
+  "system": {
+    "id": "n5eb",
+    "version": "3.1.1"
+  },
+  "medical": {
+    "defaultEnabled": false,
+    "sourceFeatures": 98,
+    "subclasses": 11,
+    "doctrines": 4,
+    "missingTenets": "excluded by agreement",
+    "guide": "MEDICAL-GRUPPENFASSUNG.md"
+  },
+  "verification": {
+    "syntaxModules": 255,
+    "staticModuleLink": "passed; module code not evaluated",
+    "moduleJsonFiles": 3,
+    "auditJsonFiles": 4,
+    "unit": "NOT_RUN_USER_REQUEST",
+    "gameplay": "NOT_RUN_USER_REQUEST",
+    "foundryIntegration": "NOT_RUN_USER_REQUEST",
+    "browser": "NOT_RUN_USER_REQUEST",
+    "visual": "NOT_RUN_USER_REQUEST"
+  },
+  "limitations": [
+    "Manual action economy and unstructured profile mechanics",
+    "Protector low-chakra optional casting-mode combinations require rule clarification",
+    "Unbreakable with another pending Medical special-hit journal requires combined GM review"
+  ],
+  "installation": {
+    "scope": "own local enhancement module only",
+    "worldChanges": false,
+    "reloadPerformed": false
+  }
+}

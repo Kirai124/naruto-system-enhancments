@@ -1,0 +1,18 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {taijutsuEnabled,taijutsuFeature,taijutsuLevel} from '../casting/taijutsu-context.mjs';
+/** Turbulence chart read from the installed original image; does not replace Enhanced Movement. */
+export const turbulenceBonus=level=>level<3?0:level>=17?30:level>=14?25:level>=10?20:level>=6?15:10;
+export function installTaijutsuSubclassPassives(game,ActorClass,CharacterModel){
+ const original=ActorClass.prototype.allApplicableEffects;
+ ActorClass.prototype.allApplicableEffects=function*(){yield*original.call(this);if(!taijutsuEnabled(game))return;const definitions=[['Iron Will','Ironclad',['berserk','dazed']],['Typhoon','Tempest',['grappled','restrained']]];
+  for(const [name,category,conditions]of definitions){const feature=taijutsuFeature(this,name,category);if(!feature)continue;yield new CONFIG.ActiveEffect.documentClass({_id:foundry.utils.randomID(),name:name+' · passive Immunitäten',type:'base',origin:feature.uuid,system:{changes:conditions.map(value=>({key:'system.traits.ci.value',type:'add',value:game.n5eb.conditions.canonicalizeConditionId(value),priority:20}))},flags:{[MODULE_ID]:{taijutsuPassive:name}}},{parent:this});}
+  const iron=taijutsuFeature(this,'Ironclad','Ironclad');if(iron)yield new CONFIG.ActiveEffect.documentClass({_id:foundry.utils.randomID(),name:'Ironclad · native Proficiencies',type:'base',origin:iron.uuid,system:{changes:[{key:'system.traits.armorProf.value',type:'add',value:'hvy',priority:20},{key:'system.traits.armorProf.value',type:'add',value:'shl',priority:21},{key:'system.tools.armorsmithKit.value',type:'upgrade',value:'1',priority:20}]}},{parent:this});
+  const focus=taijutsuFeature(this,'Martial Focus','Martial Combat');if(focus)yield new CONFIG.ActiveEffect.documentClass({_id:foundry.utils.randomID(),name:'Martial Focus · Waffenproficiencies',type:'base',origin:focus.uuid,system:{changes:['quarterstaff','nunchaku','tonfa'].map((value,i)=>({key:'system.traits.weaponProf.value',type:'add',value,priority:20+i}))},flags:{[MODULE_ID]:{taijutsuPassive:'Martial Focus'}}},{parent:this});
+  const turbulence=taijutsuFeature(this,'Turbulence','Tempest');if(turbulence)yield new CONFIG.ActiveEffect.documentClass({_id:foundry.utils.randomID(),name:'Turbulence · Grundbewegung',type:'base',origin:turbulence.uuid,system:{changes:[{key:'system.attributes.movement.walk',type:'add',value:String(turbulenceBonus(taijutsuLevel(this))),priority:20}]},flags:{[MODULE_ID]:{taijutsuPassive:'Turbulence'}}},{parent:this});
+ };
+ const fields=game.n5eb.dataModels.actor.AttributesFields,initiative=fields.prepareInitiative;
+ fields.prepareInitiative=function(...args){const result=initiative.apply(this,args);if(taijutsuEnabled(game)&&taijutsuFeature(this.parent,'Gale','Tempest')&&this.attributes.init.prof.multiplier<1){const init=this.attributes.init,old=Number.isNumeric(init.prof.term)?init.prof.flat:0;init.prof=new init.prof.constructor(this.attributes.prof,1,true);const next=Number.isNumeric(init.prof.term)?init.prof.flat:0;init.total+=next-old;init.score+=next-old;}return result;};
+ const skills=CharacterModel.prototype.prepareSkills;
+ CharacterModel.prototype.prepareSkills=function(...args){if(taijutsuEnabled(game)&&taijutsuFeature(this.parent,'The Prophecy','Matrix'))this.skills.ins.value=Math.max(1,this.skills.ins.value);return skills.apply(this,args);};
+ const death=ActorClass.prototype.rollDeathSave;ActorClass.prototype.rollDeathSave=function(config={},...args){if(taijutsuEnabled(game)&&taijutsuFeature(this,'Revelations, Reloaded','Matrix'))config={...config,advantage:true};return death.call(this,config,...args);};
+}

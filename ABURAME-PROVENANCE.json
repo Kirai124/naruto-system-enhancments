@@ -1,0 +1,46 @@
+{
+  "systemVersion": "3.1.1",
+  "basis": "Installed clan pack legacyImport sourcePath",
+  "entries": [
+    {
+      "uuid": "Compendium.n5eb.clan.Item.689ZCrC0kWDkM1Wz",
+      "name": "Insect Clone",
+      "path": "aburame/clan-hijutsu/c-rank/insect-clone.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.8q07ffDBQVt6d350",
+      "name": "Parasitic Insect Cloud",
+      "path": "aburame/clan-hijutsu/b-rank/parasitic-insect-cloud.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.C5fXulhHuVbwAXI3",
+      "name": "Human Cocoon",
+      "path": "aburame/clan-hijutsu/d-rank/human-cocoon.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.DjTikDnijwFSeoEI",
+      "name": "Insect Amp",
+      "path": "aburame/clan-hijutsu/b-rank/insect-amp.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.IOpxZ8sdBiIfv6jK",
+      "name": "Parasitic Giant Insect",
+      "path": "aburame/clan-hijutsu/a-rank/parasitic-giant-insect.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.N7CGQlIDd258fmUH",
+      "name": "Parasitic Destruction",
+      "path": "aburame/clan-hijutsu/d-rank/parasitic-destruction.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.fIvK3Hm3l4gAFKyQ",
+      "name": "Insect Sphere",
+      "path": "aburame/clan-hijutsu/d-rank/insect-sphere.json"
+    },
+    {
+      "uuid": "Compendium.n5eb.clan.Item.gzqI1coCp9VlC8ly",
+      "name": "Insect Jar Technique",
+      "path": "aburame/clan-hijutsu/c-rank/insect-jar-technique.json"
+    }
+  ]
+}

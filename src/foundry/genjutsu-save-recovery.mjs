@@ -1,0 +1,33 @@
+import {MODULE_ID} from '../settings/register.mjs';
+import {genjutsuEnabled,genjutsuLevel,ownedGenjutsuFeature,actualizationPool} from '../casting/genjutsu-context.mjs';
+import {regainActualization} from '../casting/genjutsu-resources.mjs';
+import {genjutsuSelections} from './genjutsu-selections.mjs';
+import {withCastingActorLock} from './mode-adapter.mjs';
+const KEY='genjutsuSaveRecovery';
+const rules=[['Elemental Manifestation','release'],['Hallucinatory Instrument','auditory'],['Reality Marble','two-targets'],['Temporal Stopwatch','penalty']];
+export function saveRecoveryChoices(actor,message){const item=message?.getAssociatedItem?.();if(genjutsuLevel(actor)<11||!item)return [];return rules.filter(([name,kind])=>ownedGenjutsuFeature(actor,name,'Choose Inception')&&(kind!=='release'||item.system.jutsu.keywords.has(genjutsuSelections(actor).release))&&(kind!=='auditory'||item.system.jutsu.keywords.has('auditory')));}
+export async function recoverFromGenjutsuSave(game,message,name){
+ const actor=message.getAssociatedActor();if(!genjutsuEnabled(game)||!actor?.isOwner||message.system.deltas===null)throw Error('Eigene gültige Genjutsu-Karte erforderlich.');
+ return withCastingActorLock(actor,async()=>{
+  const rule=saveRecoveryChoices(actor,message).find(r=>r[0]===name),feature=rule&&ownedGenjutsuFeature(actor,name,'Choose Inception');if(!feature)throw Error('Keine passende Inception-Rückgewinnung.');
+  const entries=structuredClone(actor.getFlag(MODULE_ID,KEY)??[]),stamp=game.combat?.started?game.combat.id+':'+game.combat.round+':'+game.combat.turn:null;
+  if(entries.some(e=>['applying','review'].includes(e.status)))throw Error('Vorherige Rückgewinnung zuerst vom GM prüfen.');if(stamp&&entries.some(e=>e.sourceUuid===feature.uuid&&e.turn===stamp))throw Error('Diese Inception hat in diesem Zug bereits einen Die zurückgegeben.');if(!actualizationPool(actor)?.spent)throw Error('Kein verbrauchter Actualization Die.');
+  const targets=[...new Map([...game.user.targets].filter(t=>t.actor).map(t=>[t.actor.uuid,t.actor])).values()];if(targets.length<(rule[1]==='two-targets'?2:1))throw Error('Tatsächlich betroffene feindliche Ziele markieren.');
+  const receipts=targets.flatMap(t=>(t.getFlag(MODULE_ID,'genjutsuSaveReceipts')??[]).filter(r=>r.messageId===message.id&&['failure','critical-failure'].includes(r.outcome)).map(r=>({id:r.id,targetUuid:t.uuid,critical:r.outcome==='critical-failure'})));
+  if(rule[1]==='two-targets'&&(!message.system.concentration||!actor.effects.has(message.system.concentration)))throw Error('Reality Marble benötigt die weiterhin bestehende Genjutsu-Konzentration.');
+  const div=document.createElement('div'),p=document.createElement('p');p.textContent=name+': '+(rule[1]==='two-targets'?'Mindestens zwei unterschiedliche feindliche Kreaturen sind gegen denselben weiterhin konzentrierten Cast gescheitert; ihre Saves dürfen zu verschiedenen Zeitpunkten erfolgt sein.':rule[1]==='penalty'?'Aktueller feindlicher Save um mindestens 5 fehlgeschlagen; dieses Jutsu verursacht einen Malus auf Angriff, Skills, Saves oder AC.':'Aktueller feindlicher Save um mindestens 5 fehlgeschlagen.')+' Ein verbrauchter Die, maximal einmal je Zug. Geheimwürfe werden hier nicht offengelegt.';div.append(p);
+  const l=document.createElement('label'),check=document.createElement('input');check.type='checkbox';check.name='confirmed';l.append(check,document.createTextNode('Tatsächliches aktuelles Save-Ereignis und alle Voraussetzungen bestätigen'));div.append(l);
+  const confirmed=await foundry.applications.api.DialogV2.wait({window:{title:'Inception · Actualization zurückgewinnen'},content:div.innerHTML,buttons:[{action:'recover',label:'Einen Die zurückgewinnen',callback:(_e,b)=>b.form.elements.confirmed.checked}],rejectClose:false});if(!confirmed)return;
+  const now=game.combat?.started?game.combat.id+':'+game.combat.round+':'+game.combat.turn:null;if(now!==stamp||message.system.deltas===null||!ownedGenjutsuFeature(actor,name,'Choose Inception'))throw Error('Quelle oder Zug während der Bestätigung verändert.');
+  const used=new Set(entries.filter(e=>e.sourceUuid===feature.uuid&&e.status!=='cancelled').flatMap(e=>e.receipts??[]));if(receipts.length&&receipts.every(r=>used.has(r.id)))throw Error('Diese Save-Belege wurden bereits für diese Rückgewinnung verwendet.');
+  const entry={id:foundry.utils.randomID(),sourceUuid:feature.uuid,messageId:message.id,targets:targets.map(t=>t.uuid),receipts:receipts.map(r=>r.id),turn:stamp,status:'applying',confirmed:true};entries.push(entry);await actor.setFlag(MODULE_ID,KEY,entries);
+  try{entry.recovered=await regainActualization(actor,1);entry.status='applied';await actor.setFlag(MODULE_ID,KEY,entries);}catch(error){entry.status='review';entry.error=error.message;await actor.setFlag(MODULE_ID,KEY,entries);throw error;}
+ });
+}
+export function installSaveRecoveryControls(game){
+ Hooks.on('dnd5e.renderChatMessage',(message,html)=>{
+  html.querySelector('.n5ese-genjutsu-save-recovery')?.remove();if(!genjutsuEnabled(game)||message.type!=='usage'||!message.getFlag(MODULE_ID,'genjutsuCast'))return;const actor=message.getAssociatedActor();if(!actor)return;
+  const rules=saveRecoveryChoices(actor,message);if(!rules.length)return;const panel=document.createElement('section');panel.className='n5ese-molding-chat n5ese-genjutsu-save-recovery';for(const [name] of rules){const b=document.createElement('button');b.type='button';b.textContent=name+' · Save-Rückgewinnung bestätigen';b.disabled=!actor.isOwner;b.addEventListener('click',async()=>{b.disabled=true;try{await recoverFromGenjutsuSave(game,message,name);}catch(e){ui.notifications.warn(e.message);}finally{b.disabled=!actor.isOwner;}});panel.append(b);}html.append(panel);
+ });
+ Hooks.on('renderCharacterActorSheet',(sheet,html)=>{const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;if(!game.user.isGM||!actor?.isOwner)return;const entries=(actor.getFlag(MODULE_ID,KEY)??[]).filter(e=>['applying','review'].includes(e.status)),host=root?.querySelector('section[data-tab="features"]');if(!host||!entries.length)return;for(const entry of entries){const b=document.createElement('button');b.type='button';b.className='n5ese-genjutsu-save-recovery';b.textContent='GM: Save-Rückgewinnung prüfen';b.addEventListener('click',async()=>{if(await foundry.applications.api.DialogV2.confirm({window:{title:'Rückgewinnung prüfen'},content:'<p>Actualization-Pool manuell geprüft/korrigiert? Ohne erneute Erstattung abschließen.</p>',rejectClose:false})){const all=structuredClone(actor.getFlag(MODULE_ID,KEY));all.find(e=>e.id===entry.id).status='resolved';await actor.setFlag(MODULE_ID,KEY,all);}});host.append(b);}});
+}
