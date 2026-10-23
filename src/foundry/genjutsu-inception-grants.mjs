@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from '../ui/class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {genjutsuEnabled,genjutsuLevel,ownedGenjutsuFeature} from '../casting/genjutsu-context.mjs';
 import {GENJUTSU_FEATURES} from '../casting/genjutsu-sources.mjs';
@@ -33,7 +34,7 @@ export async function reconcileInceptionGrants(game,actor,{explicit=false}={}){
  }finally{busy.delete(actor);}
 }
 export function installInceptionGrants(game){
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-temporal-technique')?.remove();const feature=genjutsuEnabled(game)&&ownedGenjutsuFeature(actor,'Temporal Technique','Time Slipper'),host=root?.querySelector('section[data-tab="features"]');if(!feature||!host)return;const b=document.createElement('button');b.type='button';b.className='n5ese-temporal-technique';b.textContent='Temporal Technique · '+(feature.getFlag(MODULE_ID,'genjutsuTemporalChoice')?'zusätzliche Mirage gewählt':'zusätzliche Stopwatch-Mirage wählen');b.disabled=!actor.isOwner||!!feature.getFlag(MODULE_ID,'genjutsuTemporalChoice');b.addEventListener('click',()=>chooseTemporalTechnique(game,actor).catch(e=>ui.notifications.warn(e.message)));host.prepend(b);});
+ registerClassSheetPanel(game,'genjutsu','.n5ese-temporal-technique','Temporal Technique',(sheet,html)=>{const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-temporal-technique')?.remove();const feature=genjutsuEnabled(game)&&ownedGenjutsuFeature(actor,'Temporal Technique','Time Slipper'),host=root?.querySelector('section[data-tab="features"]');if(!feature||!host)return;const b=document.createElement('button');b.type='button';b.className='n5ese-temporal-technique';b.textContent='Temporal Technique · '+(feature.getFlag(MODULE_ID,'genjutsuTemporalChoice')?'zusätzliche Mirage gewählt':'zusätzliche Stopwatch-Mirage wählen');b.disabled=!actor.isOwner||!!feature.getFlag(MODULE_ID,'genjutsuTemporalChoice');b.addEventListener('click',()=>chooseTemporalTechnique(game,actor).catch(e=>ui.notifications.warn(e.message)));host.prepend(b);});
  const authority=actor=>actor?.isOwner&&(game.users.activeGM?game.users.activeGM.id===game.user.id:game.users.find(u=>u.active&&!u.isGM&&actor.testUserPermission(u,'OWNER'))?.id===game.user.id);
  const queue=actor=>{if(authority(actor))reconcileInceptionGrants(game,actor).catch(e=>ui.notifications.warn(e.message));};
  for(const actor of game.actors)queue(actor);

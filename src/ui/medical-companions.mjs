@@ -1,3 +1,4 @@
+import {registerMedicalPanel} from './medical-window.mjs';
 import {commandMedicalGolem} from '../foundry/medical-golem-commands.mjs';
 import {rollMedicalSharedSave,resolveMedicalSharedSave} from '../foundry/medical-shared-saves.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
@@ -5,10 +6,10 @@ import {medicalEnabled,medicalFeature,medicalLevel} from '../casting/medical-con
 import {MEDICAL_COMPANIONS,activeMedicalCompanions,linkMedicalCompanion,dismissMedicalCompanion,castThroughMedicalCompanion,medicalCompanionWorkflow} from '../foundry/medical-companions.mjs';
 const button=(host,label,fn,enabled)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=!enabled;b.addEventListener('click',async()=>{b.disabled=true;try{await fn();}catch(e){ui.notifications.warn(e.message);}finally{b.disabled=!enabled;}});host.append(b);};
 export function installMedicalCompanionUI(game){
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
-  const source=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-medical-companions')?.remove();if(!medicalEnabled(game)||!medicalLevel(source))return;
+ registerMedicalPanel(game,'companions','Verknüpfte Begleiter',source=>{
+  if(!medicalEnabled(game)||!medicalLevel(source))return;
   const owned=[['diamond','Diamondheart Materialization','Diamond Heart'],['golem','Echoes of Life','Spiritual Scribe'],['summon','Summoning Apprentice','Natural Medicine']].filter(([_k,n,c])=>medicalFeature(source,n,c));if(!owned.length)return;
-  const host=root?.querySelector('section[data-tab="features"]');if(!host)return;const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-medical-companions';const h=document.createElement('h3');h.textContent='Medical · verknüpfte Begleiter';panel.append(h);
+  const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-medical-companions';const h=document.createElement('h3');h.textContent='Medical · verknüpfte Begleiter';panel.append(h);
   for(const entry of source.getFlag(MODULE_ID,'medicalSharedSaves')??[])if(['rolling','review'].includes(entry.status))button(panel,'GM: unterbrochenen gemeinsamen Save prüfen',()=>resolveMedicalSharedSave(game,source,entry.id),source.isOwner&&game.user.isGM);
   for(const [kind,label]of owned)button(panel,label+' · vorhandenen Actor verknüpfen',()=>linkMedicalCompanion(game,source,kind),source.isOwner);
   if(!game.combat?.started&&source.getFlag(MODULE_ID,'medicalFreeGolemCommand')?.turn==='manual')button(panel,'Tatsächlich neuen Zug bestätigen · freies Golem-Kommando',async()=>{if(await foundry.applications.api.DialogV2.confirm({window:{title:'Mastercraft · tatsächlicher neuer Zug'},content:'<p>Tatsächlich neuer Zug begonnen? Nur die einmalige freie Kommandonutzung zurücksetzen.</p>',rejectClose:false}))await source.unsetFlag(MODULE_ID,'medicalFreeGolemCommand');},source.isOwner);const workflow=medicalCompanionWorkflow(game);for(const entry of source.getFlag(MODULE_ID,MEDICAL_COMPANIONS)??[]){if(['ended','cancelled','resolved'].includes(entry.status))continue;const p=document.createElement('p');p.textContent=entry.name+' · '+entry.kind+' · '+entry.status;panel.append(p);
@@ -17,7 +18,7 @@ export function installMedicalCompanionUI(game){
    if(entry.status==='active'&&entry.kind==='diamond'){button(panel,'Gemeinsamer Save · höherer Bonus / einen Empfänger bestätigen',()=>rollMedicalSharedSave(game,source,entry.id),source.isOwner);button(panel,'Diamondheart · Jutsu über den Wirker',()=>castThroughMedicalCompanion(game,source,entry.id),source.isOwner);button(panel,'Diamondheart · Medical-Features beim Wirker öffnen',async()=>{await source.setFlag(MODULE_ID,'medicalFeatureOrigin',entry.id);source.sheet.render(true);},source.isOwner);}
    if(entry.status==='active'&&entry.kind==='golem'&&medicalFeature(source,'Mastercraft','Spiritual Scribe'))button(panel,'Mastercraft · bezahltes freies Kommando dieses Zuges',()=>commandMedicalGolem(game,source,entry.id),source.isOwner);
    button(panel,'Diese Verknüpfung auflösen / GM-Prüfung',()=>dismissMedicalCompanion(game,source,entry.id),source.isOwner);
-  }host.prepend(panel);
+  }return panel;
  });
  Hooks.on('dnd5e.renderChatMessage',(message,html)=>{const origin=message.getFlag(MODULE_ID,'medicalCompanionOrigin');html.querySelector('.n5ese-medical-origin')?.remove();if(!origin)return;const p=document.createElement('p');p.className='n5ese-medical-origin';p.textContent='Ursprung: '+origin.name+' · Chakra, Jutsu und Konzentration beim ursprünglichen Wirker.';html.append(p);});
 }

@@ -1,12 +1,17 @@
 {
   "id": "naruto5e-system-enhancements",
   "title": "Naruto 5e — System Enhancements",
-  "description": "Optional Naruto 5e costs, independent Dojutsu and Ninjutsu, Genjutsu, Medical-Nin and Taijutsu Specialist workflows. Group release without gameplay verification; automation disabled by default.",
-  "version": "0.17.0",
-  "authors": [{"name": "Kirai124", "url": "https://github.com/Kirai124"}],
+  "description": "Optional Naruto 5e enhancements with compact action windows for four classes. Basic casting locally verified; full gameplay validation pending. Automations are opt-in.",
+  "version": "0.17.1",
+  "authors": [
+    {
+      "name": "Kirai124",
+      "url": "https://github.com/Kirai124"
+    }
+  ],
   "url": "https://github.com/Kirai124/naruto-system-enhancments",
   "manifest": "https://github.com/Kirai124/naruto-system-enhancments/releases/latest/download/module.json",
-  "download": "https://github.com/Kirai124/naruto-system-enhancments/releases/download/v0.17.0/naruto5e-system-enhancements-0.17.0.zip",
+  "download": "https://github.com/Kirai124/naruto-system-enhancments/releases/download/v0.17.1/naruto5e-system-enhancements-0.17.1.zip",
   "readme": "https://github.com/Kirai124/naruto-system-enhancments/blob/main/README.md",
   "bugs": "https://github.com/Kirai124/naruto-system-enhancments/issues",
   "changelog": "https://github.com/Kirai124/naruto-system-enhancments/blob/main/CHANGELOG.md",

@@ -118,7 +118,7 @@ export async function requestMedicalHealing(game,actor,kind,{messageId}={}){
   if(kind==='preserve')preserveAllocation(actor,actualTargets,selected.amounts,{stoneWill:!!medicalFeature(actor,'Stone Will','Diamond Heart')});
   const paymentFeature=kind==='preserve'&&selected.preservePool==='mending'?medicalFeature(actor,'Preserve Life: Mending Presence','Adept Medic'):feature;if(!paymentFeature)throw Error('Gewählter Medical-Ressourcenpool fehlt.');
   const spend=kind==='preserve'?1:kind==='natural'?selected.dice:0;
-  if(spend&&(!Number.isSafeInteger(spend)||spend<1||paymentFeature.system.uses.value<spend))throw Error('Nicht genügend Medical-Nutzungen oder Heilwürfel.');
+  if((kind==='natural'||spend)&&(!Number.isSafeInteger(spend)||spend<1||paymentFeature.system.uses.value<spend))throw Error('Nicht genügend Medical-Nutzungen oder Heilwürfel.');
   const entry={origin:medicalFeatureOrigin(actor),id:foundry.utils.randomID(),kind,messageId,targets,rank,turn,at:game.time.worldTime,status:'paying',paymentFeatureId:paymentFeature.id,dice:selected.dice,amounts:selected.amounts,channel:channel&&selected.channel,doctrine:kind==='cast'&&!!medicalFeature(actor,'Long Life, Short Death'),rollFingerprint:message&&JSON.stringify(message.rolls.map(r=>r.toJSON())),breakdown:[],rolls:[]};
   list.push(entry);await actor.setFlag(MODULE_ID,MEDICAL_ACTIONS,list);
   try{

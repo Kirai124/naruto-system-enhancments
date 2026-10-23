@@ -1,3 +1,27 @@
+# Vier-Klassen-Zwischenstand · 0.17.1
+
+- **UI-01 · QUALITY OF LIFE · P1:** verstreute Sheet-Aktionsflächen. Betroffene Renderer in src/ui und src/foundry registrieren Panels in einer gemeinsamen klassenbezogenen Registry. Erwartet: ein Button je vorhandener aktiver Klasse, gleiche ausführbare Aktionen im Fenster. Tatsächlich an vier Testfiguren geprüft, keine Ressourcenänderung beim Öffnen. Wiederverwendbar für weitere Klassen.
+- **TAI-UI-01 · BUG · P1:** availableFeatureActions prüfte nur Featurebesitz, nicht die konkrete Nin-Tai-Natur/Form. Deshalb erschienen fremde Lightning-/Wind-/Water-Folgeaktionen. Definitionen erhalten zusätzliche reine Verfügbarkeitsbedingungen; dieselben Bedingungen gelten bei direkter Ausführung. Tests: Fire gegenüber Wind/Lightning/Water, aktive Form, Armor und fehlender Featurebesitz erfolgreich. Bestehende gespeicherte Vorgänge werden nicht gelöscht.
+- **CAST-ONLINE-01 · POTENTIAL ISSUE · P1:** Nutzer meldet Cast-Blockade mit älterer Online-Version. Neue lokale Fassung wirkt vier native Klassen-Casts erfolgreich. Ursache online noch unbekannt; Online-Welt unberührt. Dort nach Veröffentlichung mit passender Foundry-/Systemversion überprüfen; kein behaupteter Online-Funktionsnachweis.
+
+## Frühere Befunde
+
+# Medical-QA · bestätigte Befunde 23.10.2026
+
+| ID | Klasse / Priorität | Quelle / Befund | Lösung / erforderliche Prüfung |
+| --- | --- | --- | --- |
+| MED-QA-01 | BUG · hoch | medical-companions.mjs: Collection.flatMap verhindert Vorbereitung | Array-Konvertierung; echte Level-20-Vorbereitung und Unit-Test erfolgreich |
+| MED-QA-02 | BUG · hoch | medical-scalpel.mjs: fehlender Schadenszugang und Attributsbonus | Generischer Waffen-Schadenshelfer, explizites @mod; Angriff, Schaden, HP/THP und Wiederholung geprüft |
+| MED-QA-03 | BUG · hoch | molding-chat.mjs: löscht fremde Klassenaktionen | Eigener Selektor; Medical-Heil-/Trefferkarten tatsächlich bedienbar |
+| MED-QA-04 | BUG · mittel | ninjutsu-class-rolls.mjs / genjutsu-effects.mjs: null-Actor bei Kompendium-Profilen | Generische Guards; zwei echte Profile nach Reload fehlerfrei |
+| MED-QA-05 | QUALITY OF LIFE · mittel | Sheet mit mehreren Medical-Panels | Gemeinsames Fenster, Ressourcen, Suche, Gruppen; UI geprüft |
+| MED-QA-06 | BUG · mittel | medical-window.mjs: bringToFront vor Render | Nur bei gerendertem Fenster; erneutes Öffnen ohne Warnung |
+| MED-QA-07 | BUG · mittel | medical-healing.mjs: Nullbetrag umging Truthiness-Guard | Explizite Validierung vor Zahlung; gültiger Zweierverbrauch im Spiel geprüft |
+| MED-QA-08 | BUG · mittel | Never On The Front Lines: permanenter Dash-Transfer | Exakt quellgebundene Laufzeitunterdrückung; Bewegung 30 bleibt 30, Originaleffekt unverändert |
+| MED-QA-09 | POTENTIAL ISSUE · hoch | Gesamttests: 34 ältere Fehlschläge, zuvor 35 | Keine neuen Fehler gegenüber Git-Baseline; weitere Analyse offen |
+
+Evidenz, Verhalten und verbleibende Prüfungen: [Medical-QA](MEDICAL-QA.md). Der analoge Collection-Fix in taijutsu-condition-cleanup.mjs ist enthalten; dessen tatsächlicher Taijutsu-Ablauf bleibt ungeprüft.
+
 # Taijutsu · Implementierungsabschluss 21.10.2026
 
 135 Quellfeatures und 14 Unterklassen katalogisiert, Implementierungsrunde abgeschlossen. Einzelbefunde und Nachweise: [Einzelcheckliste](TAIJUTSU-SPECIALIST-CHECKLISTE.md), audit/TAIJUTSU-SOURCES.json, audit/TAIJUTSU-DECISIONS.json und audit/TAIJUTSU-IMPLEMENTATION-STATUS.json. BUG-Korrekturen für Heavy-Armor-Movement, Perfect Body und wiederholte Effektkeys bleiben quellseitig integriert; keine Aussage über Laufzeiterfolg. MISSING AUTOMATION und QUALITY OF LIFE sind entsprechend der manuellen Grenzen in der Gruppenfassung umgesetzt. POTENTIAL ISSUE: gemeinsame Gruppenprüfung, unstrukturierte Fremdmechaniken und klassenübergreifende Spezialtreffer. Native funktionierende Klassenwahl/Advancements bleiben WORKING AS INTENDED erhalten.

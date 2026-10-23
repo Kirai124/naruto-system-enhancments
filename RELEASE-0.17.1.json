@@ -1,0 +1,27 @@
+{
+  "version": "0.17.1",
+  "date": "2026-10-23",
+  "foundry": "14.364",
+  "system": "n5eb 3.1.1",
+  "localWorld": "test12",
+  "targetedTests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "allTests": {
+    "total": 238,
+    "passed": 204,
+    "failed": 34,
+    "newFailuresSinceMedicalCheckpoint": 0
+  },
+  "staticModules": 361,
+  "basicNativeCasting": [
+    "ninjutsu",
+    "genjutsu",
+    "medical",
+    "taijutsu"
+  ],
+  "remotePublished": false,
+  "productionTested": false,
+  "fullGameplayValidation": false
+}

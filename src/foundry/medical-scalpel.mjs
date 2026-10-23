@@ -43,7 +43,9 @@ export async function medicalScalpelItem(game,actor){
  if(state.damageType)type=state.damageType;
  const preference=actor.getFlag(MODULE_ID,'medicalScalpelAbility'),ability=preference==='int'&&medicalFeature(actor,'Biological Knowledge','Chakra Scalpel Specialist')?'int':actor.getFlag(MODULE_ID,'medicalAbility')==='cha'&&medicalFeature(actor,'Fortifying Scripture','Spiritual Scribe')?'cha':'wis';
  const taijutsu=medicalFeature(actor,'Competent Combatant','Combat Medic')&&actor.getFlag(MODULE_ID,'medicalScalpelTaijutsu'),attackBonus=taijutsu?actor.system.attributes.jutsu.taijutsu.attack-actor.system.abilities[ability].mod-actor.system.attributes.prof:actor.system.attributes.jutsu.ninjutsu.attack-actor.system.attributes.jutsu.ninjutsu.mod-actor.system.attributes.prof;
- data.system.damage??={};data.system.damage.base={number:scalpelDice(level),denomination:die,bonus:'',types:[type],custom:{enabled:false,formula:''},scaling:{mode:'',number:1,formula:''}};
+ // Natural spell attacks deliberately omit the native automatic ability bonus.
+ // The installed Scalpel rule explicitly includes the selected ability modifier.
+ data.system.damage??={};data.system.damage.base={number:scalpelDice(level),denomination:die,bonus:'@mod',types:[type],custom:{enabled:false,formula:''},scaling:{mode:'',number:1,formula:''}};
  data.system.range={value:null,long:null,reach:state.sabre?15:5,units:'ft'};if(state.sabre)data.system.properties=[...new Set([...(data.system.properties??[]),'rch'])];
  data.system.activities[state.activityId]={_id:state.activityId,type:'attack',name:data.name,activation:{type:'action',value:1},attack:{ability,type:{value:'melee',classification:'spell'},bonus:String(attackBonus),flat:false},damage:{includeBase:true,parts:[]},consumption:{targets:[]},range:{override:true,value:state.sabre?'15':'5',units:'ft'},target:{affects:{type:'creature',count:'1'},template:{}}};
  data.flags??={};data.flags[MODULE_ID]={medicalScalpelWeapon:{stateId:state.id,attackType:taijutsu?'taijutsu':'ninjutsu',sabre:state.sabre,damageType:type,ability,mode:state.mode}};

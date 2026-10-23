@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from '../ui/class-window.mjs';
 import {refreshActorPreparation} from './actor-preparation.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {refinedFeature,refinedLimit,refinedSelection,eligibleRefined,validateRefinedSelection} from '../casting/refined-ninjutsu.mjs';
@@ -31,7 +32,7 @@ export function renderRefined(game,sheet,html) {
   button.addEventListener('click',()=>configureRefined(game,actor).catch(e=>ui.notifications.warn(e.message)));panel.append(button);host.prepend(panel);
 }
 export function installRefinedChoices(game) {
-  Hooks.on('renderCharacterActorSheet',(sheet,html)=>renderRefined(game,sheet,html));
+  registerClassSheetPanel(game,'ninjutsu','.n5ese-refined','Refined Ninjutsu',(sheet,html)=>renderRefined(game,sheet,html));
   Hooks.on('getHeaderControlsItemSheet5e',(sheet,controls)=>{
     const item=sheet.item??sheet.document;
     if(item?.actor&&refinedFeature(item.actor)?.id===item.id&&item.isOwner&&game.settings.get(MODULE_ID,'ninjutsuClassAutomation'))controls.push({action:'n5eseRefined',icon:'fa-solid fa-wand-magic-sparkles',label:'Refined Ninjutsu — Auswahl',onClick:()=>configureRefined(game,item.actor).catch(e=>ui.notifications.warn(e.message))});

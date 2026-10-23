@@ -1,3 +1,13 @@
+# Aktuell · 0.17.1
+
+Vier Klassen erhalten eigene Aktionsfenster: Ninjutsu orange, Genjutsu violett, Medical grün, Taijutsu rot. Nur tatsächlich vorhandene Klassen und aktivierte Enhancement-Kategorien erzeugen einen Button. Vorhandene Effekte auf anderen Empfängern und NPCs bleiben erreichbar. Nin-Tai-Naturaktionen werden vor der Anzeige auf konkrete Natur/Form geprüft. [Umfang und Prüfstand](ZWISCHENSTAND-0.17.1.md).
+
+## Frühere Entwicklungsnotizen
+
+# Unveröffentlicht · Medical-Bedienung und QA
+
+Ein Sheet-Button öffnet die tatsächlich verfügbaren Medical-Klassenaktionen, Begleiter und gespeicherten Vorgänge in einem kompakten Fenster. Treffer-/Heilungsoptionen bleiben kontextbezogen an Chatkarten. Ein Scalpel-Angriff bietet den nativen Schadenswurf an. Bestätigte Kernabläufe und noch ungeprüfte Fähigkeiten: [Medical-QA](MEDICAL-QA.md).
+
 # Aktuell: Taijutsu Specialist · Gruppenfassung 0.17.0
 
 Grundklasse, Martial Techniques und 14 installierte Unterklassen sind quellseitig eingebunden. Details und manuelle Grenzen: [Gruppenfassung](TAIJUTSU-GRUPPENFASSUNG.md), [Einzelcheckliste](TAIJUTSU-SPECIALIST-CHECKLISTE.md). Optional, standardmäßig aus; Gruppenprüfung offen.

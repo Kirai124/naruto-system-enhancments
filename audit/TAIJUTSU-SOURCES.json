@@ -1,0 +1,3597 @@
+{
+  "date": "2026-10-18",
+  "system": "n5eb 3.1.1",
+  "classSource": "Compendium.n5eb.class.Item.Ipg5bKh1zS3Yfn2I",
+  "subclasses": [
+    {
+      "name": "Disturbance",
+      "source": "Compendium.n5eb.subclass.Item.0ClINUkXTUi58Q7K"
+    },
+    {
+      "name": "Talent & Focus",
+      "source": "Compendium.n5eb.subclass.Item.JHLItkOsislgTMEl"
+    },
+    {
+      "name": "Righteous Fury",
+      "source": "Compendium.n5eb.subclass.Item.LzTBNfT4sOHRHZL8"
+    },
+    {
+      "name": "Passionate Flame",
+      "source": "Compendium.n5eb.subclass.Item.MGfFkSDUL5omoMal"
+    },
+    {
+      "name": "Stancer",
+      "source": "Compendium.n5eb.subclass.Item.a1NTDIiVGdJhkORc"
+    },
+    {
+      "name": "Ruin",
+      "source": "Compendium.n5eb.subclass.Item.pAnNgwhOZ3JLanAR"
+    },
+    {
+      "name": "Nin-Tai",
+      "source": "Compendium.n5eb.subclass.Item.pkFa3Xdy5mAvzKrp"
+    },
+    {
+      "name": "Ironclad",
+      "source": "Compendium.n5eb.subclass.Item.yVR3BA0j2Mdgkg43"
+    },
+    {
+      "name": "Tempest",
+      "source": "Compendium.n5eb.t7-subclass.Item.7M8SDg1DJPQsPqAQ"
+    },
+    {
+      "name": "Realized Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.DoyAPcz6Z8cisUGF"
+    },
+    {
+      "name": "Martial Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.H5VT7MwH2LKae285"
+    },
+    {
+      "name": "Grappler",
+      "source": "Compendium.n5eb.t7-subclass.Item.IljzIjRQvhfk5b04"
+    },
+    {
+      "name": "Matrix",
+      "source": "Compendium.n5eb.t7-subclass.Item.YIWhUAMANlN8x4qx"
+    },
+    {
+      "name": "Ultimate Battle",
+      "source": "Compendium.n5eb.t7-subclass.Item.ifXslkfLkV2Y6Ekh"
+    }
+  ],
+  "features": [
+    {
+      "level": 1,
+      "name": "Martial Defense",
+      "source": "Compendium.n5eb.class.Item.ITK8bVvZelagkGvm",
+      "text": "Beginning at 1st level, while you are wearing no armor, your AC equals 10 + Proficiency + Dexterity Modifier. Beginning at 5th level, you learn how to blend your martial prowess with a set number of techniques learned from the teachings and theory of seal smiths. You gain 2 guard slots, which can be used to infuse yourself with taijutsu techniques meant to mimic any minor armor seal you would like. Infusing yourself with such a seal must be done over the course of a full rest. Additionally, you cannot gain the benefit of this feature while you are not using this features AC calculation. You gain access to refined armor seals and 1 additional slot at 9th level, greater armor seals and 1 additional slot at 13th level, and Superior armor seals and 1 additional slot at 17th level.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!ITK8bVvZelagkGvm.l27R2K6WD2ZnRsp1",
+          "name": "Martial Defense",
+          "origin": "Compendium.n5eb.class.Item.ITK8bVvZelagkGvm",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "n5eb": {
+              "requiresNoArmor": true
+            },
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/equipment/chest/breastplate-sculpted-blue.webp",
+          "_id": "l27R2K6WD2ZnRsp1",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.ac.calc",
+                "value": "custom",
+                "priority": 20,
+                "type": "override"
+              },
+              {
+                "key": "system.attributes.ac.formula",
+                "value": "10 + @attributes.prof + @abilities.dex.mod",
+                "priority": 20,
+                "type": "override"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727655658248,
+            "modifiedTime": 1728829901185,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 1,
+      "name": "Unarmed Technique",
+      "source": "Compendium.n5eb.class.Item.Nz7RMFTPquBcxxSX",
+      "text": "Also 1st level, your practice of martial arts gives you mastery of combat styles that primarily use unarmed strikes and Taijutsu Specialist weapons, which are Combat Bracers, Iron Claws, Quarterstaffs, Nunchaku, Tonfa and Knuckle Blades. Choose one of the Taijutsu Stances located in Chapter 13: Customization Options and you gain the following benefits while you are in a Taijutsu Stance or wielding only Taijutsu Specialist weapons: You can use Strength or Dexterity for the attack and damage rolls and Save DC calculation of your unarmed strikes, Taijutsu Specialist weapons, Taijutsu and the Athletics and Martial Arts skill. You can roll a d6 in place of the normal damage of your unarmed strike or Weapons that you are proficient with. This increases to a d8 at 6th level and a d10 at 11th level.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 1,
+      "name": "Martial Technique",
+      "source": "Compendium.n5eb.class.Item.S1TglFLRvVSLZHNL",
+      "text": "Finally, beginning at 1st level, your focus on Taijutsu has prepared your body for the strain of performing these techniques better than others could even dream of. This training has enabled you to utilize Taijutsu in such an efficient way, other forms of efficiency actively hinder your masterfully honed skill. Taijutsu you cast are always cast with a predetermined chakra cost ignoring its listed cost unless its Special. While benefiting from this class feature, you cannot gain the benefit of other forms of cost reduction, regardless of the source. You can choose to not use this feature when you would cast a Taijutsu. Taijutsu you cast of the following Ranks have the associated base costs at all times. Upcasting still increases the cost of the jutsu as listed in its text. D-Rank: 3 Chakra. C-Rank: 5 Chakra. B-Rank: 9 Chakra. A-Rank: 14 Chakra. S-Rank: 20 Chakra.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 2,
+      "name": "Martial Adept",
+      "source": "Compendium.n5eb.class.Item.ucEljLiJZkch29oz",
+      "text": "Starting at 2nd level, your training with unarmed techniques have granted you a technique that others of your skill level could only ever pray to emulate. This skill and technique is manifested in the form of Martial die, which is a d4. Your martial die grows in size to a d6 at 9th, and a d8 at 17th. At the beginning of each of your turns you manifest a pool of martial die, of an amount equal to the value shown in the Martial die column of the taijutsu specialist class table. You can spend your martial die to complete any number of martial techniques or taijutsu specialist class features. Unspent martial die are lost at the beginning of each of your turns. You begin by knowing four of such martial techniques, learning more as noted in the martial techniques column of the Taijutsu Specialist class table. Martial Techniques are detailed at the end of this class description. Any martial techniques that would refer to levels, are in reference to your Taijutsu specialist class level. Additionally, any martial techniques that would require a saving throw uses your Taijutsu save DC. When you would complete a Full-Rest, you are able to switch martial techniques known.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 4,
+        "max": "@scale.tai-spec.martial-die-uses",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 2,
+      "name": "Enhanced Movement",
+      "source": "Compendium.n5eb.class.Item.5i8xFLpNK1EVelUk",
+      "text": "Also, at 2nd level, your speed increases by 10 feet while not wearing Heavy Armor. This bonus increases to 15 feet at 6th level, 20 feet at 9th level, 25 feet at 13 level, and 30 feet at 17th level.",
+      "signals": [
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!5i8xFLpNK1EVelUk.PNkYNvtqJPsp8EQk",
+          "name": "Enhanced Movement",
+          "origin": "Compendium.n5eb.class.Item.5i8xFLpNK1EVelUk",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+          "_id": "PNkYNvtqJPsp8EQk",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.movement.walk",
+                "value": "@scale.tai-spec.enhanced-movement",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727654311919,
+            "modifiedTime": 1728829628807,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 3,
+      "name": "Taijutsu Style",
+      "source": "Compendium.n5eb.class.Item.RXJ6QDeBk9j9cbQG",
+      "text": "At 3rd level you learn a Combat style that fits in with how you view combat and encompasses your overall approach towards Taijutsu. Your Style grants you feature at 3rd Level and again at 6th, 9th, 14th, 17th and 20th Level",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 5,
+      "name": "Extra Attack",
+      "source": "Compendium.n5eb.class.Item.4EaBVmVCONYzodqS",
+      "text": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn. Attacks you make with the Attack action count as Chakra enhanced.",
+      "signals": [
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 7,
+      "name": "Evasion",
+      "source": "Compendium.n5eb.class.Item.0dDWJdgZXfvl9C9o",
+      "text": "Beginning at 7th level, your instinctive Agility lets you dodge out of the way of certain area effects. When a Jutsu allows you to make a Dexterity save to take only half damage, you instead take no damage and suffer no effects if you succeed on a saving throw, and only half damage if you fail.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 7,
+      "name": "Chakra Enhanced Strikes",
+      "source": "Compendium.n5eb.class.Item.eKeya7mXnKnhDmNM",
+      "text": "At 7th Level, your attacks become imbued with your chakra naturally, with each strike becoming more and more lethal as more chakra is packed behind each blow. When you cast a Taijutsu you gain the following one of the following benefits up to twice per casting; • Melee Taijutsu attacks you make that deal [Unarmed Damage] adds +1 damage die to your [Unarmed Damage]. • Taijutsu attacks ignore half of a creatures damage reduction.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!eKeya7mXnKnhDmNM.AI78LPxNJfkQyfXU",
+          "name": "Chakra Enhanced Strikes",
+          "origin": "Compendium.n5eb.class.Item.eKeya7mXnKnhDmNM",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+          "_id": "AI78LPxNJfkQyfXU",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.traits.dm.midi.all",
+                "value": "/2",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727653137073,
+            "modifiedTime": 1728829564158,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 10,
+      "name": "Unbreakable Will",
+      "source": "Compendium.n5eb.class.Item.EBBdTcEi7EdjdElZ",
+      "text": "Beginning at 10th level, your presence on the battlefield cannot be suppressed, repressed or even ignored. When a Jutsu or effect, with the Fuinjutsu keyword, would force you to make a Saving throw to resist its effects, you can add 1 Martial die to the result.",
+      "signals": [
+        "Ressourcen/Rast"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 11,
+      "name": "Flow of Battle",
+      "source": "Compendium.n5eb.class.Item.efrAWaHNWguxq37L",
+      "text": "Beginning at 11th level, you have begun to master the art of Taijutsu to a scary degree, learning when to move into both offensive and defensive stances. You gain a bonus to your initiative equal to your Intelligence, Wisdom or Charisma modifier (your choice, this cannot be changed, once decided)",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!efrAWaHNWguxq37L.syKDGt8Mc5M0QHYD",
+          "name": "Flow of Battle: Wisdom Bonus",
+          "origin": "Compendium.n5eb.class.Item.efrAWaHNWguxq37L",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/holy/yin-yang-balance-symbol.webp",
+          "_id": "syKDGt8Mc5M0QHYD",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.init.bonus",
+                "value": "@abilities.wis.mod",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727654670005,
+            "modifiedTime": 1728829707789,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "pack": "class",
+          "key": "!items.effects!efrAWaHNWguxq37L.1Xoqfk83fW0mU2qg",
+          "name": "Flow of Battle: Intelligence Bonus",
+          "origin": "Compendium.n5eb.class.Item.efrAWaHNWguxq37L",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": true,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/holy/yin-yang-balance-symbol.webp",
+          "_id": "1Xoqfk83fW0mU2qg",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.init.bonus",
+                "value": "@abilities.int.mod",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,2",
+            "createdTime": 1728829708677,
+            "modifiedTime": 1728829729565,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "pack": "class",
+          "key": "!items.effects!efrAWaHNWguxq37L.BuBhrwoXHorsl5dR",
+          "name": "Flow of Battle: Charisma Bonus",
+          "origin": "Compendium.n5eb.class.Item.efrAWaHNWguxq37L",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": true,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/holy/yin-yang-balance-symbol.webp",
+          "_id": "BuBhrwoXHorsl5dR",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.attributes.init.bonus",
+                "value": "@abilities.cha.mod",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,2",
+            "createdTime": 1728829737102,
+            "modifiedTime": 1728829754366,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 13,
+      "name": "Master of Persistence",
+      "source": "Compendium.n5eb.class.Item.XZ00vzr5k02D7H9N",
+      "text": "At 13th level, you don't know how to or when to give up, and it only make it harder to stop you. If you would begin your turn blinded, dazed, deafened, incapacitated or stunned, you can spend 2 martial die to end one of the listed conditions.",
+      "signals": [
+        "Ressourcen/Rast"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 15,
+      "name": "Perfect Body",
+      "source": "Compendium.n5eb.class.Item.EvKdFOPdNcGonstj",
+      "text": "At 15th level, your intense training grants you proficiency in Constitution saving throws. Additionally, whenever you make a saving throw, with an ability you are not proficient in, add your Dexterity modifier to the saving throw.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!EvKdFOPdNcGonstj.fS1zM8WcbZ4nspi0",
+          "name": "Perfect Body",
+          "origin": "Compendium.n5eb.class.Item.EvKdFOPdNcGonstj",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/control/silhouette-hold-change-green.webp",
+          "_id": "fS1zM8WcbZ4nspi0",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.abilities.con.proficient",
+                "value": 1,
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "system.abilities.con.bonuses.save",
+                "value": "@abilities.dex.mod",
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "system.abilities.wis.bonuses.save",
+                "value": "@abilities.dex.mod",
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "system.abilities.int.bonuses.save",
+                "value": "@abilities.dex.mod",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727657860746,
+            "modifiedTime": 1727658311263,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 18,
+      "name": "Perfect Mind",
+      "source": "Compendium.n5eb.class.Item.tToM7bhkFUvO6Xrk",
+      "text": "At 18th level, your intense training grants you proficiency in Intelligence or Wisdom saving throws (Pick one.). Additionally, you become immune to the Fear condition.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!tToM7bhkFUvO6Xrk.SnoqJw6bMoB9NqTc",
+          "name": "Wis Prof",
+          "origin": "Compendium.n5eb.class.Item.tToM7bhkFUvO6Xrk",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+          "_id": "SnoqJw6bMoB9NqTc",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.abilities.wis.proficient",
+                "value": 1,
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727658394361,
+            "modifiedTime": 1727658599544,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "pack": "class",
+          "key": "!items.effects!tToM7bhkFUvO6Xrk.HlDSHSnqX9mk2lBr",
+          "name": "Int Prof",
+          "origin": "Compendium.n5eb.class.Item.tToM7bhkFUvO6Xrk",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": true,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+          "_id": "HlDSHSnqX9mk2lBr",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.abilities.int.proficient",
+                "value": 1,
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727658485627,
+            "modifiedTime": 1727658606465,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "pack": "class",
+          "key": "!items.effects!tToM7bhkFUvO6Xrk.Ec3YdkMn3CG4n8Hk",
+          "name": "Immune To Fear",
+          "origin": "Compendium.n5eb.class.Item.tToM7bhkFUvO6Xrk",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+          "_id": "Ec3YdkMn3CG4n8Hk",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.traits.ci.value",
+                "value": "frightened",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,1,1",
+            "createdTime": 1727658519063,
+            "modifiedTime": 1727658581309,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "source": "Compendium.n5eb.class.Item.3R6ULWi6YDL3qyIf",
+      "text": "When you reach 4th and again at 8th, 12th, 16th, and 19th, level, you can increase one ability score by +1, gain 1 rank of Mastery in a skill you are proficient in, & a Feat of your choice that they qualify for. As normal you can't increase an ability score above 20 using this feature.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 3,
+      "name": "Blinding Speed",
+      "source": "Compendium.n5eb.subclass.Item.wP1z08xHKdR7A2vf",
+      "text": "When you choose this Style, starting at 3rd level, you focus on overwhelming your enemies with more than they could conceivably handle at one time. You learn to accomplish this through a series of Martial Techniques , unique to you and your style of combat. You learn the following two Martial Techniques. Shatter. When a creature is attempting to cast a Jutsu within 15 feet of you, you may, as a reaction, spend 1 martial die. When you do, you may move up to half your movement speed, ending said movement within 5 feet of the triggering creature. You may then choose to make two unarmed strikes, attacking their vital points and open defenses with precision, meant to prevent their action. If you hit with both attacks the target creature must succeed a Constitution saving throw. On a failed save you interrupt the jutsu, preventing its casting. The affected creatures Chakra is still spent. On a success, the jutsu is cast normally. Unstable Core. After you use your action to cast a Taijutsu, you may spend 1 martial die . When you do, you make two unarmed attacks as a bonus action, adding your martial die to the damage rolls of each attack and forcing a creature to make a strength saving throw, being knocked prone on a failed save.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 3,
+      "name": "Disturbance Flurry",
+      "source": "Compendium.n5eb.subclass.Item.EfSw8cK0dyDNfj5b",
+      "text": "Also, at 3rd level, you learn to break your opponent's combat flow using your mastery over combos and repeated strikes. By spending 1 martial die , you are able to gain an additional bonus action , which you can use to cast a Taijutsu or make one additional unarmed attack adding the result of the die to your damage dealt. This can only be done once per turn and costs no action. Beginning at 17th level, your martial speed eclipses anyone who would consider themselves your rival. By spending 3 martial die, you are able to gain 1 additional bonus action, which you can use to cast a Taijutsu, with the Finisher keyword.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 3,
+      "name": "Unstable Core",
+      "source": "Compendium.n5eb.subclass.Item.KPnNUidOs0LDxWtv",
+      "text": "After you use your action to cast a Taijutsu, you may spend 1 martial die. When you do, you make two unarmed attacks as a Bonus Action, adding your martial die to the damage rolls of each attack and forcing a creature to make a strength saving throw, being knocked prone on a failed save.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 3,
+      "name": "Shatter",
+      "source": "Compendium.n5eb.subclass.Item.QQELApmYSESKoCKr",
+      "text": "When a creature is attempting to cast a Jutsu within 15 feet of you, you may, as a Reaction, spend 1 martial die. When you do, you may move up to half your movement speed, ending said movement within 5 feet of the triggering creature. You may then choose to make two unarmed strikes, attacking their vital points and open defenses with precision, meant to prevent their action. If you hit with both attacks the target creature must succeed a Constitution saving throw. On a failed save you interrupt the jutsu, preventing its casting. The affected creatures Chakra is still spent. On a success, the jutsu is cast normally.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 6,
+      "name": "Untouchable",
+      "source": "Compendium.n5eb.subclass.Item.LFvQeqhOFfDzQwra",
+      "text": "Starting at 6th level, creatures cannot take attacks of opportunities against you, by any means. Additionally, creatures who would spend their reaction to make an attack of any type targeting you, is made at disadvantage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 9,
+      "name": "Unmatched Reflexes",
+      "source": "Compendium.n5eb.subclass.Item.y8SAXl1UWC83Xl4r",
+      "text": "Starting at 9th level you learn to react more often preventing situations before they even start. Beginning at the start of your turn, you may spend 1 martial die . If you do, you gain 1 additional reaction, which can only be used to cast a taijutsu.",
+      "signals": [
+        "Ressourcen/Rast"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 14,
+      "name": "Debilitating Barrage",
+      "source": "Compendium.n5eb.subclass.Item.AxsTdKnefm3B1eXu",
+      "text": "At 14th Level you've gained the knowledge to temporarily inhibit a creatures fortitude by striking a series of pressure points. Whenever you hit a creature with two or more attacks, as a part of the same action, you can spend 2 martial die to force the creature to make a C onstitution saving throw vs your Taijutsu Save DC. On a failed save you cause the creature to become vulnerable to a damage type of your choice. This effect lasts until the next instance of damage of that type that affects them. You can only use this feature twice per rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 17,
+      "name": "Disturbing Endurance",
+      "source": "Compendium.n5eb.subclass.Item.rVdlNczA7Nwwdj5p",
+      "text": "Beginning at 17th Level, you've learned how to recoup your lost stamina and energy far more efficiently than before. If a feature granted by this subclass would cost more than 1 martial die , you reduce the cost of the feature by 1 martial die.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 20,
+      "name": "Disturbing Technique",
+      "source": "Compendium.n5eb.subclass.Item.OmvpiUZr2uiNcuT5",
+      "text": "Beginning at 20th Level, your technique is so overwhelming that your enemies speak of how you should never be faced alone. But you've heard the tales and have prepared for such a situation. When you would cast a Taijutsu that requires you to make 2 or more attacks and there are at least two or more hostile creatures within the jutsu's range , you may spend 1 martial die , granting it the Disturbing keyword. Taijutsu with the Disturbing keyword doubles the number of attacks made with the jutsu, but the attacks must be evenly split amongst all hostile creatures within the jutsu's range.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Disturbance"
+    },
+    {
+      "level": 3,
+      "name": "Unnatural Talent",
+      "source": "Compendium.n5eb.subclass.Item.ZfA6yLgy05L8yFY7",
+      "text": "When you choose this Style starting at 3rd level, you focus all of your effort on surpassing the limits of your body, allowing you to perform more Martial Techniques than normally possible. You increase your pool of Martial die by +1. You gain an additional +1 increase to your Martial die pool as you gain levels in this class based on the Unnatural Talent Martial Die Chart. Additionally, unarmed attacks you make are treated as if they have the Critical, Deadly and Multiattack weapon properties.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 3,
+      "name": "Focused Talent",
+      "source": "Compendium.n5eb.subclass.Item.sa3hUBOFhuIy82xu",
+      "text": "When you choose this Style, starting at 3rd level, your talent and focus is weaponized to completely drive home the point that it doesn't matter how much your enemies train to overcome you, they are out of their league and they need to come to grips with this new reality they find themselves in. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques. Redirected Aggression. When a hostile creature makes a melee or ranged attack and misses, you may as a reaction, immediately spend one Martial die to redirect the missed attack back towards them. Make a melee or ranged unarmed attack as a part of this reaction, using the attacks original range as your ranged attacks range. On a hit, the creature suffers the effects of their own attack, as if they attacked themselves. Shatterpoint. Once per turn, when you score an unarmed or Taijutsu attack that deals unarmed damage, you can spend 1 Martial die. When you do, the affected creature must make a Strength Saving throw, losing all temporary hit points or damage reduction-based effects they have, until the beginning of their next turn",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 6,
+      "name": "Talented Technique",
+      "source": "Compendium.n5eb.subclass.Item.sFgreQ3JKAezfEgv",
+      "text": "Beginning at 6th level, your combat prowess far surpasses everyone else who thinks they are your equal. When you would cast a Taijutsu, you may spend 1 Martial die, granting it the Talent keyword. Taijutsu with the Talent keyword deals additional damage die equal to the number of keywords it has a result of Martial Techniques (Ex. Brutal, Raw, Devastating, etc.), once per casting. Once you use this feature, you must spend 2 Martial die at the beginning of one of your turns or rest for 10 minutes to recharge this feature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 9,
+      "name": "Focused Adaptation",
+      "source": "Compendium.n5eb.subclass.Item.UNaPrR1wGcVeTmpb",
+      "text": "Beginning at 9th level, you learn to infuse your strikes with a unique blend of Chakra that comes as a result of your Martial die. At the beginning of each of your turns, you can spend 1 Martial die. When you do, you can choose one of the following damage types: • Force • Earth • Wind • Fire • Cold • Lightning • Necrotic You mold and manifest your Chakra imitating the consistency of the Chakra needed to inflict the damage type. Until the beginning of your next turn, you can enhance your attacks. When you do, melee attacks you make, that deal unarmed damage against a creature is treated as the selected damage type. If this feature is used while you are benefiting from a stance that deals a damage type not granted by this feature, you can choose to spend 1 additional Martial die to grant this features benefit to that stances damage type.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 14,
+      "name": "Talented Legacy",
+      "source": "Compendium.n5eb.subclass.Item.fUwwNAEvy0cvYgtn",
+      "text": "Starting at 14th level you have come to an understanding that most will choose to ignore. That being, that you are simply superior to them in every conceivable way in regards to your martial capability. This is displayed in your ability to learn many more techniques than them. You gain +1 additional Martial Technique. You gain an additional one when you reach 20th level.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 17,
+      "name": "Focused Strike",
+      "source": "Compendium.n5eb.subclass.Item.NywUOKpKdqDWM1M1",
+      "text": "Starting, at 17th level you all it takes is a single strike to completely immobilize and bring an enemy to their knees. When you would score an unarmed or Taijutsu attack that deals unarmed damage on a creature, you can spend 3 Martial die. When you do, they must succeed a Strength saving throw. On a failed save, they are Stunned until the end of their next turn. Once you use this feature, you must spend 5 Martial die at the beginning of one of your turns or rest for 1 hour to recharge it.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 20,
+      "name": "Focused Technique",
+      "source": "Compendium.n5eb.subclass.Item.2Hx2p4l0ODQaOf1U",
+      "text": "Beginning at 20th level, your technique is legendary. People speak about your abilities and tell stories to each other about you for their own notoriety. When you would cast a Taijutsu, you may spend 2 martial die, granting it the Focus keyword. Taijutsu with the Focus keyword forces the target creature to make a constitution saving throw, taking 2d12 damage and gaining 1 rank of weakened for every point below they DC they fail by. Taijutsu with both the Talent & Focus keywords gain the previous effect and reduces the targets saving throw by an amount equal to the number of keywords the jutsu has gained as a result of Martial Techniques (Ex. Brutal, Raw, Devastating, etc.). Once you use this feature, you must spend 8 Martial die at the beginning of one of your turns or rest for 8 hours to recharge this feature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Talent & Focus"
+    },
+    {
+      "level": 3,
+      "name": "Chakra Frenzy",
+      "source": "Compendium.n5eb.subclass.Item.AYlQ6DT673xQZe8H",
+      "text": "When you choose this style starting at 3rd level, you gain the ability to focus your Chakra into a frenzy of berserker energy, provided that you aren't wearing heavy armor. It empowers you with supernatural combat skills. You can spend 1 Martial die and a bonus action to enter a Chakra Frenzy for up to 1 minute, gaining the following benefits: • You have advantage on Strength Ability checks, skill checks and Saving throws. • When you make melee weapon attacks using Strength or Dexterity, you gain a bonus to damage rolls equal to your Martial die. You choose which ability score when you enter your Chakra frenzy. • You have resistance to bludgeoning, piercing and slashing damage. While your Chakra Frenzy is active, you can only maintain concentration on Jutsu with a range of Self. Your Chakra Frenzy ends early if you are knocked unconscious or if your turn ends and you have not attacked a hostile creature or forced one to make a saving throw or you have not taken damage since then. You can also, end your Chakra Frenzy on your turn as a bonus action.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 3,
+      "name": "Frenzied Assault",
+      "source": "Compendium.n5eb.subclass.Item.ykPdpI1S0LHvdZ0F",
+      "text": "When you choose this Style, starting at 3rd level, your rage, fury and passion is weaponized to overwhelm your targets with pure force. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques. Savage Force. When you score a successful hit on a creature with a Taijutsu attack that deals unarmed damage, you can spend up to 2 Martial die. When you do you increase the damage of your attack by an amount equal to three times the result of the martial die. In return the next melee attack that would deal damage to you cannot be reacted to or have its value reduced. Tyrants Savagery. When a creature would deal damage to you, you can spend any number of Martial die. When you do record the result. The next time you would deal damage to that creature you deal additional damage equal to twice the result.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 6,
+      "name": "Force Of Rage",
+      "source": "Compendium.n5eb.subclass.Item.gq14aktuBUS0c9eF",
+      "text": "Starting at 6th level, you have imbued your frenzy with your own Chakra to add additional effects to it. Choose a jutsu you know with a casting time of 1 action or 1 bonus action, a range of self, and that can last's for at least 1 minute, with or without concentration. When you activate your Chakra Frenzy, you can spend additional Martial die to cast your chosen jutsu as part of the same action based on the rank of the jutsu casted. (D-Rank/C-Rank: 1 Martial die, B-Rank/A- Rank: 2 Martial die, S-Rank: 3 Martial die.) When cast in this way, you still need to pay the initial Chakra cost, but you do not need to pay its cost to maintain your concentration on it. You can switch this jutsu when you gain the benefit of a full-rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 9,
+      "name": "Relentless Fury",
+      "source": "Compendium.n5eb.subclass.Item.bKo1jQzYOthyVKnc",
+      "text": "Starting at 9th level, your fury can keep you fighting despite grievous wounds. If you drop to 0 hit points while your Chakra Frenzy is active, you can spend 1 Martial die to not immediately die or fall unconscious. Make a DC 10 Constitution ability check. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 2. When you finish a short or long rest, the DC resets to 10. When you reach 17th level, each time you succeed on this ability check, your fury further invigorates you, granting you advantage on any attacks you make until the end of your next turn",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 14,
+      "name": "Unstoppable Fury",
+      "source": "Compendium.n5eb.subclass.Item.UFHfLjsVFIN5FmpV",
+      "text": "Beginning at 14th level, your Chakra Frenzy is so fierce that it ends early only if you fall unconscious or if you choose to end it. Additionally, when you roll 4 or lower with an unarmed damage die, you can reroll the die and must use the new roll, even if the new roll is 4 or lower.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 17,
+      "name": "Fury Of The Righteous",
+      "source": "Compendium.n5eb.subclass.Item.91BG4D6z5u8ixoiX",
+      "text": "Beginning at 17th level, your passionate anger has reached a zenith so pure, that others who follow this path can only ponder how it is you attained this level of wrath. While you are gaining the benefits of your Chakra Frenzy class feature, you have become unstoppable. For the duration of the Chakra Frenzy your speed cannot be reduced, and you are immune to the Berserk, Charmed and frightened, and stunned conditions. If you are frightened, or stunned, you can still take your bonus action to enter your Chakra Frenzy, immediately ending the aforementioned effects.",
+      "signals": [
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 20,
+      "name": "Righteous Fury Technique",
+      "source": "Compendium.n5eb.subclass.Item.I1bY2il9CKZw0LQs",
+      "text": "Beginning at 20th Level, your savagery is so overwhelmingly cruel and brutal that your enemies speak of you as if you are a monster. You love to hear the stories. At the start of your turn, if you have Chakra Frenzy active, you can spend 4 Martial Dice to become immune to all Physical and Mental conditions until the end of your next turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Righteous Fury"
+    },
+    {
+      "level": 3,
+      "name": "Fists Of Iron",
+      "source": "Compendium.n5eb.subclass.Item.OuU2QSchZSC94KZk",
+      "text": "When you choose this Style starting at 3rd level, you focus all of your effort on mastering hardening your fists, elbows, and other parts of your body until they feel like Iron while in combat. Once per turn, your unarmed Strike deals additional damage equal to 1 Martial die. This damage increases as you gain levels in this class based on the Fists of Iron Strike damage chart.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 3,
+      "name": "Enhanced Flurry",
+      "source": "Compendium.n5eb.subclass.Item.NgzjFa0zneh5qkmd",
+      "text": "When you choose this Style, starting at 3rd level, your passion and zeal is weaponized to completely drive home the fact that no one works as hard as you. Period. While they were outside learning handsigns, you learned how to talk with your fists. While others were learning how to mold Chakra, you were doing 100 push-ups, sit ups and pull ups every day. While they were learning to become frail, you learned to become strong. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques . Chakra Enhanced Blows You channel Chakra into your hands enhancing your blows even further. When you declare an unarmed or melee taijutsu attack, you can spend 1 Martial Dice. When you do, the first two successful attacks forces its targets to make a Strength saving throw, being bruised on a failed save. Dynamic Set-Up When you would cast a Taijutsu with the Combo keyword, you can spend Martial Dice, equal to the jutsu's rank. When you do, you can cast a Taijutsu with the Finisher keyword as a part of the same action used to cast the combo jutsu. Once you use this technique you cannot cast a Taijutsu using your action or Bonus Action until the beginning of your next turn. (D-Rank/C-Rank: 1 Martial Dice , B-Rank/A-Rank: 3 Martial Dice , S-Rank: 5 Martial Dice .)",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 6,
+      "name": "Hand Wraps of Passion",
+      "source": "Compendium.n5eb.subclass.Item.npulDwpHHQVv5MXg",
+      "text": "Starting at 6th Level, your ability to imitate seal smiths for your martial defense is extended to allowing you to make your fists as dangerous as any commonly smithed weapon. You wrap your hands in wraps of your description, be they white tape, or black cloth strips. While wrapped around your hands you constantly infuse Chakra into them allowing you to make your fists as tough as steel. At the conclusion of a long rest, you can select the type of enhancement your hand wraps provide you from the following list. Once selected, you cannot change this selection until you complete a long rest. Mighty Blows Taijutsu attacks you make that deal [Unarmed Damage] ignores resistance and treat immunity as resistance. Beginning at 14th level when you deal [Unarmed Damage] twice to the same creature on your turn, they are unable to take Reactions against you until the beginning of your next turn. Mighty Guards You gain damage reduction equal to half of your Proficiency Bonus. Beginning at 14th level that increases to your full proficiency. Mighty Mobility You cannot have your speed reduced by any means and you ignore difficult terrain. Beginning at 14th level, you gain immunity to the Slowed and Grappled conditions.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 9,
+      "name": "Flaming Finishers",
+      "source": "Compendium.n5eb.subclass.Item.LzR8cETWhL2Wjggt",
+      "text": "Beginning at 9th Level, when you would cast a Taijutsu with the Finisher keyword, you can enhance the jutsu cast by spending as many Martial die as you choose. When you do, you gain all previous effects if you choose to gain a higher cost Martial die effect. Once you use an effect granted by this jutsu, you must spend an equal number of Martial die to recharge this feature or spend 10 minutes resting before you can use this feature again. By spending 1 Martial die, you upcast the taijutsu by 1 rank, ignoring rank limitations. By spending 2 Martial die, you add all spent Martial die to damage, once per casting. By spending 3 Martial die, you ignore immunity. By spending 4 Martial die, you increase all damage die by 1 step. By spending 5 Martial Dice, you gain advantage on the first attack made as a part of the Taijutsu, or you impose disadvantage on the first saving throw forced by the Taijutsu.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 14,
+      "name": "Sheer Will",
+      "source": "Compendium.n5eb.subclass.Item.6sXmcErhlNaHkYe8",
+      "text": "Beginning at 14th Level, you can cast Taijutsu with a casting time of an Action as a Bonus Action. Alternatively, you can cast Taijutsu with a casting time of a bonus Action as a Reaction, with no set trigger. You can perform either of these effects twice per rest.",
+      "signals": [
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 17,
+      "name": "Indignation",
+      "source": "Compendium.n5eb.subclass.Item.5HUj53OA4cggV6ED",
+      "text": "Beginning at 17th level, when a creature would make a melee attack against you, you can choose to spend 3 Martial Dice, to cast a Taijutsu with the casting time of a Reaction, without spending your Reaction.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 20,
+      "name": "Passinate Flame Technique",
+      "source": "Compendium.n5eb.subclass.Item.7M7McIzZJypOVOhx",
+      "text": "Beginning at 20th Level, your passion and drive is so potent that you have weaponized this passion into a flurry of strikes that cripple foes and help build your legend, expanding your technique's allure. When you would cast a Taijutsu that would affect a hostile creature, you may spend 3 Martial Dice to grant it the Combo or Finisher keyword for that Taijutsu's casting.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Passionate Flame"
+    },
+    {
+      "level": 3,
+      "name": "Mixed Martial Arts",
+      "source": "Compendium.n5eb.subclass.Item.OrRf5alHz075lHMF",
+      "text": "When you choose this style starting at 3rd level, you may learn one Taijutsu Stance found in Chapter 13: Customization Options that you do not know. While in any Taijutsu stance, you may spend 1 Martial die to gain the benefit of a second, non-Clan based, Taijutsu Stance (Such as Gentle fist etc.) that you know, simultaneously for the next minute.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 3,
+      "name": "Combo Breaker",
+      "source": "Compendium.n5eb.subclass.Item.zbLhcPsHHkAHGKQg",
+      "text": "When you choose this Style, starting at 3rd level, your technique, style and mastery is weaponized to drift and fuse a myriad of fighting styles to defeat your targets with pure grace. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques. Alpha Counter. When a creature misses you with an attack, you may as a reaction spend 1 Martial die. When you do, you may immediately make two unarmed attacks against the triggering creature, adding the Martial die to the damage rolled. If at least one of these attacks hit, you force the target creature to make a Strength saving throw, being unable to use a reaction until the beginning of their next turn on a failed save. Dodge Cancel. When you hit a creature with at least two unarmed attacks, you can spend 1 Martial Dice. hen you do, until the end of the target creature's next turn, the first attack targeting you each turn suffers a penalty to hit equal to your Martial Dice.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 6,
+      "name": "Muscle Memory",
+      "source": "Compendium.n5eb.subclass.Item.wMUydzEAcCjbsDIu",
+      "text": "Starting at 6th level, your study of martial arts and their respective stances have become all encompassing, allowing you to make use of the knowledge mid combat. By spending 1 Martial die, select one hostile creature you can see, and make a Martial Arts check vs their passive Martial Arts. On a success, your next melee attack that hits that creature, adds 1 additional damage die. If the result of your check is 5 or higher than the contested DC increase the bonus damage die by +1, and an additional +1 for every +5 over the DC. Beginning at 10th level, when you would use this feature, you can choose to spend an additional Martial dice up to your remaining amount, adding it to the result of your check.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 9,
+      "name": "Stance Blending",
+      "source": "Compendium.n5eb.subclass.Item.6WsAwyTzstReoN7A",
+      "text": "Starting at 9th level, you may select one Taijutsu Stance that you do not know, learning it. Additionally, by spending 1 Martial die at the beginning of each of your turns, you can gain the benefit of up to 3 taijutsu stances simultaneously until the beginning of your next turn. Additionally, while gaining the benefit of two or more Stances, you add half of your Martial die to Taijutsu attacks and add your Taijutsu ability modifier to the damage of taijutsu attacks as a result of Taijutsu you cast that requires a Taijutsu stance, even if it already adds it.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 14,
+      "name": "Stanced Combat",
+      "source": "Compendium.n5eb.subclass.Item.v5ClHtuBozsbeBdR",
+      "text": "Beginning at 14th level, you've perfected fighting with multiple stances at once. If you are gaining the benefit of a stance that has a special action, that you can use as a Bonus action (Ex. Serpent Fist's bonus action ability, or Dragon Fist's bonus action ability), you can instead spend 1 Martial die to perform any special bonus action as a part of your Attack action, at no additional cost, once per round, only on your turn. If a stance you are benefiting from has a special ability that requires An Action, or Full Turn Action, you can instead spend 1 Martial die to perform it as a Bonus action, once per turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 17,
+      "name": "The Stancer",
+      "source": "Compendium.n5eb.subclass.Item.oawWucIsQtCc563M",
+      "text": "Beginning at 17th level, you have become an absolute master at combining stances into a blended cacophony of fists, kicks and strikes, mixing a variety of different forms into a stance all your own. Taijutsu you cast that require a Taijutsu stance deals additional damage equal to 1 Martial die and ignore resistance & treat immunity as resistance. Additionally, while gaining the benefit of your Stance Blending feature, you may add your Intelligence, Wisdom or Charisma modifier (your choice) to the damage of Taijutsu attacks that add your Taijutsu ability modifier.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 20,
+      "name": "Stancer Technique",
+      "source": "Compendium.n5eb.subclass.Item.qjNjYBzfweKWgroV",
+      "text": "Beginning at 20th Level, your style is so unique and graceful that your enemies speak of you as if you were the originator of the different stances and styles you've blended. When you would cast a Taijutsu that requires a Taijutsu stance, you may spend 2 martial die, granting it the Stancer keyword. Taijutsu with the Stancer keyword ignores immunity, bonuses to AC as a result of features, traits and jutsu, penalties to hit, penalties to damage and cost increases.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Stancer"
+    },
+    {
+      "level": 3,
+      "name": "Battle Ready Catalyst",
+      "source": "Compendium.n5eb.subclass.Item.SHS6LtKurWWfieCi",
+      "text": "When you choose this style starting at 3rd level, through intensive research, trial and error, or sheer dumb luck, you have discovered a way to enhance your Taijutsu, through a Catalyst for your Chakra, which you wear on your person either on your armor, or as a part of your daily attire. This Catalyst's design is one of your description. They can be vented boots, or special gloves. With this catalyst, you can weave it into your clothing over the course of 1 hour. Once complete, you gain the following benefits; • You have resistance to Chakra damage. • +1 Bonus to AC, if integrated into Light or Medium Armor. • When making Constitution (Chakra Control) checks, you may add your unarmed combat die to the roll",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 3,
+      "name": "Anti-Chakra Wavelength",
+      "source": "Compendium.n5eb.subclass.Item.93CieilmyU4tcmTf",
+      "text": "When you choose this Style, starting at 3rd level, your catalyst generates a hostile and very aggressive Chakra dispersing wavelength that you have weaponized to disrupt and ruin your targets combat capabilities with but a few strikes. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques. Choose two keywords from the following list. When using the Martial Techniques granted by this class feature, you will always reference the chosen keywords: • Sensory • Fuinjutsu • Earth Release • Wind Release • Fire Release • Water Release • Lightning Release • Tactical • Visual • Auditory Chakra Break. When you score a successful hit on a creature with an unarmed or Taijutsu attack that deals unarmed damage, you can spend a Martial die. When you do you attempt to inject them with this wavelength generated by your catalyst. They must make a constitution saving throw, being unable to spend Chakra on jutsu with the chosen keyword until the end of their next turn on a failed save. Focus Break. When you score a successful hit on a creature with an unarmed or Taijutsu attack that deals unarmed damage, you can spend a Martial die. When you do you attempt to break their focus. Add the spent martial die to the damage dealt and if they would make a concentration check to maintain concentration, they instead make a strength saving throw vs your Taijutsu save DC, losing concentration on all jutsu on a failed save. If they are concentrating on a jutsu with the chosen keyword, they automatically fail the save, losing concentration.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 6,
+      "name": "Disruptive Assault",
+      "source": "Compendium.n5eb.subclass.Item.4i1Xu2yP09jQZo75",
+      "text": "Starting at 6th level, you've honed your disrupting combat style to a point where you can easily follow through with your attacks, even when your enemies try their best to resist. Once per turn, when you deal unarmed damage, you can spend up to two Martial die. When you do the target takes Chakra damage equal to twice the result. This increases to three times the result at 14th level and four times the result at 20th. If the target is gaining the benefit of a jutsu with a keyword chosen as a result of the Anti-Chakra Wavelength class feature, then you add your proficiency bonus to the Chakra damage dealt.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 9,
+      "name": "Catalytic Overdrive!",
+      "source": "Compendium.n5eb.subclass.Item.YegYXMOUgQvWw25f",
+      "text": "Starting at 9th level, by spending 1 Martial Die at the beginning of each of your turns you are able to push your Catalyst into overdrive until the beginning of your next turn. While your catalyst is in overdrive, you gain the following benefits: • +1 bonus to AC. • +1d4 bonus to all strength, dexterity and constitution ability checks • +1d6 bonus to all taijutsu damage rolls. • Bonus to all saving throws against jutsu with keywords chosen with the Anti-Chakra Wavelength class feature equal to 1 Martial die. While your Catalyst is in overdrive, you can only maintain concentration on one jutsu and if you would be incapacitated, stunned, your Catalyst short circuits, being unable to enter an overdrive state for the next 10 minutes.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 14,
+      "name": "Anti-Shinobi Wavelength",
+      "source": "Compendium.n5eb.subclass.Item.BW3WrtwOuEcPiNhL",
+      "text": "Beginning at 14th level, you have adapted to your Catalysts Anti-Chakra wavelength so much so that, you can feel the potential and power behind it. While you are gaining the benefits of Catalytic Overdrive!, you can spend up to 2 Martial die. When you do, you can select one more keyword of your choice from the Anti-Chakra Wavelength list for each die spent. These additional keywords count as keywords that your Martial Techniques granted by this subclass affects.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 17,
+      "name": "Unbreakable Catalyst",
+      "source": "Compendium.n5eb.subclass.Item.tcMvXQtQxBP3VILV",
+      "text": "Beginning at 17th level, you've honed your catalyst into an unstoppable force for you to utilize at all times. Your Catalyst can no longer short circuit as a result of being incapacitated, stunned, while it is in overdrive.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 20,
+      "name": "Ruin Technique",
+      "source": "Compendium.n5eb.subclass.Item.4d2XPXTREcCI51FA",
+      "text": "Beginning at 20th Level, your catalyst infused techniques are so methodical and precise that your enemies speak of you as if you were a myth. None of it is exactly false. When you would cast a Taijutsu that requires a target to make a saving throw, you may spend 2 martial die, granting it the Ruin keyword. Taijutsu with the Ruin keyword always inflicts two of the following conditions regardless of a success or failure, once per casting: • Bruised • Concussed • Confused • Dazzled • Weakened",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ruin"
+    },
+    {
+      "level": 3,
+      "name": "Nature Enhanced Combat",
+      "source": "Compendium.n5eb.subclass.Item.vxeiidiCE5aNgWkr",
+      "text": "When you choose this style starting at 3rd level, you have focused your effort on harnessing your innate Nature Release. Select one Nature Release (Earth, Wind, Fire, Water, or Lightning Release). You gain the ability to learn and cast jutsu with the corresponding keyword. Also, when learning Ninjutsu with the corresponding keyword, you may use your Taijutsu ability modifier in place of your Ninjutsu ability modifier for the purposes of fulfilling Ability score Requirements. Ninjutsu learned in this way can be cast even without the appropriate Ninjutsu ability score. By spending 1 Martial Dice, as a Bonus Action, you enhance your body with the Chakra of the corresponding Nature release granted by this feature. You benefit from these effects for the next minute or until you spend a Bonus Action to end this benefit. • Earth Release: Your body becomes hardened like stone. [Unarmed Damage] you deal can be treated as Earth damage. You gain Temporary hit points equal to half your level at the beginning of each of your turns. • Wind Release: Your body becomes as light as a gentle breeze. [Unarmed Damage] you deal can be treated as Wind damage. Once per turn, you gain +20 speed and the benefits of the disengage action against a creature you deal [Unarmed Damage] to until the end of that same turn. • Fire Release: Your body becomes hot to the touch. [Unarmed Damage] you deal can be treated as Fire damage. Increase your [Unarmed Damage] by +1 Martial Dice. • Water Release: Your body becomes cool to the touch. [Unarmed Damage] you deal can be treated as Cold damage. Your unarmed attacks gain the Reach 1 and Trip weapon properties. • Lightning Release: Your body gives off a soft static with occasional jolts of harmless electricity. [Unarmed Damage] you deal can be treated as Lightning damage. Your unarmed attacks gain the Winding and Tactical weapon properties.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 3,
+      "name": "Elemental Combat",
+      "source": "Compendium.n5eb.subclass.Item.I2pfefcWPTl6FObD",
+      "text": "Also, at 3rd level, you learn to harness your new Elemental Chakra to better enhance your combat potential when utilizing elemental combo's. When using a Taijutsu while gaining the benefits of the Nature Enhanced Combat class feature the taijutsu used gains the Nature Release Keyword you chose and deals that nature release keywords corresponding damage type. You learn to accomplish this through a series of Martial Techniques, unique to you and your style of combat. You learn the following two Martial Techniques. Elemental Rush. Whenever you hit a creature with at least two melee Taijutsu attacks, while gaining the benefits of your Nature Enhanced Combat class feature, you can spend 1 Martial die, allowing you to make two unarmed attacks as a Reaction. Elemental Crush. When you would deal damage with a Taijutsu you cast, you may spend any number of Martial die to deal additional damage equal to twice the result. Once you use this Technique, you have to spend an equal number of Martial die to recharge it.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 6,
+      "name": "Elemental Cloak",
+      "source": "Compendium.n5eb.subclass.Item.391woOCDVGoIzhXP",
+      "text": "Starting at 6th level, you have learned to manifest your Elemental Chakra into a full-blown Chakra cloak that erupts off of your body. When you would gain the benefits of Nature Enhanced Combat you gain the following boosts to each Nature Release; • Earth Release: Dust, gravel and other Earthen substances begin to form around you. You gain resistance to Earth damage, and gain +4 damage reduction vs all sources (Excluding Psychic). • Wind Release: Wind whips around you violently. You gain resistance to Wind damage. You gain immunity to effects that would create a cloud, gas or mist as they cannot be sustained within 10 feet of you. • Fire Release: Your body becomes wreathed in flames. You become resistant to Fire damage and once per turn, creatures of your choice, who deal damage to you with a melee attack or effect with a range of touch, takes Fire damage equal to 2 Martial Dice. • Water Release: You generate gales of Water that spirals around you. You become resistant to cold damage and effects that would push, pull or knock you prone as the result of a save or contested check, add 1 Martial Dice to the roll. • Lightning Release: Your body becomes clad in Lightning that oscillates violently. You gain resistance to Lightning damage and when you take the dash action, you can make 1 unarmed attack as part of the same action.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 9,
+      "name": "Elemental Armor",
+      "source": "Compendium.n5eb.subclass.Item.MgUAdTk8sOr9VYMu",
+      "text": "Beginning at 9th level, you learn to modify your Taijutsu further using hyper compressed Ninjutsu. When you would gain the benefits of your Nature Enhanced Combat class feature, you can choose to instead enhance your Elemental Cloak beyond its normal limits. You can maintain this enhanced form by spending 1 Martial Dice at the beginning of each of your turns. In order to exit this form, you must spend a Bonus Action on one of your turns. You gain the following benefits based on your chosen element; • Earth Release: The temporary hit points you gain from Nature Enhanced Combat is doubled for the duration. • Wind Release: You gain immunity to the Grappled and Restrained conditions. • Fire Release: [Unarmed Damage] you deal is increased by +1 damage die. • Water Release: Creatures cannot gain Jutsu based bonuses to their saving throws vs Taijutsu you cast. • Lightning Release: Unarmed attacks damage you deal ignores half of a creatures Damage reduction.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 14,
+      "name": "Elemental Recharge",
+      "source": "Compendium.n5eb.subclass.Item.ekjfeRrduD6XiHO9",
+      "text": "Beginning at 14th level, you have learned to convert your Chakra into the energy needed to perform more combos and keep the attacks flowing. When you would take damage from your associated nature release damage type, you can spend a Reaction to absorb some of the residual chakra and power. You regain Hit points and Martial Dice based on the rank of the jutsu that triggered this effect. You can gain the benefit of this feature a number of times equal to your Proficiency Bonus per long rest. (D-Rank: 10 HP/1 Martial Dice, C-Rank: 15 HP/2 Martial Dice, B-Rank: 20 HP/3 Martial Dice, A-Rank: 30 HP/4 Martial Dice, S-Rank: 40 HP/5 Martial Dice)",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "@prof",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 17,
+      "name": "Wrath Of Nature",
+      "source": "Compendium.n5eb.subclass.Item.JaeIAOM1TSg6KNPY",
+      "text": "Starting at 17th level, you have mastered the art of Blending Ninjutsu and Taijutsu. While you are gaining the benefit of your Elemental Armor class feature you gain the following benefits; • Earth Release: Critical hits are treated as normal hits against you. • Wind Release: When you move to a space, all creatures can only perceive you as teleporting, thus you do not trigger attacks of opportunity and you cannot trigger effects that require you to move. • Fire Release: Damage you deal as a result of an Unarmed attack or Taijutsu ignores damage resistance and treats immunity as resistance. • Water Release: When you deal [Unarmed Damage] to a creature you can move them up to 10 feet in any direction of your choice. • Lightning Release: Melee unarmed attacks and Taijutsu you cast always deal half of its damage through effects that intercept damage, directly affecting its original target.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 20,
+      "name": "Nin-Tai Technique",
+      "source": "Compendium.n5eb.subclass.Item.9YkP1NwlItdjcDdW",
+      "text": "Beginning at 20th Level, your technique is so overwhelmingly powerful that your enemies speak of you as if you are a force of nature. Something that is unavoidable and if encountered, can only be weathered. When you would cast a Taijutsu that requires you to make no more than 1 attack, you may spend 4 martial die, granting it the Nin-Tai keyword. Taijutsu with the Nin-Tai keyword scores a critical hit on a D20 roll of a 10 or better. Once you use this feature, you must spend 4 martial die at the beginning of one of your turns to recharge this feature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Nin-Tai"
+    },
+    {
+      "level": 3,
+      "name": "Ironclad",
+      "source": "Compendium.n5eb.subclass.Item.Pl4aUlwnUvTuZej6",
+      "text": "When you choose this style starting at 3rd level, your passion for protection has borne fruit. You gain proficiency in Heavy Armor, and the Armor smith's Kit. While wearing heavy armor, you still gain the benefits of Enhanced Movement. Additionally, your research in metallurgy has allowed you to create an item no other shinobi could or would consider making; A Shield. Your Shield is a piece of equipment that you gain proficiency in. Your Shield has 3 Seal slots. If your shield is ever lost or destroyed, you may craft an exact copy of the previous one using 100 ryo and 1 downtime. You may only benefit from one shield at a time. This shield has the following statistics:",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 3,
+      "name": "Iron Combat",
+      "source": "Compendium.n5eb.subclass.Item.HB7j5jGAZbrfAMto",
+      "text": "Also, at 3rd level, you learn to leverage your unique method of protection in the heat of combat, You learn to accomplish this through a series of Martial Techniques, unique to you. While wielding your Shield, you learn the following two Martial Techniques. Interpose. When an allied creature within 10 feet of you would take damage from an attack, and you could cast a Taijutsu with a casting time of a Reaction to reduce damage, the attack's to hit, or increase your AC, you can, as a Reaction, spend 1 Martial Dice, to redirect the attack to you, cast the appropriate Taijutsu, and add your Martial Dice to the Damage Reduction, to hit reduction, or AC bonus against the triggering attack. Shield Bash. When you make an unarmed attack, you can spend 1 martial die. If you do, when you hit a creature with an unarmed attack, before the end of the current turn, you may choose to shove the target creature, using your attack roll in place of your athletics check. If you are successful, you deal your unarmed damage + your martial die and the target creature becomes bruised.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 6,
+      "name": "Iron Heart",
+      "source": "Compendium.n5eb.subclass.Item.rBoQhLxjIjej99ag",
+      "text": "Starting at 6th level, you've become comfortable fighting behind your defenses, and have gained the skill and courage needed to use yourself as a shield for your allies. As a Reaction, when a creature within 5 feet of you is hit by an attack that deals any type of damage, excluding psychic, you may dive in front of them, using your armor and shield to take the brunt of the force. The damage is reduced by your Unarmed Combat die + your proficiency bonus. Rather than the initial target, the attack hits you regardless of your AC or other abilities. At 14th level, you may also target an ally who is no further than your maximum movement speed. When you do you move towards them ending your movement adjacent to them in a space that can hold you. Additionally, you can now target an ally who is in the area of effect of a jutsu like Fireball. When you do, your ally automatically passes their save, taking no further effect, and you gain disadvantage on your save.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 9,
+      "name": "Iron Will",
+      "source": "Compendium.n5eb.subclass.Item.t3iphFblZg3CWVrP",
+      "text": "Starting at 9th level, you have conditioned yourself to allow nothing to distract you from your one purpose on the field of battle: Protection. You become immune to the Berserk and Dazed conditions. Additionally, you gain a 2 additional reactions per round, that can only be used to use your Iron Heart feature.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 14,
+      "name": "Iron Fury",
+      "source": "Compendium.n5eb.subclass.Item.qnKmq10zfAi67rr0",
+      "text": "Starting at 14th level, you no longer stand idly by while your allies are hurt. Twice per rest, as an action, you may spend 4 martial die to enter a combat trance for 1 minute, devoting your mind, body, and soul to safeguard your friends, and show your enemies retribution. You gain the following benefits for the duration: • You have resistance to all damage except Psychic damage. • When you use your Iron Heart Feature, you may make two unarmed attacks against the triggering creature as a part of the same action. • Your Shield Provides you an additional +1 Bonus to AC while holding it.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 17,
+      "name": "Iron Flow",
+      "source": "Compendium.n5eb.subclass.Item.spiW8ototOdP2oyZ",
+      "text": "Beginning at 17th level, you've mastered controlling your stamina for important moments in a fight. Whenever you use your Iron Heart feature and you are at or below half of your maximum hit points, you can add 1 martial die, to the amount of damage reduced as a result of Iron Heart.",
+      "signals": [
+        "Ressourcen/Rast"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 20,
+      "name": "Ironclad Technique",
+      "source": "Compendium.n5eb.subclass.Item.J2CWPKJLY4GENlrG",
+      "text": "Beginning at 20th level, your defensive technique has been perfected. Enemies speak of how your guard can never be broken. When you would cast a Taijutsu as a reaction, you may spend up to 3 martial die, granting it the Ironclad keyword. Taijutsu with the Ironclad keyword grants you a number of temporary hit points equal to 5 times the result of your martial dice. These temporary hit points last until the beginning of your next turn. Once you use this feature, you must spend the same amount of martial die at the beginning of one of your turns to recharge this feature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ironclad"
+    },
+    {
+      "level": 3,
+      "name": "Turbulence",
+      "source": "Compendium.n5eb.t7-subclass.Item.DraX1AJCfoiLNps3",
+      "text": "When you choose this Style starting at 3rd level, you have trained your legs until you feel the urge to run at all times. Your base movement speed increases by +10 feet, on top of your speed increases from the Enhanced Movement table. This increase in movement speed increases as you gain levels in this class, as indicated by the Turbulence Speed Chart . Your unarmed attacks must use your legs to use any of this subclass' active features.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 3,
+      "name": "Tempest Fury",
+      "source": "Compendium.n5eb.t7-subclass.Item.vY7thlkeHXEvTcvs",
+      "text": "Also, at 3rd level, you begin to overwhelm your opponents with your blistering speed, using your swiftness to your advantage. You learn to accomplish this through a series of Martial Techniques , unique to you and your style of combat. You learn the following four Martial Techniques . Hail. Whenever you hit a creature with one or more unarmed attacks, you may spend 1 martial die to increase your movement by 5 feet for each successful hit, and gain a +1 bonus to AC, until the start of your next turn. Sleet. You move quickly making your body appear as sleet. You can spend 1 martial die to take the dodge action as a reaction. Snow. You move gracefully like snow, moving silently. As a bonus action by spending 1 martial die you gain the benefits of both the dodge and disengage actions. Rain. You move fluidly, allowing you to carry your momentum. When you cast a taijutsu, you can spend 1 martial die to take the dash action as a free action.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 6,
+      "name": "Gale",
+      "source": "Compendium.n5eb.t7-subclass.Item.z8pUKASKaojaQaW5",
+      "text": "Starting at 6th level, you have begun to strike at the slightest threat of danger. You ignore difficult terrain and your wall and water walking speed is equal to your walking speed. Additionally, you add your full proficiency bonus to initiative rolls instead of half. Also at 6th level, you can spend 2 martial die to increase your AC by +1 for every 10 feet of movement you use if you take the dash action, to a maximum of your half your proficiency bonus.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 9,
+      "name": "Hurricane",
+      "source": "Compendium.n5eb.t7-subclass.Item.etR5Z1yi1m4HDNDw",
+      "text": "Starting at 9th level, your agility is to be acknowledged and respected. You have advantage on any saving throw that would reduce your movement and you spend 1 martial die to end the grappled or restrained conditions. Additionally, your kicks have extra striking power. When you hit a creature with an unarmed attack, you can spend 2 martial die to knock them back equal to your current Turbulence Speed Chart . If a creature hits a wall or another creature with this effect, the creature(s) must make a Dexterity saving throw taking one of your unarmed damage die per every 5 feet. they would have traveled and fall prone on a failed save.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 14,
+      "name": "Tornado",
+      "source": "Compendium.n5eb.t7-subclass.Item.3fb8kXZQL2yHGoJn",
+      "text": "Beginning at 14th level, as an action you can spend 3 martial die to make a number of unarmed attacks equal to your movement speed/10 feet. for each attack up to an amount equal to your proficiency bonus. These attacks only add half your ability modifier to the damage. Also at 14th level, when you take the dash action in anyway, increase your movement speed by triple your movement speed instead of double.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "@prof",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 17,
+      "name": "Cyclone",
+      "source": "Compendium.n5eb.t7-subclass.Item.VMh6TnhRQlCfj0ym",
+      "text": "Beginning at 17th level, your movements leave a path of destruction due to your sheer speed. As an action you can spend 4 martial die to become an incarnate of wind itself. While you are in this form, you gain the following benefits; You double your movement speed and your movement does not provoke oppurtunity attacks. When you take the attack action, you can use a flurry of blows without spending martial die. You are counted as being under the effects of the Dodge Action. You can stay in this form for a number of rounds equal to your proficiency bonus and can only activate it once per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 20,
+      "name": "Typhoon",
+      "source": "Compendium.n5eb.t7-subclass.Item.Zq5xG3xsK8hYxDMh",
+      "text": "Finally, at 20th level your speed has manifested into even the most simple techniques. You become immune to the grappled and restrained conditions. When you hit a creature with an unarmed or taijutsu attack you can spend 1 martial die to knock them prone and deal additional damage equal to your proficiency bonus, as the force of your kick destroys their defenses. Also at 20th level, choose one bullet from Cyclone you gain those benefits even without activating that feature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Tempest"
+    },
+    {
+      "level": 3,
+      "name": "Soul Manifestation",
+      "source": "Compendium.n5eb.t7-subclass.Item.60pmfFVggiOPc4l7",
+      "text": "At 3rd level, you begin to manifest a portion of your battle soul. As an action or bonus action, you can spend 1 Martial Die to release a portion of your battling spirit. This manifestation of your soul is of your own description, whether it is embodied by a seperate entity or a simple scarf. Upon activitating your soul, all creatures of your choice within 10 feet of you must make a dexterity saving throw vs your Taijutsu Save DC. On a failed save they take the martial die in force damage. For the next 10 minutes, your soul is manifested. It will disappear early if you are incapacitated or die. You gain the following benefits while the spirit is summoned: You can use your Charisma modifier in place of your Strength modifier when making Strength checks and Strength saving throws. You may use Charisma in place of any Taijutsu Specialist features that use Dexterity. This includes casting taijutsu with Charisma in place of dexterity. Enhanced by the power of your soul, your unarmed strikes gain the reach property, and you may use charisma for attack and damage rolls, changing the damage type to force. Twice per turn, when you deal force damage, you add 1 Martial Die to the result. This does not spend the die.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 3,
+      "name": "Realized Techniques",
+      "source": "Compendium.n5eb.t7-subclass.Item.sdtUHj5s3eFM9cgV",
+      "text": "Also at 3rd, you learn to use two new techniques in tandem with your manifested soul. Autonomous Defense. When you would take damage, you may spend up to 3 Martial Die. For every die spent, you reduce the damage dealt by the result of the die + half your charisma modifier. If your Soul Manifestation feature is active and the triggering creature is within 10 feet of you, you may make an unarmed attack against them. Soul Flurry. When you make an unarmed attack as an action, you may spend up to 2 Martial Die. You may make an additional unarmed attack for each die spent. Additional attacks made using this feature deal additional damage equal to your martial die. If your Soul Manifestation feature is active then each attack adds half your charisma modifier to the damage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 6,
+      "name": "Oppressive Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.ND7zWXztdY6djn01",
+      "text": "At 6th level, you learn the D-rank Ninjutsu Oppressive Aura . This jutsu loses the Ninjutsu keyword, has its range increased to 15 feet, and gains the Taijutsu Keyword. This jutsu uses your Taijutsu Save DC as opposed to your Ninjutsu Save DC. When you activate your Soul Manifestation feature, you may pay half the jutsu's cost to cast it as part of the same action. When casted this way, you are not required to pay concentration costs. Additionally, if Oppressive Aura is casted while you are gaining the benefits of Soul Manifestation, you may increase the cost by 3. When you do, affected creatures gain either a rank of charmed or fear(Your choice). Starting at 10th level, whenever a creature affected by this jutsu fails the roll to end the jutsu, you may spend a 5 chakra. When you do you may inflict an additional stack of any Mental condition they are suffering from.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 9,
+      "name": "Soul Heart",
+      "source": "Compendium.n5eb.t7-subclass.Item.YK3bF7URn4JcAqSv",
+      "text": "At 9th level, your soul becomes potent enough to maintain itself while seperated from you. When you would use your Soul Manifestation feature, you may spend an additional Martial Die . When you do this, your soul manifests itself in it's full form. During this, you gain the following benefits in addition to your Soul Manifestation features; Your Unarmed Attacks now have the reach 2 property and all Taijutsu you cast have their range increased by 10 feet. When a creature hits you with an attack roll, you reduce the damage taken by the result of 1 Martial Die . This does not spend the die. You cannot suffer a penalty to attack bonus or saving throws from mental conditions. When a taijutsu you cast would inflict a condition, you may instead inflict an equivalent amount of ranks of fear or charmed until the end of your next turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 14,
+      "name": "Shattering Blast",
+      "source": "Compendium.n5eb.t7-subclass.Item.Dxez3q75xaVlytvt",
+      "text": "At 14th level, when you activate your Soul Manifestation feature, all creatures who take damage from the activation are also pushed back by 10 feet. Additionally, as a reaction when you take damage, you may spend 2 Martial Die and 10 chakra. When you do, you reduce the damage by the result of the spent die + your Charisma modifier. If you are not under the effects of the Soul Manifestation feature, you activate it as part of the reaction.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 17,
+      "name": "Serene Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.QGdCYF9OCjjaPAyf",
+      "text": "At 17th level, you learn to enter a trance where you're able to move, feel, and react to the souls of those around you. With this level of awareness, your own soul and combat prowess are boosted to unprecedented heights. While your Soul Manifestation or Soul Heart features are active, you may spend 4 Martial Die . For the next minute you gain the following benefits; You gain the benefits of the Soul Heart feature. Hostile creatures who begin or end their turn within 10 feet of you may not roll to end the effects of a jutsu that inflicted the charm or fear condition onto them. You gain blindsight up to 30 feet. With this blindsight, you can only perceive creatures who have souls. You gain a +2 to AC, Dexterity and Charisma saving throws against creature with souls. At the end of this minute, you become Weakened until the beginning of your next turn. You may go into full spirit mode once per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 20,
+      "name": "Soul Shatter",
+      "source": "Compendium.n5eb.t7-subclass.Item.Rx3CfaSY1RDWmDzr",
+      "text": "At 20th level, you're truly one with your soul. You fight together better than any old army could. You no longer require a Martial Die to activate your Soul Manifestation feature. Additionally, when you inflict the charm or feared condition with a Taijutsu, you may spend 4 Martial Die . The taijutsu inflicts 5 ranks of the charmed or fear condition. These ranks of fear or charmed disappear at the end of their next turn and their duration cannot be extended by any means.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Realized Soul"
+    },
+    {
+      "level": 3,
+      "name": "Martial Focus",
+      "source": "Compendium.n5eb.t7-subclass.Item.rwoCCakMi1zLYfRD",
+      "text": "When you choose this style, starting at the 3rd level, you gain proficiency in Quarterstaffs, Nunchaku, and Tonfas. These weapons become Taijutsu Specialist weapons for you, and while you are equipped with a Taijutsu Specialist weapon, you are considered unarmed for the purpose of interactions with Taijutsu, Taijutsu Fighting Styles, and Taijutsu Specialist features. Additionally, jutsu that would augment your unarmed strikes instead affect your taijutsu specialist weapon, and when you make an unarmed attack, or deal your weapon's damage as part of a Taijutsu, you can use your taijutsu specialist weapon's attack bonus and damage. Finally, once per turn, you can enter a focused state of mind with Taijutsu Specialist weapon, gaining access to abilities that can be unleashed with Martial Die until the start of your next turn. Choose from one of the following; Quarterstaff's Strength : While wielding your Quarterstaff with both hands you can spend 1 Martial Die to double your unarmed damage die. Nunchaku's Fury : While wielding a Nunchaku, you can spend 1 Martial Die, whenever you would successfully hit an opponent with your taijutsu specialist weapon you may immediately make another attack, dealing 1d6 bludgeoning damage, up to twice per turn. This damage cannot be increased or augmented by any means. Tonfa's Trickery : While wielding a Tonfa in each hand, you can spend 1 Martial Die. When you would successfully hit an opponent with your taijutsu specialist weapon, you may attempt to trip the target, adding the result of the Martial Die to your check.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 3,
+      "name": "Armed Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.M51MNWZhXMuhfLdj",
+      "text": "Starting at 3rd level, you learn the following Martial Techniques. In order to use these Martial Techniques, you must be wielding a Taijutsu Specialist weapon. Leviathan Dash. When you land an unarmed attack with the attack action, you can spend 1 Martial Die to toss your weapon to an allied creature within 10 feet of you. The allied creature then moves up to target and makes an unarmed attack against them, using your attack bonus, and adding the Martial Die to the damage roll. The allied creature then tosses your weapon back to you. Seismic Strikes. You channel chakra into your weapon to strike with incredible force. You can spend 1 Martial Die and until the end of your next turn, each successful unarmed or taijutsu attack made with your weapon knocks the creature back 5 feet. If the creature possesses or is under an effect that would inhibit knockback, you instead increase your critical threat range for the aforementioned attacks by +2 against this creature.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 6,
+      "name": "Combat Versatility",
+      "source": "Compendium.n5eb.t7-subclass.Item.Nub4G84Y6goeO7vE",
+      "text": "Beginning at the 6th level, when you would cast a Taijutsu with the Combo keyword, you can cast a Bukijutsu with the Finisher keyword using your taijutsu ability modifier. The Bukijutsu cast counts as a Taijutsu for the purpose of Taijutsu Specialist feature interactions. You can only cast 1 Finisher per turn. When you cast a bukijutsu with the Finisher keyword, you can spend Martial Die equal to the rank of the juttsu to add your Taijutsu Specialist level to the first damage roll. (D/C-Rank: 1, B/A-Rank: 2, S- Rank: 3)",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 9,
+      "name": "Break 'em Down",
+      "source": "Compendium.n5eb.t7-subclass.Item.BG4t4V0en78KqtZs",
+      "text": "Beginning at the 9th level, when you would deal bludgeoning damage to a creature with your taijutsu specialist weapon, you can impose a Constitution saving throw by spending 2 Martial Die. On failed save the target is dazed for a minute. If they are already dazed they are stunned. If they are already stunned they are paralyzed. A creature may remake this saving throw at the end of each of its turns.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 14,
+      "name": "Martial Expert",
+      "source": "Compendium.n5eb.t7-subclass.Item.w6ohO9xFJRfQc7Fw",
+      "text": "Beginning at the 14th level, you and your weapon are one. After constant battles, you can now further enhance your abilities based on your weapon choice as follows: Quarterstaff Expert : While benefitting from Quarterstaff's Strength, you can spend 2 Martial Die, to cause damage you inflict with your taijutsu specialist weapon unable to be reduced by any means, and cause enemies to roll the first saving throw from taijutsu you cast utilizing with your weapon at disadvantage. Nunchaku Expert : While benefitting from Nunchaku's Fury, you can spend 2 Martial Die. Whenever you successfully hit with a taijutsu specialist weapon, your chance to hit with taijutsu specialist weapons and taijutsu increases by +1 for the duration. Tonfa Expert : While benefitting from Tonfa's Trickery you can spend 2 Martial Die to make each successful attack you make with your weapon increase your AC by +1 for the duration.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 17,
+      "name": "Master of Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.ielIaREqscdjkINe",
+      "text": "Starting at the 17th level, you have attained heights no other has with their taijutsu. Choose between Quarterstaff Strength, Nunchaku's Fury, or Tonfa's Trickery. You are now always under its effects. Additionally, you can spend an extra Martial Die when activating Martial Expert to extend the duration until the end of your next turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 20,
+      "name": "Martial Combat Technique",
+      "source": "Compendium.n5eb.t7-subclass.Item.CIL4bxpIrDhTsjaU",
+      "text": "Starting at 20th level, your finesse with using weaponry in tandem with your fists in hand to hand combat surpasses the skill of all who only focus on one of these attributtes. When you cast a Taijutsu or Bukijutsu with a Taijutsu Specialist weapon, you can spend 3 Martial Die, granting it the Martial Combat keyword. Jutsu with the Martial Combat keyword cannot miss unless the attack roll is a natural 1.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Martial Combat"
+    },
+    {
+      "level": 3,
+      "name": "Fancy Footwork",
+      "source": "Compendium.n5eb.t7-subclass.Item.HvZyOwUX7Pxg4SSP",
+      "text": "When you choose this Style starting at 3rd level, you have trained yourself to move in ways that extend your normal reach. Your unarmed attacks gain the Reach 1 property, as you have learned to step in and out of your opponent's effective range. Additionally, You've developed the skills necessary to hold your own in close-quarters grappling. You can exchange an unarmed attack to attempt to grapple an opponent.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 3,
+      "name": "Submissions",
+      "source": "Compendium.n5eb.t7-subclass.Item.doddkU2bIEQfnS7S",
+      "text": "Also, at 3rd level, you learn to grapple opponent's with throws that will leave them staggering. You learn to accomplish this through a series of Martial Techniques , unique to you and your style of combat. You learn the following 3 Martial Techniques . A creature can only be under the effects of one the Martial Technique granted by this subclass at a time. German Suplex. When you would grapple a creature, you can spend 1 martial die to knock them prone, ending the grapple and dealing your unarmed damage. Hip Throw. When you would grapple a creature, you can spend 1 martial die to knock them prone, and throw them 10 feet in any direction. Headlock. When you would grapple a creature, you can spend 1 martial die to also make them restrained for the duration of the grapple.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 6,
+      "name": "Ground Fighting",
+      "source": "Compendium.n5eb.t7-subclass.Item.gBGQnuIuNVVrBdgx",
+      "text": "Starting at 6th level, you have become accustomed to fighting and moving while not standing. While you are prone you no longer have disadvantage on melee attack rolls, creatures within 5 feet no longer gain advantage, and you only need to spend 5 feet to stand up. Additionally, when you score a critical hit with an unarmed attack the target is automatically grappled.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 9,
+      "name": "Ridiculous Strength",
+      "source": "Compendium.n5eb.t7-subclass.Item.KVZgFl2A6aVklm49",
+      "text": "Starting at 9th level, your grappled opponent can be used as a glorified shield, You can grapple creatures no matter their size. You have advantage on Strength and Dexterity saving throws while you are grappling a creature that is Medium or larger and your AC is increased by 1 for each size category (Medium = 1, Large = 2, etc.) Additionally, when a creature attempts to move, teleport, or otherwise break out of a grapple by using a feature or jutsu, you can spend 1 Martial Die to negate that effect until the start of your next turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 14,
+      "name": "Iron Grip",
+      "source": "Compendium.n5eb.t7-subclass.Item.Z74Crtcj8bYYHfWh",
+      "text": "Beginning at 14th level, you ignore immunity to the grappled and restrained conditions. Also at 14th level, your grappling style has evolved even further and you learn more advanced grappling techniques and gain access to three new Martial Techniques . Flying Armbar. As an action, you can spend 2 martial die to deliver a jumping submission, make a grapple check against a target creature within 10 feet the target is grappled, dazed, prone, and restrained on a success. The target can use an action to attempt to escape your grip. Twister. While a grappled and prone creature is within 5ft., you can spend 1 martial die as a bonus action to contort their body into a painful position. The target creature must succeed on a Strength Saving Throw becoming weakened and taking your unarmed damage. At the start of each of their turns they take can attempt to break out. Hammerlock. While a prone creature is within 5 feet, you can spend 1 martial die as a bonus action to painfully pin their arm. Make a grapple check against the target creature. On a success, the target takes your unarmed damage and is restrained. A creature takes damage equal to your taijutsu modifier at the start of their turn. At the end of each of their turns they take can attempt to break out.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 17,
+      "name": "Chain Grab",
+      "source": "Compendium.n5eb.t7-subclass.Item.cs0VLGaojlUXpR52",
+      "text": "Beginning at 17th level, you have learned to grapple people in quick succession, further hindering their movements. When you use a Martial Technique granted by this subclass you may spend 2 additional martial die to automatically use any other Martial Technique feature granted by this subclass at no extra cost. Additionally starting at 17th level, creatures cannot weave hand signs when grappled by you.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 20,
+      "name": "The God of Grappling",
+      "source": "Compendium.n5eb.t7-subclass.Item.bV7vDiqxiTJPe0qB",
+      "text": "Starting at 20th level, you have reached the pinnacle of grappling superiority. When a creature would cast a jutsu you may spend your reaction and 2 martial die to move up to your movement speed to attempt to stop them, by grappling them. You make this grapple check at advantage. On a success a creature is subjected to any one of your Martial Techniques granted to you by this subclass at no additional cost. Also at 20th level, your body has become accustomed to fighting on the ground, and your skin has toughened up considerably. While you are unarmored you gain an amount of damage reduction equal to your Constitution modifier.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Grappler"
+    },
+    {
+      "level": 3,
+      "name": "The Prophecy",
+      "source": "Compendium.n5eb.t7-subclass.Item.818IWRMdcJcGROcO",
+      "text": "When you choose this Style at 3rd level, you begin to see the world as if it were a sequence of numbers and fight to break the boundaries set upon you. You gain proficiency in Insight and you ignore penalties and disadvantage on Insight rolls. Additionally, you can use Wisdom in place of Dexterity for Taijutsu Specialist features that require Dexterity.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 3,
+      "name": "Source Code",
+      "source": "Compendium.n5eb.t7-subclass.Item.OuhOIgUEbivjAtSB",
+      "text": "Also, at 3rd level, you ways to break the sequence of your opponent's attacks with the following 2 Martial Techniques. When you use a Martial Technique or a Taijutsu, until the start of your next turn creatures have disadvantage on attacks of opportunity against you, and your jump height is doubled. Bullet Time. You can spend 1 Martial Die to take the dodge action as a reaction when you would be targeted by an attack or make a saving throw that would benefit from the dodge action. Additionally, the triggering creature rolls an additional d20, taking the lowest result of their attack roll if an attack was performed, or, against the triggering saving throw, you can add the result of your Martial Die to your saving throw. There is no Chakra. When you make land an unarmed strike or affect a creature with a Taijutsu, if the creature is benefitting from a jutsu, regardless of whether the jutsu requires concentration, you can spend 1 Martial Die per attack or saving throw to force the original caster of the jutsu to make a concentration check, subtracting the Martial Die from their result. If the affected creature is neither concentrating or benefitting from a jutsu, this technique instead imposes a Constitution saving throw, where failure prevents the creature from concentrating on jutsu until the end of your next turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 6,
+      "name": "Neo",
+      "source": "Compendium.n5eb.t7-subclass.Item.Vb9T7LmkkwBuMyjS",
+      "text": "Starting at 6th level, your vision begins to warp and change, as you begin to perceive the preset order of events creatures will make, as if they were written in a script. You gain a +1 bonus to unarmed and Taijutsu (Bukijutsu not included) attack and damage rolls for each hostile creature within 5 feet of you, when there are at least two hostile creatures within 5 feet of you. Also at 6th level, once per short rest, you can increase your Passive Perception and Passive Insight by half your Taijutsu specialist level, and gain 5 times your Taijutsu Specialist level in feet of Blindsight, Chakra Sight, and Tremor Sense for 1 minute. You can reactivate this feature without taking a rest by spending 2 Martial Die.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 9,
+      "name": "Deconstruction of Reality",
+      "source": "Compendium.n5eb.t7-subclass.Item.kAd3pvZVsATKEBs2",
+      "text": "Starting at 9th level, reality's fabric begins to become clear to you, so clear in fact that you believe you can weave it. Taijutsu you cast deal double damage to structures and constructs, and creatures with temporary hit points. Your Source Code Techniques also gain the following text; Bullet Time The triggering creature has disadvantage on consecutive attack rolls they make against you, or you have advantage on consecutive saving throws they impose against you, during the turn this technique is activated. There is no Chakra If the affected creature or original caster of the jutsu the target is benefitting from is unable to lose concentration as the result of a jutsu, feature, or trait, you can spend an additional Martial Die each time you would use this technique to force them to make a concentration check regardless.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 14,
+      "name": "Freedom from the Machine",
+      "source": "Compendium.n5eb.t7-subclass.Item.nfLxduHabHjMfkim",
+      "text": "Starting at 14th level, the restraints of the world no longer bind you with its chains. On your turn, you can spend 2 Martial Die to give yourself flying speed equal to your movement speed for 1 minute, and can spend 1 Martial Die at the end of this duration to restart the duration. Also at 14th level, you can use Unshakeable Will and Master of Persistance without Martial Die, a number of times equal to your Wisdom modifier per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 17,
+      "name": "The One",
+      "source": "Compendium.n5eb.t7-subclass.Item.HXHFLmerXXMOnVQs",
+      "text": "Starting at 17th level, in a dire moment, you choose to exempt yourself from the confines of the world, allowing your innermost desires to take precedence. When you would reach 0 hit points or are killed, you can make the choice to continue going and be the one to define fate. You become the The One for 1 minute, gaining the following benefits; After 1 minute, you fall unconscious for 8 hours. Upon becoming The One, you recover all Martial Die, and recover half of your maximum hit points and chakra points. Excess hit points and chakra become temporary hit points and chakra. Your movement speed is doubled. Your Wisdom ability score increases by +2. Neo is always active, and now also grants you True Sight. You become immune to the Unconscious, Slowed, and Weakened conditions. As a reaction, when you would be targeted by a ranged attack or make a saving throw against a hostile effect that would deal damage, you can make a Wisdom (Insight) check against the attack roll or Save DC respectively. If your result is greater, the attack's velocity slowly becomes 0, freezing in place before dispersing. You cannot lose the ability to take a reaction, nor can creatures ignore it.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 20,
+      "name": "Revelations, Reloaded",
+      "source": "Compendium.n5eb.t7-subclass.Item.oCqwycy0cSRRuiKI",
+      "text": "Finally at 20th level, you are the rebellous program that redefines reality. You have advantage on death saving throws, and ignore massive damage rules. You are also immune to hostile effects that would cause instant death.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Matrix"
+    },
+    {
+      "level": 3,
+      "name": "Dragon Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.14oG9ToJgcgPFclY",
+      "text": "Beginning at 3rd level, you broken past your body's limitations and have improved your phyisical strength, as well as your aptitude with chakra control. You can use Martial Arts in place of Chakra Control, and learn and create Taijutsu in half the required time (this doesn't stack with similar effects). Using your Taijutsu learning score in place of your Ninjutsu learning score, you learn 1 Ninjutsu that you qualify for that requires an attack roll. This loses the Ninjutsu keyword, and gains the Taijutsu and Finisher keywords. You can use this Ninjutsu in place of a Taijutsu Finisher, and this jutsu deals 2 extra die of damage when used as a Finisher. You gain more Ninjutsu this way at 10th and 17th levels, and can switch the Ninjutsu when you gain a level in this class.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 3,
+      "name": "Limit Breaking Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.OQcBCaY5Pr0ZxSou",
+      "text": "Also at 3rd level, you gain new ways to surpass your limits amidst the heat of battle using your Martial Die. You learn the following Martial Techniques. Instinctual Inversion. As a reaction, when you would damaged by an area of effect, you can cast a Ninjutsu under the effects of your Dragon Soul feature, at half cost, shaping the chakra into a sphere in front of you. Roll the jutsu's damage dice and reduce the incoming damage by the result. Using this reaction prevents the area of effect from spreading to the space directly behind you. If you reduce the incoming damage to 0, you gain advantage on any saving throws from the triggering jutsu. If you reduce the damage by 150% or more, you instead succeed said saving throws. This technique costs a number of Martial Die equal to the rank of the jutsu cast. (D- Rank: 1, C-Rank: 2, B-Rank: 3, A-Rank: 4, S-Rank: 5) Instinctual Strikes. When you cast a Taijutsu, you can spend 1 Martial Die to ignore any bonuses a creature may have to their AC as the result of a jutsu, feature, or trait until the end of your next turn. This does not apply to changes in AC calc",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 6,
+      "name": "Instinctual Defiance",
+      "source": "Compendium.n5eb.t7-subclass.Item.oNVT8dxqhOjKypMl",
+      "text": "Starting at 6th level, your body's instinctual fighting style emboldens your spirit and mind, preventing your will from ever being triumphed over. Once per long rest, when you would fall under the effects of a Genjutsu or Fuinjutsu, or gain the Berserk, Charmed, Frightened, Grappled or Restrained conditions, you can let out a loud battle cry, flairing an aura of chakra which expels the triggering effect(s). All hostile creatures within 15 feet, are blown back 20 feet. Until the end of your next turn, you have advantage on attack rolls against the creature responsible for giving you one of the aforementioned effects. You gain an extra use of this feature at 14th level.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 9,
+      "name": "Autonomous Ultra Instinct",
+      "source": "Compendium.n5eb.t7-subclass.Item.sWKRdF3hs9VlxPpp",
+      "text": "Starting at 9th level, you have begun to tap into a state that most Shinobi could only ever dream of, Autonomous Ultra Instinct . the peak of Taijutsu. However, it is incomplete. You have only managed to grasp half of the full power Ultra Instinct. Select either the Offensive or Defensive signs of Ultra Instinct. You cannot change this later. Once per rest as an action, you can spend 2 Martial Die to enter Ultra Instinct for 1 minute, gaining the benefits listed below. The form ends early if your chakra reaches 0. If you attempt to enter Ultra Instinct again before taking a rest, you expend 5 chakra die. Offensive Sign Your maximum Martial Die increases by +1. Your unarmed damage instead adds 1.5x your ability mod. Whenever a creature hits you with a melee attack, you can make one unarmed attack at them, once per turn. When you land an unarmed or taijutsu attack roll, you deal an additional amount of damage equal to the amount your attack roll result exceeded the target's AC by (Max of +5). While bloodied (Under 50% hp), creatures cannot react to Finishers you cast, when used as a Finisher. Defensive Sign You gain 7 temporary hit points at the start of your turns. Attacks against you, and Dexterity saving throws you make, suffer a penalty equal to half or a bonus equal to the full result, of one Martial Die . This does not spend any. When you would fail a saving throw, you can spend any number of Martial Die , adding them to result. Your movement speed is doubled. While bloodied , critical hits against you are treated as normal hits.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 14,
+      "name": "Mystic Awakening",
+      "source": "Compendium.n5eb.t7-subclass.Item.o1i47F9T0urYC56O",
+      "text": "Starting at 14th level, even when everything seems dire, your spirit burns a light of hope for all. You are unable to lose the ability to mold chakra. Additionally, Ninjutsu you cast with the Finisher keyword gain a +1 to damage die and Save DC. Finally, as a reaction to becoming bloodied, you can immediately Ultra Instinct at no Martial Die cost, dispelling any triggering effect(s) and negating any attack(s) if any, and immediately taking your turn. You can only activate Ultra Instinct this way once per full rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 17,
+      "name": "Kami no Ryōiki",
+      "source": "Compendium.n5eb.t7-subclass.Item.bjzJ6HvCDEVvISBO",
+      "text": "Although your journey is not over, your mind, body, and soul have undergone tremedous evolution. Starting at 17th level, when you enter Ultra Instinct you can choose to benefit from both the Offensive and Defensive signs.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "level": 20,
+      "name": "The Ultimate Battle",
+      "source": "Compendium.n5eb.t7-subclass.Item.Xn0eBS4MAsuQSmaz",
+      "text": "Starting at 20th level, you have at long last attained mastery over the technique of self movement, placing you on a pedestal akin to gods. The duration of Ultra Instinct is doubled, and Limit Breaking Combat martial techniques have their Martial Die costs halved while in Ultra Instinct (Min.0).",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Ultimate Battle"
+    },
+    {
+      "name": "Technical Technique",
+      "source": "Compendium.n5eb.class.Item.0fiiTQYNOvYThIk4",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains the Technical keyword. Jutsu with the Technical keyword reduces the cost to maintain concentration on it by an amount equal to half the result of the die.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Flurry Of Blows",
+      "source": "Compendium.n5eb.class.Item.1iR8tYVCIIHz5uIc",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you take the attack action, you may as a bonus action, spend 1 martial die. When you do you are able to make 1 unarmed attack. Beginning at 7th level, you can make 2 unarmed attacks and at 13th level, you can make 3 unarmed attacks.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Patient Movement",
+      "source": "Compendium.n5eb.class.Item.2eopPgngkIW8sysY",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "By spending 1 martial die, you do not trigger attacks of opportunity, creatures cannot react to your movement and creatures you target cannot react to the first unarmed attack you make this turn",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Brutal Taijutsu",
+      "source": "Compendium.n5eb.class.Item.3YwhTNFW1orq257S",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend any number of martial die. When you do, if the jutsu does not add your ability modifier to the damage dealt, you add the spent die to the first damage roll made.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Devastating Taijutsu",
+      "source": "Compendium.n5eb.class.Item.79jyyk3MwbMyRGJq",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast creatures within 10 feet of the original target must make a Dexterity saving throw, taking half of the damage dealt, once per casting",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Brutal Technique",
+      "source": "Compendium.n5eb.class.Item.JQKqSfpTfwdI1gsV",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 Martial Dice. When you do, the Taijutsu cast gains the Brutal keyword. Taijutsu with the Brutal keyword add half of your base Taijutsu Ability Modifier rounded up to their damage rolls, if it did not before. If it already adds your Taijutsu Ability Modifier, then it instead adds both your base Strength and Dexterity Ability Modifier to the damage rolls.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Precise Taijutsu",
+      "source": "Compendium.n5eb.class.Item.JX0q8zvWSXSyqUw6",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend up to 3 martial die. When you do, the jutsu cast gains a +1 bonus to hit for each die spent.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Flurry Of Guards",
+      "source": "Compendium.n5eb.class.Item.MJNrbAMKHi3FoJMb",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you are targeted by a melee attack, as a reaction by spending 1 martial die, you are able to reduce the triggering attack or damage roll by the result (Pick one). Beginning at 7th level, you can spend 2 die reducing the triggering attack by the result and at 13th level, you can spend 3 die, reducing the triggering attack by the result.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Precise Technique",
+      "source": "Compendium.n5eb.class.Item.MpuZlqaEay6pP17c",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains the Precise keyword. Jutsu with the Precise keyword cannot have their attack results penalized or reduced by the effects of a jutsu or trait.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Raw Technique",
+      "source": "Compendium.n5eb.class.Item.UzTBMAFK316zUONb",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains the Raw keyword. Jutsu with the Raw keyword deals damage to a creatures hit points and temporary hit points simultaneously.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Patient Defense",
+      "source": "Compendium.n5eb.class.Item.V6C5ldzhyAE9hpfD",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "By spending 1 ma rtial die, you can take the dodge action as a bonus action.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Step Of Darkness",
+      "source": "Compendium.n5eb.class.Item.ZNrkcGfDO3NtvZEh",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "On your turn, by spending 1 martial die, you can take the Hide action as a bonus action.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Step Of The Wind",
+      "source": "Compendium.n5eb.class.Item.byUEOuDEhZ6JgeHU",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "On your turn, as a bonus action, by spending 1 martial die, you gain the benefits of the Disengage or Dash action (your choice) and your jump distance is doubled until the end of your turn.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Patient Offence",
+      "source": "Compendium.n5eb.class.Item.e20H9695Tf5t5Bqy",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When a creature would miss you with a melee attack, you can spend 1 Martial Dice to make an Unarmed Attack against that creature, once per creature per turn.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Step Of The Stars",
+      "source": "Compendium.n5eb.class.Item.gZWD36AyXUX1roTt",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would make an Attack of Opportunity, you can spend 1 Martial Dice to make two Unarmed Attacks in place of one.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Furious Taijutsu",
+      "source": "Compendium.n5eb.class.Item.ovNtBrrvDzh0w75j",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu that requires at least 2 attacks, you can spend 2 martial die. When you do, the jutsu cast increases the number of attacks it makes by +1. You can spend an additional 2 martial die, to increase the number of attacks it makes by +1.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Devastating Technique",
+      "source": "Compendium.n5eb.class.Item.oyBcD1TFDlBhk9J7",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains the Devastating keyword. Jutsu with the Devastating keyword cannot have their Critical hits negated or reacted too.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Raw Taijutsu",
+      "source": "Compendium.n5eb.class.Item.p2ictmqgqqr0tmWC",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains a +1 bonus to its DC. Beginning at 7th, you can spend 2 martial die for a +2 bonus to its save DC and at 13th level you can spend 3 martial die for a +3 bonus to its save DC.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Furious Technique",
+      "source": "Compendium.n5eb.class.Item.qtIG4RH3VtDcQaMJ",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "When you would cast a Taijutsu, you can spend 1 martial die. When you do, the jutsu cast gains the Furious keyword. Jutsu with the Furious keyword cannot have their damage reduced by jutsu.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Step Of The Moon",
+      "source": "Compendium.n5eb.class.Item.w6OxrKpkdW266OCW",
+      "category": "Choose Martial Techniques",
+      "level": 2,
+      "text": "At the beginning of your turn, before any action is taken, you can automatically end one Physical or Mental condition you are suffering from by spending an amount of Martial Dice equal to the rank of the effect that inflicted the condition. (D-Rank: 1; C-Rank: 2; B-Rank: 3; A-Rank: 4; S- Rank: 5).",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    }
+  ],
+  "unresolved": [],
+  "externalItems": [
+    {
+      "source": "Compendium.n5eb.items.Item.DiHt2oXGIiOv0VNf",
+      "name": "Smoke Bomb",
+      "type": "consumable",
+      "category": "Base"
+    },
+    {
+      "source": "Compendium.n5eb.items.Item.DiwDKeJG8pPuv2LP",
+      "name": "Iron Clad Shield",
+      "type": "equipment",
+      "category": "Ironclad"
+    }
+  ],
+  "chartEvidence": {
+    "unnaturalTalent": "Installed assets/content/cheat-sheets/unnatural-talent.webp: +1 at3,+2 at10,+3 at17",
+    "fistsOfIron": "Installed assets/content/cheat-sheets/fist-of-iron.webp:1/2/3 dice at3/9/17",
+    "turbulence": {
+      "file": "systems/n5eb/assets/content/cheat-sheets/t7-turbulence-speed-chart.webp",
+      "readFromOriginalImage": true,
+      "progression": {
+        "3": 10,
+        "6": 15,
+        "10": 20,
+        "14": 25,
+        "17": 30
+      },
+      "note": "Source image inspection; no UI test."
+    }
+  }
+}

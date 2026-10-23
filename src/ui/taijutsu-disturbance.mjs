@@ -1,10 +1,11 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {taijutsuEnabled,taijutsuFeature,isTaijutsu} from '../casting/taijutsu-context.mjs';
 import {beginDisturbance,disturbanceAttack,endDisturbance,disturbanceEntries,disturbanceFeature} from '../foundry/taijutsu-disturbance.mjs';
 import {beginBarrage,resumeBarrageTargets,disturbanceWorkflow,requestDisturbanceTargets} from '../foundry/taijutsu-disturbance-targets.mjs';
 const button=(host,label,fn,enabled=true)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=!enabled;b.addEventListener('click',async()=>{b.disabled=true;try{await fn();}catch(error){ui.notifications.warn(error.message);}finally{b.disabled=!enabled;}});host.append(b);};
 export function installDisturbanceUI(game){
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
+ registerClassSheetPanel(game,'taijutsu','.n5ese-disturbance','Disturbance',(sheet,html)=>{
   const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-disturbance')?.remove();if(!taijutsuEnabled(game)||!['shatter','core','flurry','reflexes','barrage'].some(k=>disturbanceFeature(actor,k)))return;const host=root?.querySelector('section[data-tab="features"]');if(!host)return;
   const panel=document.createElement('details');panel.className='n5ese-ninjutsu-card n5ese-disturbance';const summary=document.createElement('summary');summary.textContent='Disturbance · Techniken und gespeicherte Vorgänge';panel.append(summary);
   for(const [kind,label]of [['shatter','Shatter · Jutsu-Versuch unterbrechen'],['core','Unstable Core · zwei unbewaffnete Angriffe'],['flurry','Disturbance Flurry · zusätzliche Bonusaktion'],['reflexes','Unmatched Reflexes · zusätzliche Taijutsu-Reaktion']])if(disturbanceFeature(actor,kind))button(panel,label,()=>beginDisturbance(game,actor,kind),actor.isOwner);

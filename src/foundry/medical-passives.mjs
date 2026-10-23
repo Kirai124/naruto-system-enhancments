@@ -1,5 +1,18 @@
 import {MODULE_ID} from '../settings/register.mjs';
 import {medicalEnabled,medicalFeature,medicalLevel,isMedical} from '../casting/medical-context.mjs';
+export function medicalManualDashEffect(game,effect){
+ const item=effect.parent,actor=item?.actor;
+ return !!(medicalEnabled(game)&&effect.transfer&&medicalFeature(actor,'Never On The Front Lines')===item&&
+  effect.changes?.length===1&&effect.changes[0].key==='system.attributes.movement.walk'&&
+  String(effect.changes[0].value).replace(/\s/g,'')==='@attributes.movement.walk*2');
+}
+const suppressedPrototypes=new WeakSet();
+export function installMedicalManualDash(game,EffectClass){
+ // This installed transfer effect incorrectly applies a conditional Dash permanently.
+ // Keep the rule and its manual action economy; suppress only that exact native effect in memory.
+ const effectPrototype=EffectClass?.prototype,descriptor=effectPrototype&&Object.getOwnPropertyDescriptor(effectPrototype,'isSuppressed');
+ if(descriptor?.get&&descriptor.configurable&&!suppressedPrototypes.has(effectPrototype)){suppressedPrototypes.add(effectPrototype);Object.defineProperty(effectPrototype,'isSuppressed',{...descriptor,get(){return medicalManualDashEffect(game,this)||descriptor.get.call(this);}});}
+}
 export function installMedicalPassives(game,CharacterModel){
  const fields=game.n5eb.dataModels.actor.AttributesFields,armor=fields.prepareArmorClass;
  fields.prepareArmorClass=function(rollData,...args){

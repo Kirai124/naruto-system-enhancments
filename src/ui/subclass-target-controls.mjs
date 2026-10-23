@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {activeMoldingEffect,moldingMarker} from '../effects/molding-effects.mjs';
 import {triggerRainingVortex} from '../foundry/molding-restrictions.mjs';
@@ -22,5 +23,5 @@ export function installSubclassTargetControls(game){
   }
   (root.querySelector('section[data-tab="features"]')??root.querySelector('.window-content'))?.prepend(panel);
  };
- Hooks.on('renderCharacterActorSheet',render);Hooks.on('renderNPCActorSheet',render);
+ registerClassSheetPanel(game,'ninjutsu','.n5ese-molding-targets','Gespeicherte Zielwirkungen',render);Hooks.on('renderNPCActorSheet',render);
 }

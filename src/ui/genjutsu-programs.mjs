@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {genjutsuEnabled} from '../casting/genjutsu-context.mjs';
 import {PROGRAMS,registerProgram,castProgram,endProgram,resolveProgram} from '../foundry/genjutsu-programs.mjs';
@@ -13,7 +14,7 @@ export function installGenjutsuProgramsUI(game){
   html.querySelector('.n5ese-genjutsu-program')?.remove();if(!genjutsuEnabled(game)||message.type!=='usage'||message.getFlag(MODULE_ID,'genjutsuMirageCast')?.name!=='Signature Work')return;const actor=message.getAssociatedActor();if(!actor)return;
   const panel=document.createElement('section');panel.className='n5ese-molding-chat n5ese-genjutsu-program';const entry=actor.getFlag(MODULE_ID,PROGRAMS)?.find(e=>e.messageId===message.id);if(entry)controls(game,actor,entry,panel);else if(message.system.deltas!==null)button(panel,'Signature Work · Genjutsu-Programm speichern',actor,()=>registerProgram(game,actor,message.id));html.append(panel);
  });
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
+ registerClassSheetPanel(game,'genjutsu','.n5ese-genjutsu-program','Illusionsprogramme',(sheet,html)=>{
   const root=html instanceof HTMLElement?html:sheet.element,actor=sheet.actor??sheet.document;root?.querySelector('.n5ese-genjutsu-program')?.remove();if(!genjutsuEnabled(game))return;const entries=(actor.getFlag(MODULE_ID,PROGRAMS)??[]).filter(e=>e.status!=='ended'),host=root?.querySelector('section[data-tab="features"]');if(!host||!entries.length)return;const panel=document.createElement('details');panel.className='n5ese-ninjutsu-card n5ese-genjutsu-program';const summary=document.createElement('summary');summary.textContent='Signature Work · '+entries.length+' Illusionsprogramme';panel.append(summary);for(const entry of entries)controls(game,actor,entry,panel);host.prepend(panel);
  });
  Hooks.on('updateActor',(actor,changes)=>{if(changes['flags.'+MODULE_ID+'.'+PROGRAMS]===undefined&&changes.flags?.[MODULE_ID]?.[PROGRAMS]===undefined)return;for(const message of game.messages)if(message.getAssociatedActor?.()?.uuid===actor.uuid&&message.getFlag(MODULE_ID,'genjutsuMirageCast')?.name==='Signature Work')ui.chat.updateMessage(message);});

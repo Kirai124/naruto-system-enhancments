@@ -1,0 +1,44 @@
+[
+  {
+    "source": "Compendium.n5eb.items.Item.NijK86qNzaHagxIh",
+    "name": "Medicine Kit",
+    "type": "tool",
+    "description": "<p>This kit includes all of the necessary implements to perform complex medical inquiries and procedures while not in a medical facility supported by sterilized environments, allowing you to diagnose and even treat issues such as broken bones, open wounds and even providing immediate care to people who are on death's door making death saving throws.</p><p>Proficiency with this kit lets you add your proficiency bonus to any skill checks you make to perform medical tasks, light healing, condition treatment, stabilization and create Blood Pills.</p><hr /><p><strong>Medical Check Up (1 Charge).</strong></p><p>By spending 1 charge over the course of 10 minutes, you are able to assess the current status of up to 6 creatures informing them of all conditions, diseases, poisons or effects, affecting them at the moment, and how to cure/remove it.</p><hr /><p><strong>Light Patch up (X Charge(s)).</strong></p><p>You select one creature within 5 feet of you.</p><p>For the next 10 minutes, you spend time patching them up.</p><p>Spend any number of charges.</p><p>For each charge spent, the creature regains 2d4 hit points.</p><hr /><p><strong>Full Fix up (2 Charges).</strong></p><p>You select one creature within 5 feet of you.</p><p>As an action, you stab them with an adrenal fluid meant to stave off death.</p><p>Remove one failed death save from them.</p><hr /><p><strong>Stabilization (3 Charges).</strong></p><p>Select one creature who is dying or making death saving throws within 5 feet of you.</p><p>By spending 3 charge, you are able to stabilize them at 0 hit points.</p><p>Doing this removes up to 2 failed death saves.</p><hr /><p><strong>Condition Treatment (3 Charges).</strong></p><p>Select one creature who is within 5 Feet of you.</p><p>Over the course of 10 minutes to 1 hour you are able to treat a creature curing them of a number of conditions they are currently under the effects of.</p><p>Roll 1d6.</p><p>The result is the number of minutes spent performing such a treatment times 10.</p><hr /><p><strong>Blood Pill Creation (2 Charge(s)).</strong></p><p>By spending at least 2 charge, you can spend 1 hour of leisure time or the duration of a short rest creating blood increasing stimulants in the form of a pill, known as a Blood Pill.</p><p>When you do, you create a number of single use Blood pills of a quality equal to the quality of this Kit, for every 2 Charges spent, you create one single use Blood Pill.</p><p></p><p><span style=\"font-family:Signika, sans-serif\">Rank of Condition Removed C-Rank.</span></p>"
+  },
+  {
+    "source": "Compendium.n5eb.items.Item.oNAY6p1RBBrDSaBH",
+    "name": "Flash Tag",
+    "type": "consumable",
+    "description": "<p>Flash tags are paper bombs repurposed to create an extreme source of white light meant to cause temporary visual impairment.</p><p>Flash Tags can be set to detonate on impact or set with a timer that lasts several seconds before detonating.</p><p>Flash Tags have a range equal to 30 feet.</p><p>As an action, you can throw a Flash Tag at a point you can see within range.</p><p>Each creature within 10 feet must make a Wisdom saving throw.</p><p>A creature becomes blind until the end of their turn on a Failed save or suffer no negative effects on a successful save.</p><p>This item is 1 Bulk Flash Tags can be affixed to Kunai.</p><p>When they are the range of the Flash Tag becomes wholly reliant on the kunai itself.</p><p>When affixed.</p><p>The next time the affixed Kunai would deal damage to a creature, the Flash Tag detonates.</p><p>A creature who took damage from the kunai prior to it detonating makes their saving throw at disadvantage.</p>"
+  },
+  {
+    "source": "Compendium.n5eb.jutsus.Item.AmYKioz6uE9BEGwQ",
+    "name": "Summoning Technique",
+    "type": "spell",
+    "rank": "d",
+    "chakra": {
+      "cost": "10",
+      "scaling": {
+        "mode": "rank",
+        "value": 5
+      },
+      "special": ""
+    },
+    "description": "<p>You must have formed a Blood Contract with a Sage Tribe, such as one found in the <strong>Summoning Jutsu</strong> section found at the end of the <strong>Ninjutsu</strong> chapter in order to successfully cast this jutsu. If a creature refuses or cannot be summoned, You spend chakra according to the rank this jutsu was cast.</p><p>It appears where the user designates and can act as a Bonus Action on the user's turn, on the user's initiative order. You can communicate with the creature and it will listen to you and only you in combat. You can direct it to perform the following actions: Attack (Unarmed, Weapon, or Jutsu), Dodge, and Help. The creature can perform an Action and Move. The summoned creature must remain within 120 feet of the summoner. All sage creatures can speak common.</p><p><strong>At Higher Ranks</strong>:</p><p>For each rank you cast this jutsu above D-Rank, you summon a corresponding creature equal in level and rank to the Rank used upon activation.</p>"
+  },
+  {
+    "source": "Compendium.n5eb.jutsus.Item.Odgir3CfeTCO2Ygp",
+    "name": "Release",
+    "type": "spell",
+    "rank": "e",
+    "chakra": {
+      "cost": "2",
+      "scaling": {
+        "mode": "none",
+        "value": 0
+      },
+      "special": ""
+    },
+    "description": "<p>This technique allows the user to isolate and forcefully remove the effect of a single Genjutsu effect, so long as it can be dispelled. </p><p>You must first be aware that you or your target is under the effect of a Genjutsu. As part of the activation of this jutsu, make an Illusion Check at advantage vs the Save DC of the Genjutsu. On a success you free yourself or your target from the Genjutsu.</p>"
+  }
+]

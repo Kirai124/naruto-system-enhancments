@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {readVoidSurcharges} from '../trackers/pool-targets.mjs';
 export function installVoidSurchargeControls(game){
@@ -18,5 +19,5 @@ export function installVoidSurchargeControls(game){
   }
   const hint=document.createElement('small');hint.textContent='Zuschläge addieren sich nach Kostenreduktionen und Chakra Recovery. Verbrauch beim nächsten bestätigten Jutsu mit Chakra-Verbrauch; Unterhalt bleibt unverändert.';panel.append(hint);host.prepend(panel);
  };
- Hooks.on('renderCharacterActorSheet',render);Hooks.on('renderNPCActorSheet',render);
+ registerClassSheetPanel(game,'ninjutsu','.n5ese-void-surcharges','Void-Zuschläge',render);Hooks.on('renderNPCActorSheet',render);
 }

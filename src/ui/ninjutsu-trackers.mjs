@@ -1,3 +1,4 @@
+import {registerClassSheetPanel,openClassWindow} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {ownedTrackers} from '../trackers/ninjutsu-definitions.mjs';
 const hints = {
@@ -117,19 +118,19 @@ export function renderNinjutsuTrackers(game,sheet,html,manager) {
       card.append(detail);
     }
   }
-  const status=document.createElement('small');status.className='n5ese-ninjutsu-status';status.textContent='Shards/Motes im Castingdialog ausgeben · Zielwirkungen als gespeicherte GM-Anfrage · Ember-DR noch offen';panel.append(status);
+  const status=document.createElement('small');status.className='n5ese-ninjutsu-status';status.textContent='Shards/Motes im Castingdialog ausgeben · Zielwirkungen als gespeicherte GM-Anfrage';panel.append(status);
   host.prepend(panel);
   for(const definition of definitions){
     const itemRow=[...host.querySelectorAll('[data-item-id]')].find(e=>e.dataset.itemId===definition.item.id);
     if(!itemRow)continue;
     itemRow.dataset.n5eseTrackerManaged='true';
     const button=document.createElement('button');button.type='button';button.className='n5ese-tracker-link';button.textContent='Tracker';
-    button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();panel.scrollIntoView({block:'start'});});
+    button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();openClassWindow(game,actor,'ninjutsu');});
     itemRow.querySelector('.item-row > .item-uses')?.append(button);
   }
 }
 export function installNinjutsuTrackers(game,manager){
-  Hooks.on('renderCharacterActorSheet',(sheet,html)=>renderNinjutsuTrackers(game,sheet,html,manager));
+  registerClassSheetPanel(game,'ninjutsu','.n5ese-ninjutsu','Ressourcen & Marks',(sheet,html)=>renderNinjutsuTrackers(game,sheet,html,manager));
   Hooks.on('dnd5e.preUseActivity',activity=>{
     if(!game.settings.get(MODULE_ID,'ninjutsuTrackers'))return;
     const item=activity.item;

@@ -1,3 +1,13 @@
+# Klassenfenster · 0.17.1
+
+Die öffentliche API bleibt kompatibel. Martial `getFeatureActions` liefert nun nur Aktionen mit tatsächlich passenden Natur-/Formbedingungen; eine direkte Ausführung einer unpassenden Aktion wird ebenfalls zurückgewiesen. Fenster- und Panel-Registry sind interne UI-Bausteine ohne öffentliche Stabilitätszusage. Keine neue Abhängigkeit zur Class Mod Library.
+
+## Frühere Entwicklungsnotizen
+
+# Medical-Fenster · unveröffentlicht
+
+Die öffentliche Klassen-API bleibt unverändert. Fenster-Registry, DOM-Builder und Waffen-Chatadapter sind interne Erweiterungspunkte ohne Stabilitätszusage. Öffnen verbraucht keine Ressourcen; Aktionen verwenden weiterhin dieselben Besitz-/GM-/Transaktionsprüfungen. [Prüfstand](MEDICAL-QA.md).
+
 # Taijutsu API · 0.17.0
 
 Zugriff: game.modules.get('naruto5e-system-enhancements').api.taijutsu. Fassade version1, status source-complete-unverified. Verändernde Methoden prüfen Featurebesitz, Klassenstufe, Automation und Actorrechte. Dieselben bestätigten Dialoge/Journale wie in der Oberfläche; kein Umgehen von GM-Rechten.

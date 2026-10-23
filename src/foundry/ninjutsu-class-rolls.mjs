@@ -38,4 +38,4 @@ export function installNinjutsuClassRolls(game,types){
   if(record.choices.some(c=>c.name==='Hijutsu Master'&&['empower','area'].includes(c.value))&&options.ignore!==true)options.ignore={...options.ignore,resistance:true};
  });
 }
-export function addLinkedDamage(game,activity,result){if(!game.settings.get(MODULE_ID,'ninjutsuClassAutomation')||!result.rolls?.length)return;const bonus=activity.actor.effects.filter(e=>activeNinjutsuEffect(game,e)).reduce((n,e)=>n+(Number(ninjutsuEffect(e).metadata.damage)||0),0);if(bonus)result.rolls[0].parts.push(String(bonus));}
+export function addLinkedDamage(game,activity,result){if(!game.settings.get(MODULE_ID,'ninjutsuClassAutomation')||!activity.actor||!result.rolls?.length)return;const bonus=activity.actor.effects.filter(e=>activeNinjutsuEffect(game,e)).reduce((n,e)=>n+(Number(ninjutsuEffect(e).metadata.damage)||0),0);if(bonus)result.rolls[0].parts.push(String(bonus));}

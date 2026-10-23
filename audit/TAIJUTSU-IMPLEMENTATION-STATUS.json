@@ -1,0 +1,980 @@
+{
+  "date": "2026-10-21",
+  "state": "IMPLEMENTATION_ROUND_COMPLETE_GROUP_VERIFICATION_PENDING",
+  "gameplayTests": "NOT_RUN_USER_REQUEST",
+  "features": [
+    {
+      "name": "Martial Defense",
+      "source": "Compendium.n5eb.class.Item.ITK8bVvZelagkGvm",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Native AC retained; persistent confirmed guard selection, slots and structured passive mapping; unstructured seal text manual."
+    },
+    {
+      "name": "Unarmed Technique",
+      "source": "Compendium.n5eb.class.Item.Nz7RMFTPquBcxxSX",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Confirmed STR/DEX for native specialist weapons/unarmed/Taijutsu/skills, voluntary 1d6/8/10 base-die replacement on proficient simple weapon profiles. Custom/ammunition-replacement profiles require manual handling."
+    },
+    {
+      "name": "Martial Technique",
+      "source": "Compendium.n5eb.class.Item.S1TglFLRvVSLZHNL",
+      "category": "Base",
+      "status": "EXISTING_RETAINED",
+      "note": "Existing rank-cost and reduction exclusion integration retained."
+    },
+    {
+      "name": "Martial Adept",
+      "source": "Compendium.n5eb.class.Item.ucEljLiJZkch29oz",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Existing pool, maxima, own-turn recovery and explicit out-of-combat renewal."
+    },
+    {
+      "name": "Enhanced Movement",
+      "source": "Compendium.n5eb.class.Item.5i8xFLpNK1EVelUk",
+      "category": "Base",
+      "status": "SOURCE_CORRECTION_UNTESTED",
+      "note": "Suppress shipped movement effect while heavy armor equipped."
+    },
+    {
+      "name": "Taijutsu Style",
+      "source": "Compendium.n5eb.class.Item.RXJ6QDeBk9j9cbQG",
+      "category": "Base",
+      "status": "NATIVE_RETAINED",
+      "note": "Native subclass choice preserved."
+    },
+    {
+      "name": "Extra Attack",
+      "source": "Compendium.n5eb.class.Item.4EaBVmVCONYzodqS",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Native extra-attack progression retained. Attack/action economy manual by agreement; Chakra Enhanced Blows has a persistent action/cast group and first-two-hit bookkeeping."
+    },
+    {
+      "name": "Evasion",
+      "source": "Compendium.n5eb.class.Item.0dDWJdgZXfvl9C9o",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed damage outcome; native effect and managed target exclusion after successful Evasion. Resolve damage/save before applying conditions; repeat damage asks again."
+    },
+    {
+      "name": "Chakra Enhanced Strikes",
+      "source": "Compendium.n5eb.class.Item.eKeya7mXnKnhDmNM",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Up to two benefits; one half-DR option maximum, extra unarmed dice require explicit melee/formula confirmation."
+    },
+    {
+      "name": "Unbreakable Will",
+      "source": "Compendium.n5eb.class.Item.EBBdTcEi7EdjdElZ",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Explicitly confirmed one Martial Die normally; optional shared Matrix allowance. Successful rolls are stored before payment; cancelled native roll pays neither resource."
+    },
+    {
+      "name": "Flow of Battle",
+      "source": "Compendium.n5eb.class.Item.efrAWaHNWguxq37L",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent INT/WIS/CHA initiative choice; GM correction only once chosen."
+    },
+    {
+      "name": "Master of Persistence",
+      "source": "Compendium.n5eb.class.Item.XZ00vzr5k02D7H9N",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed own-turn condition removal; optional shared WIS-mod Matrix allowance with Unbreakable Will. Selected native/managed condition only."
+    },
+    {
+      "name": "Perfect Body",
+      "source": "Compendium.n5eb.class.Item.EvKdFOPdNcGonstj",
+      "category": "Base",
+      "status": "SOURCE_CORRECTION_UNTESTED",
+      "note": "CON proficiency upgrade; DEX bonus only on actual nonproficient saves; suppress incorrect native riders."
+    },
+    {
+      "name": "Perfect Mind",
+      "source": "Compendium.n5eb.class.Item.tToM7bhkFUvO6Xrk",
+      "category": "Base",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent INT/WIS proficiency choice; native immunity retained."
+    },
+    {
+      "name": "Ability Score Improvement",
+      "source": "Compendium.n5eb.class.Item.3R6ULWi6YDL3qyIf",
+      "category": "Base",
+      "status": "NATIVE_RETAINED",
+      "note": "Native advancement; no replacement."
+    },
+    {
+      "name": "Blinding Speed",
+      "source": "Compendium.n5eb.subclass.Item.wP1z08xHKdR7A2vf",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned parent supplies Shatter/Core without requiring separate child inventory features. Paid native unarmed attack groups; original texts have no activities or effects to replace."
+    },
+    {
+      "name": "Disturbance Flurry",
+      "source": "Compendium.n5eb.subclass.Item.EfSw8cK0dyDNfj5b",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "One shared paid use per turn. Normal1 Die for manually managed additional bonus action or one native unarmed attack+Martial damage die; level17 alternative Finisher declaration3 Dice, reduced to2 by Endurance. No global action economy counter."
+    },
+    {
+      "name": "Unstable Core",
+      "source": "Compendium.n5eb.subclass.Item.KPnNUidOs0LDxWtv",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirm original own action Taijutsu; pay1 Die for two native unarmed attacks, each with a separate Martial damage die. After both, confirm actual hits; one stored STR save/Prone per distinct actually hit creature. No extra duplicate damage application."
+    },
+    {
+      "name": "Shatter",
+      "source": "Compendium.n5eb.subclass.Item.QQELApmYSESKoCKr",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Paid2-counterattack group against actual selected caster and original usage card. Confirm15-foot trigger/half-speed movement/5-foot final position manually. Both actual hits required before stored CON save and active-GM interruption. Original Chakra remains spent; only linked concentration removed; native subsequent damage/effects and enhancement requests guarded. Already applied/custom external effects require manual GM handling."
+    },
+    {
+      "name": "Untouchable",
+      "source": "Compendium.n5eb.subclass.Item.LFvQeqhOFfDzQwra",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "For native attacks against the one explicitly targeted owner, confirm actual reaction expenditure: disadvantage; opportunity option aborts attack. Attacks without reaction cost remain normal. Movement and global action economy stay manual."
+    },
+    {
+      "name": "Unmatched Reflexes",
+      "source": "Compendium.n5eb.subclass.Item.y8SAXl1UWC83Xl4r",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Explicit actual own-turn-start confirmation,1 Martial Die, persistent additional-Taijutsu-reaction declaration. Reaction use remains manual."
+    },
+    {
+      "name": "Debilitating Barrage",
+      "source": "Compendium.n5eb.subclass.Item.AxsTdKnefm3B1eXu",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirm2 actual native attack cards from same action against one creature and already applied full original damage. Native2/rest uses and actual Martial pool (2 Dice, reduced to1 at17 with Endurance). Stored CON save; selected typed vulnerability only for next separate actual damage. Consumed marker bundled in native damage update prevents repeat if effect cleanup fails."
+    },
+    {
+      "name": "Disturbing Endurance",
+      "source": "Compendium.n5eb.subclass.Item.rVdlNczA7Nwwdj5p",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned-level/source-checked passive reduction by1 only for actual Disturbance feature prices above1. Applied to all new Disturbance payment paths; no change to other subclass costs."
+    },
+    {
+      "name": "Disturbing Technique",
+      "source": "Compendium.n5eb.subclass.Item.OmvpiUZr2uiNcuT5",
+      "category": "Disturbance",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual20th-level feature adds paid Disturbing casting choice. Confirm original2+ attacks and all2+ actual hostiles in range. Double Jutsu attacks including paid Furious extras; save target list and approved floor/ceil distribution reminder. Attacks/actions manually executed. Counts must match other original-attack fields."
+    },
+    {
+      "name": "Unnatural Talent",
+      "source": "Compendium.n5eb.subclass.Item.ZfA6yLgy05L8yFY7",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Verified native-pool progression and Critical/Deadly/Multiattack properties on generated or prepared actual unarmed/Specialist weapon profiles; original inventory data unchanged."
+    },
+    {
+      "name": "Focused Talent",
+      "source": "Compendium.n5eb.subclass.Item.sa3hUBOFhuIy82xu",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Shatterpoint before original damage, temporary DR suppression. Redirected Aggression native unarmed counter and original native damage/effect reflection; complex stored/infused/class-conditioned original profiles require manual GM transfer before payment."
+    },
+    {
+      "name": "Talented Technique",
+      "source": "Compendium.n5eb.subclass.Item.sFgreQ3JKAezfEgv",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid native feature usage plus Martial Die, count actual paid Martial keywords including Talent/Focus/Technical; selected original damage die bonus once per cast. Native counter recharge by confirmed own-start Dice or actual 10-minute rest."
+    },
+    {
+      "name": "Focused Adaptation",
+      "source": "Compendium.n5eb.subclass.Item.UNaPrR1wGcVeTmpb",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actual own turn start, normal type1 Die/actual unlisted stance type2 Dice, managed next-own-start expiry, confirmed melee unarmed damage part conversion. Outside combat end manually."
+    },
+    {
+      "name": "Talented Legacy",
+      "source": "Compendium.n5eb.subclass.Item.fUwwNAEvy0cvYgtn",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Explicit additional learned techniques outside normal advancement allowance; interrupted creation GM reconciliation, no duplicate source copies."
+    },
+    {
+      "name": "Focused Strike",
+      "source": "Compendium.n5eb.subclass.Item.NywUOKpKdqDWM1M1",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed unarmed-damage hit, three Dice plus native usage, native STR save, managed Stunned through next target turn end. Recharge5 Dice or actual1-hour rest."
+    },
+    {
+      "name": "Focused Technique",
+      "source": "Compendium.n5eb.subclass.Item.2Hx2p4l0ODQaOf1U",
+      "category": "Talent & Focus",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Two Martial Dice and native usage. Explicit damage type; persistent native CON saves, Talent/Focus keyword-count penalty, 2d12 and1 Weakened per failed point, confirmed GM/owner target application. Weakened duration not invented. Recharge8 Dice or actual8-hour rest."
+    },
+    {
+      "name": "Chakra Frenzy",
+      "source": "Compendium.n5eb.subclass.Item.AYlQ6DT673xQZe8H",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent activation, resistance, STR advantages, per-hit die, Self concentration restriction and confirmed continuation; Fury upgrades and their resource/recharge workflows integrated."
+    },
+    {
+      "name": "Frenzied Assault",
+      "source": "Compendium.n5eb.subclass.Item.ykPdpI1S0LHvdZ0F",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Savage Force confirmed unarmed-damage Taijutsu hit bonus plus journalled incoming melee drawback. Immunity and temporary HP retained. Tyrants Savagery persistent target-specific paid rolls, additive next-hit bonuses, GM review. Multiclass Medical combined-hit interoperation still limited to choosing one workflow, no simultaneous duplicate application."
+    },
+    {
+      "name": "Force Of Rage",
+      "source": "Compendium.n5eb.subclass.Item.gq14aktuBUS0c9eF",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Existing upkeep option linked to paid fresh Frenzy; no duplicate activation die."
+    },
+    {
+      "name": "Relentless Fury",
+      "source": "Compendium.n5eb.subclass.Item.bKo1jQzYOthyVKnc",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed unapplied fatal damage, native CON check before unconsciousness, one die, increasing DC/reset and exact single damage receipt; complex pending Medical hits require GM review."
+    },
+    {
+      "name": "Unstoppable Fury",
+      "source": "Compendium.n5eb.subclass.Item.UFHfLjsVFIN5FmpV",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Frenzy early-end exemption and once-only reroll of original confirmed unarmed die, no bonus-dice reroll."
+    },
+    {
+      "name": "Fury Of The Righteous",
+      "source": "Compendium.n5eb.subclass.Item.91BG4D6z5u8ixoiX",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned Frenzy immunities, existing Fear/Stunned removal on activation and movement suppression guards; no runtime verification."
+    },
+    {
+      "name": "Righteous Fury Technique",
+      "source": "Compendium.n5eb.subclass.Item.I1bY2il9CKZw0LQs",
+      "category": "Righteous Fury",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Four-die confirmed turn-start immunity with next-own-turn deadline and interruption review."
+    },
+    {
+      "name": "Fists Of Iron",
+      "source": "Compendium.n5eb.subclass.Item.OuU2QSchZSC94KZk",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual native unarmed strike only, 1/2/3 Martial Dice by source chart, once-per-turn warning and confirmed GM correction. Full original hit plus bonus applied together."
+    },
+    {
+      "name": "Enhanced Flurry",
+      "source": "Compendium.n5eb.subclass.Item.NgzjFa0zneh5qkmd",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Enhanced Blows paid once for one declared Attack action or Taijutsu cast, first two confirmed successful hits, stored STR saves/Bruised. Dynamic Set-Up chosen owned Finisher, original and partner normal costs, rank-specific Dice, explicit subsequent action/bonus Taijutsu lock. Interrupted pair GM review, no automatic retry. Level20 keyword-granted partner supported with separate reserved Dice."
+    },
+    {
+      "name": "Hand Wraps of Passion",
+      "source": "Compendium.n5eb.subclass.Item.npulDwpHHQVv5MXg",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed long-rest choice and actual wearing; Mighty Blows typed resistance handling and level14 two-applied-hit reaction notice in own combat turn; Guards confirmed single shared HP reduction budget including Psychic, excluding Chakra; Mobility speed preservation and level14 immunities. Terrain/reactions remain manual. Outside-combat two-hit reaction notice is manual."
+    },
+    {
+      "name": "Flaming Finishers",
+      "source": "Compendium.n5eb.subclass.Item.LzR8cETWhL2Wjggt",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid original rank, higher effective rank/upkeep, S/d12 caps, cumulative paid dice and size steps, immunity bypass, first attack advantage OR stored first native save disadvantage. Native feature uses and variable recharge authoritative."
+    },
+    {
+      "name": "Sheer Will",
+      "source": "Compendium.n5eb.subclass.Item.6sXmcErhlNaHkYe8",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned feature casting selection; native Sheer Will use / explicit incoming melee trigger and3 Martial Dice / hostile target confirmation and3 Dice for per-cast Combo or Finisher. Action economy manually adjudicated, selected mode recorded on chat."
+    },
+    {
+      "name": "Indignation",
+      "source": "Compendium.n5eb.subclass.Item.5HUj53OA4cggV6ED",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned feature casting selection; native Sheer Will use / explicit incoming melee trigger and3 Martial Dice / hostile target confirmation and3 Dice for per-cast Combo or Finisher. Action economy manually adjudicated, selected mode recorded on chat."
+    },
+    {
+      "name": "Passinate Flame Technique",
+      "source": "Compendium.n5eb.subclass.Item.7M7McIzZJypOVOhx",
+      "category": "Passionate Flame",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned feature casting selection; native Sheer Will use / explicit incoming melee trigger and3 Martial Dice / hostile target confirmation and3 Dice for per-cast Combo or Finisher. Action economy manually adjudicated, selected mode recorded on chat."
+    },
+    {
+      "name": "Mixed Martial Arts",
+      "source": "Compendium.n5eb.subclass.Item.OrRf5alHz075lHMF",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned stance registry, explicit primary and paid simultaneous non-clan stance, 60s marker; class learning choices link existing or explicitly grant selected original stance. Underlying stance abilities manual by explicit agreement."
+    },
+    {
+      "name": "Combo Breaker",
+      "source": "Compendium.n5eb.subclass.Item.zbLhcPsHHkAHGKQg",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Alpha Counter paid two native unarmed attacks, stored hit confirmation and one STR save; no-reactions marker with manual action economy. Dodge Cancel rolls once, stored target request, first matching attack penalty each turn until target next turn end."
+    },
+    {
+      "name": "Muscle Memory",
+      "source": "Compendium.n5eb.subclass.Item.wMUydzEAcCjbsDIu",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid native Martial Arts vs confirmed passive, optional extra Dice at10+, persistent next-target melee damage dice, original die/type and critical confirmed, common damage request; interrupted rolls GM review. Same-target unspent bonus must be used/ended before repurchase."
+    },
+    {
+      "name": "Stance Blending",
+      "source": "Compendium.n5eb.subclass.Item.6WsAwyTzstReoN7A",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Known additional stance learning and paid up-to-three activation until own next start; per attack ceil half rolled Martial Die, stance-required attack damage adds Taijutsu modifier."
+    },
+    {
+      "name": "Stanced Combat",
+      "source": "Compendium.n5eb.subclass.Item.v5ClHtuBozsbeBdR",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned active stance requirement; paid actual special-action declaration, per-round Attack-action variant/per-turn bonus-action variant. Underlying stance actions and action economy manual by explicit agreement."
+    },
+    {
+      "name": "The Stancer",
+      "source": "Compendium.n5eb.subclass.Item.oawWucIsQtCc563M",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual stance-requirement confirmation; one Martial damage die, resistance ignored/immunity downgraded. Optional mental modifier while actual Blending on attacks with confirmed original Taijutsu ability contribution."
+    },
+    {
+      "name": "Stancer Technique",
+      "source": "Compendium.n5eb.subclass.Item.qjNjYBzfweKWgroV",
+      "category": "Stancer",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "2 Dice via native cast; confirmed actual attack/damage penalties and feature AC bonuses excluded, base AC retained. Ignores imposed costs (Shocked/late surcharges/Fracture/registered imposed increases); consumes next-cast surcharges normally. Voluntary extras/moldings retained."
+    },
+    {
+      "name": "Battle Ready Catalyst",
+      "source": "Compendium.n5eb.subclass.Item.SHS6LtKurWWfieCi",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed integrated worn catalyst marker: Chakra resistance, +1 AC only actually worn Light/Medium armor, Unarmed die on CON Chakra Control. End explicitly on removal."
+    },
+    {
+      "name": "Anti-Chakra Wavelength",
+      "source": "Compendium.n5eb.subclass.Item.93CieilmyU4tcmTf",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent actual two keywords; Chakra Break CON save and timed matching Chakra spending block. Focus Break bonus damage with original, replaces native concentration prompt with STR/verified keyword auto failure and removes native concentrations only when actual HP/THP lost."
+    },
+    {
+      "name": "Disruptive Assault",
+      "source": "Compendium.n5eb.subclass.Item.4i1Xu2yP09jQZo75",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed Unarmed original hit, 1-2 paid Dice, level multiplier and explicitly confirmed matching-jutsu PB; once-per-turn guard/GM exception; Chakra portion goes through native defenses."
+    },
+    {
+      "name": "Catalytic Overdrive!",
+      "source": "Compendium.n5eb.subclass.Item.YegYXMOUgQvWw25f",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid own-start state, timed AC/check/damage/keyword saves, single concentration; actual stored Stunned/Incapacitated short circuit plus confirmed unstructured trigger; Unbreakable Catalyst prevents short circuit."
+    },
+    {
+      "name": "Anti-Shinobi Wavelength",
+      "source": "Compendium.n5eb.subclass.Item.BW3WrtwOuEcPiNhL",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid1-2 extra keywords while actual Overdrive, shared lifetime."
+    },
+    {
+      "name": "Unbreakable Catalyst",
+      "source": "Compendium.n5eb.subclass.Item.tcMvXQtQxBP3VILV",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Prevents automatic and confirmed manual short circuit; lower-level Overdrive ends and blocks ten world-time minutes on stored Incapacitated/Stunned."
+    },
+    {
+      "name": "Ruin Technique",
+      "source": "Compendium.n5eb.subclass.Item.4d2XPXTREcCI51FA",
+      "category": "Ruin",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "2 Dice via native casting; two distinct chosen conditions, once-per-cast actual target request, applies regardless original save but respects condition defenses. No invented duration."
+    },
+    {
+      "name": "Nature Enhanced Combat",
+      "source": "Compendium.n5eb.subclass.Item.vxeiidiCE5aNgWkr",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Permanent release choice, native form/pool, source-specific damage/properties and Earth turn THP; confirmed Wind hit/disengage trigger and learning-requirement context. Original learning/downtime adjudication stays manual."
+    },
+    {
+      "name": "Elemental Combat",
+      "source": "Compendium.n5eb.subclass.Item.I2pfefcWPTl6FObD",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Transient Taijutsu nature keyword/type conversion, confirmed Elemental Rush attacks and Elemental Crush paid hit bonus/recharge. Source integrated, not runtime verified."
+    },
+    {
+      "name": "Elemental Cloak",
+      "source": "Compendium.n5eb.subclass.Item.391woOCDVGoIzhXP",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual form resistance, Earth DR, Lightning Dash attack, saved shared Fire retaliation, Water defensive die and confirmed concrete Wind cloud/gas/mist exclusion. Map physics manual by decision."
+    },
+    {
+      "name": "Elemental Armor",
+      "source": "Compendium.n5eb.subclass.Item.MgUAdTk8sOr9VYMu",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Unlimited enhanced-form duration while automatic1-Die own-start upkeep is available; no Die ends form. Elemental benefits and Water selected Jutsu Save-bonus exclusion integrated."
+    },
+    {
+      "name": "Elemental Recharge",
+      "source": "Compendium.n5eb.subclass.Item.ekjfeRrduD6XiHO9",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed triggering nature damage/rank; native use, healing and Martial Dice recovery with interruption journal."
+    },
+    {
+      "name": "Wrath Of Nature",
+      "source": "Compendium.n5eb.subclass.Item.JaeIAOM1TSg6KNPY",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Fire downgrade and Earth critical protection, Lightning source snapshot and pre-defense interception split, Water selected Jutsu Save-benefit exclusion; confirmed concrete Wind immunities/OA prohibition. Movement, clear zone and map traps manual by decision."
+    },
+    {
+      "name": "Nin-Tai Technique",
+      "source": "Compendium.n5eb.subclass.Item.9YkP1NwlItdjcDdW",
+      "category": "Nin-Tai",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Existing cast dialog confirms exactly one original attack; four Dice and native use, critical threshold10 in native attack config, existing recharge. Not runtime verified."
+    },
+    {
+      "name": "Ironclad",
+      "source": "Compendium.n5eb.subclass.Item.Pl4aUlwnUvTuZej6",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Heavy armor/shield/Armorsmith proficiency and Heavy-Armor movement exception; original shield profile linked/granted once, replacement100 Ryō with confirmed downtime, native seal slots and cached last profile. Only own module/item copies changed."
+    },
+    {
+      "name": "Iron Combat",
+      "source": "Compendium.n5eb.subclass.Item.HB7j5jGAZbrfAMto",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed native defensive reaction cast linked once by Interpose; one Martial Die, Lightning interception split and actual attack outcome. Shield Bash paid declaration, confirmed Shove using original attack result, combined original hit+die and Bruised with one defense calculation."
+    },
+    {
+      "name": "Iron Heart",
+      "source": "Compendium.n5eb.subclass.Item.rBoQhLxjIjej99ag",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Saved unapplied original damage and ally, source-specific Lightning split, native protector defenses and optional disadvantaged original save. Saved receipts and two Iron Fury counters. Movement/non-damage area effects manual; mixed Psychic/Chakra transfers require GM adjudication."
+    },
+    {
+      "name": "Iron Will",
+      "source": "Compendium.n5eb.subclass.Item.t3iphFblZg3CWVrP",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Source-owned Berserk/Dazed immunities. Two additional restricted Iron Heart reactions remain manually managed."
+    },
+    {
+      "name": "Iron Fury",
+      "source": "Compendium.n5eb.subclass.Item.qnKmq10zfAi67rr0",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Native activation/resources, resistance except Psychic and actual shield AC; exactly two native counterattacks against actual attacker after saved completed Iron Heart application, one group per transfer."
+    },
+    {
+      "name": "Iron Flow",
+      "source": "Compendium.n5eb.subclass.Item.spiW8ototOdP2oyZ",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Additional free rolled Martial Die in Iron Heart reduction while actual HP at or below half."
+    },
+    {
+      "name": "Ironclad Technique",
+      "source": "Compendium.n5eb.subclass.Item.J2CWPKJLY4GENlrG",
+      "category": "Ironclad",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actually cast reaction Taijutsu,1–3 Dice, persisted5x roll ordinary source-tracked THP until own start; recharge requires original count at own start. Native resource fields are empty, so separate paid debt is authoritative."
+    },
+    {
+      "name": "Turbulence",
+      "source": "Compendium.n5eb.t7-subclass.Item.DraX1AJCfoiLNps3",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Original installed chart inspected: +10/15/20/25/30 at levels3/6/10/14/17, adds to Enhanced Movement. Active leg-based subclass techniques not yet integrated."
+    },
+    {
+      "name": "Tempest Fury",
+      "source": "Compendium.n5eb.t7-subclass.Item.vY7thlkeHXEvTcvs",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Sleet/Snow/Rain resources and declarations; Hail strongest value with renewed duration. Dodge/Disengage visibility/movement requirements and action economy manual."
+    },
+    {
+      "name": "Gale",
+      "source": "Compendium.n5eb.t7-subclass.Item.z8pUKASKaojaQaW5",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed Dash AC with next-own-start lifetime and native initiative proficiency. Difficult terrain and wall/water walking use actual walking speed; physical movement manual."
+    },
+    {
+      "name": "Hurricane",
+      "source": "Compendium.n5eb.t7-subclass.Item.etR5Z1yi1m4HDNDw",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Movement-save advantage and paid Grappled/Restrained cleanup retained. Confirmed Unarmed leg hit pays2 Dice for chart knockback; actual collision and remaining5-foot steps confirmed, saved common damage/native target DEX saves and confirmed damage/Prone. Physical token movement manual."
+    },
+    {
+      "name": "Tornado",
+      "source": "Compendium.n5eb.t7-subclass.Item.3fb8kXZQL2yHGoJn",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid native attack group bounded by current speed/PB with half ability rounded up; confirmed Dash exposes triple movement budget without changing base speed or attack count."
+    },
+    {
+      "name": "Cyclone",
+      "source": "Compendium.n5eb.t7-subclass.Item.VMh6TnhRQlCfj0ym",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Paid native use, duration, doubled movement/no opportunity attack confirmation, granted free Flurry without separately learned technique. Dodge situational behavior still manual."
+    },
+    {
+      "name": "Typhoon",
+      "source": "Compendium.n5eb.t7-subclass.Item.Zq5xG3xsK8hYxDMh",
+      "category": "Tempest",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Permanent Cyclone choice, native derived Grappled/Restrained immunity, paid confirmed Unarmed/Taijutsu hit adds PB and Prone in shared damage workflow. No runtime proof."
+    },
+    {
+      "name": "Soul Manifestation",
+      "source": "Compendium.n5eb.t7-subclass.Item.60pmfFVggiOPc4l7",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Paid persistent activation, saved activation Force/DEX saves, CHA choices/reach, automatic Incapacitated/death end. Optional Force bonus joined into original hit, twice-per-turn journal."
+    },
+    {
+      "name": "Realized Techniques",
+      "source": "Compendium.n5eb.t7-subclass.Item.sdtUHj5s3eFM9cgV",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Autonomous Defense and Soul Flurry integrated in source; common original damage bridge and persisted receipts; not runtime verified."
+    },
+    {
+      "name": "Oppressive Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.ND7zWXztdY6djn01",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned original Aura profile, native casting ticket with verified half-price order/optional3 Chakra, native concentration and free upkeep on confirmed Soul activation. Saved STR targets, target-end CON repeat, own effects/temporary immunity and confirmed leave workflow. Level10 failed-repeat5-Chakra mental-rank increase preserves original condition lifetime."
+    },
+    {
+      "name": "Soul Heart",
+      "source": "Compendium.n5eb.t7-subclass.Item.YK3bF7URn4JcAqSv",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Reach2, free guarded damage die,10-foot Taijutsu usage-clone range, native mental-condition attack/save penalty exclusion, confirmed own-condition conversion. Complex custom range and outside-combat condition expiry manual."
+    },
+    {
+      "name": "Shattering Blast",
+      "source": "Compendium.n5eb.t7-subclass.Item.Dxez3q75xaVlytvt",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Saved two-Die/ten-Chakra defensive reaction, original-damage reduction bridge, child Soul activation without second activation payment, native activation saves and manual movement. Source integrated, no runtime proof."
+    },
+    {
+      "name": "Serene Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.QGdCYF9OCjjaPAyf",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Native activation, soul-specific bonuses and one-minute Soul Heart; Charm/Fear repeat-save aura until next target own start; delayed Weakened aftermath. Soul-only blindsight remains conditional reminder."
+    },
+    {
+      "name": "Soul Shatter",
+      "source": "Compendium.n5eb.t7-subclass.Item.Rx3CfaSY1RDWmDzr",
+      "category": "Realized Soul",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Free base Soul activation; optional paid4-Dice5-rank actual Taijutsu Fear/Charm replacement, next target-end lifetime and nonextendable marker."
+    },
+    {
+      "name": "Martial Focus",
+      "source": "Compendium.n5eb.t7-subclass.Item.rwoCCakMi1zLYfRD",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual weapon proficiency/focus and source weapon profile selection for unarmed or confirmed Taijutsu base damage/attack bonus, optional Versatile; original profiles retained. Quarterstaff original base dice, fixed1d6 Nunchaku and confirmed Tonfa Trip workflows."
+    },
+    {
+      "name": "Armed Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.M51MNWZhXMuhfLdj",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid Seismic Strikes, actual knockback-inhibited critical range and confirmed movement; Leviathan GM request rolls actual ally unarmed profile with source attack bonus and source Martial Die, saved joint damage once."
+    },
+    {
+      "name": "Combat Versatility",
+      "source": "Compendium.n5eb.t7-subclass.Item.Nub4G84Y6goeO7vE",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent once-per-turn Combo-to-Bukijutsu-Finisher ticket, native usage clone converted to actual Taijutsu, original unchanged; optional rank-priced first damage class-level bonus; paid/error states prevent replay. Actual Combo/action economy confirmed."
+    },
+    {
+      "name": "Break 'em Down",
+      "source": "Compendium.n5eb.t7-subclass.Item.BG4t4V0en78KqtZs",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actual Specialist bludgeoning hit,2 Dice, saved native CON save and one-minute Dazed/Stunned/Paralyzed escalation with target-end repeat saves."
+    },
+    {
+      "name": "Martial Expert",
+      "source": "Compendium.n5eb.t7-subclass.Item.w6ohO9xFJRfQc7Fw",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid focus-specific state and Master extension, Nunchaku/Tonfa counters; Quarterstaff native damage bypasses reductions while preserving immunity/THP, first original target save has disadvantage."
+    },
+    {
+      "name": "Master of Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.ielIaREqscdjkINe",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Permanent focus with GM-only correction and actual equipment gates; paid Expert extension and underlying focus actions integrated."
+    },
+    {
+      "name": "Martial Combat Technique",
+      "source": "Compendium.n5eb.t7-subclass.Item.CIL4bxpIrDhTsjaU",
+      "category": "Martial Combat",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "3 Dice in common payment, actual equipped Specialist weapon and attack activity; native D20 result only natural1 misses, no inflated total/AC."
+    },
+    {
+      "name": "Fancy Footwork",
+      "source": "Compendium.n5eb.t7-subclass.Item.HvZyOwUX7Pxg4SSP",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Reach1 and confirmed actual grapple linking. Exchanging an attack and resolving unstructured grapple comparisons remain manual by agreement."
+    },
+    {
+      "name": "Submissions",
+      "source": "Compendium.n5eb.t7-subclass.Item.doddkU2bIEQfnS7S",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual successful Grapple confirmed; three basic techniques, native damage, source-specific anchors and preserved unrelated effects."
+    },
+    {
+      "name": "Ground Fighting",
+      "source": "Compendium.n5eb.t7-subclass.Item.gBGQnuIuNVVrBdgx",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed critical-unarmed grapple,5-foot standing cleanup preserving unrelated conditions, contextual pure-Prone attack-roll correction. Movement and actual grapple comparison manual."
+    },
+    {
+      "name": "Ridiculous Strength",
+      "source": "Compendium.n5eb.t7-subclass.Item.KVZgFl2A6aVklm49",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Actual linked owned grapples drive strongest size AC and STR/DEX save advantage; stored current-grapple escape block marker; unstructured escape adjudication manual."
+    },
+    {
+      "name": "Iron Grip",
+      "source": "Compendium.n5eb.t7-subclass.Item.Z74Crtcj8bYYHfWh",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Three advanced techniques with actual external grapple results/native Twister STR save, ignored Grappled/Restrained immunity, source-owned conditions and saved target-turn escape/damage events."
+    },
+    {
+      "name": "Chain Grab",
+      "source": "Compendium.n5eb.t7-subclass.Item.cs0VLGaojlUXpR52",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed sequential2-Die follow-up replaces only prior submission ongoing effect, keeps prior damage, and blocks native HS while actual linked grapple persists."
+    },
+    {
+      "name": "The God of Grappling",
+      "source": "Compendium.n5eb.t7-subclass.Item.bV7vDiqxiTJPe0qB",
+      "category": "Grappler",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid2-Die confirmed movement/advantaged actual grapple, free learned submission, and unarmored CON DR. No invented opposed-grapple rule."
+    },
+    {
+      "name": "The Prophecy",
+      "source": "Compendium.n5eb.t7-subclass.Item.818IWRMdcJcGROcO",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Insight proficiency, confirmed numeric penalty removal/disadvantage suppression, optional WIS-for-DEX Taijutsu feature substitution without altering ordinary DEX saves."
+    },
+    {
+      "name": "Source Code",
+      "source": "Compendium.n5eb.t7-subclass.Item.OuhOIgUEbivjAtSB",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid Bullet Time extra d20 / exact next-save bonus, preserved original rolls, order-independent Flurry Guards; Deconstruction consecutive advantages. There is no Chakra DC10 minus Martial Die, exact confirmed Jutsu effects, optional paid Deconstruction override of managed protected concentration. Source Code movement marker after native Taijutsu; explicit Martial Technique trigger for unstructured use; OA confirmation and doubled native jump height. Dodge action requirements remain manual."
+    },
+    {
+      "name": "Neo",
+      "source": "Compendium.n5eb.t7-subclass.Item.Vb9T7LmkkwBuMyjS",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Existing paid timed perception plus per-roll explicitly confirmed actual hostile creatures within5ft, threshold2 and matching Unarmed/Taijutsu attack/damage bonuses, Bukijutsu excluded. No assumed alliance from disposition."
+    },
+    {
+      "name": "Deconstruction of Reality",
+      "source": "Compendium.n5eb.t7-subclass.Item.kAd3pvZVsATKEBs2",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Typed Taijutsu double damage against actual construct/THP or confirmed structure; Bullet Time consecutive-roll benefits and paid No-Chakra managed concentration-protection override."
+    },
+    {
+      "name": "Freedom from the Machine",
+      "source": "Compendium.n5eb.t7-subclass.Item.nfLxduHabHjMfkim",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Shared WIS-mod allowance for free Will/Persistence, long/full-rest reset. Separate2-Dice60-second flight at own turn,1-Die renewal only at confirmed expired duration; dynamic walking-speed flight and persistent interrupted-payment review."
+    },
+    {
+      "name": "The One",
+      "source": "Compendium.n5eb.t7-subclass.Item.HXHFLmerXXMOnVQs",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Saved actual0-HP/death trigger, native pool/recovery/overflow, one-minute WIS/immunities/movement/Neo/truesight, eight-hour Unconscious aftermath. Native Insight defense; exact stopped-save application or confirmed specific hit/effect link, no broad deletion of other hits."
+    },
+    {
+      "name": "Revelations, Reloaded",
+      "source": "Compendium.n5eb.t7-subclass.Item.oCqwycy0cSRRuiKI",
+      "category": "Matrix",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Native death-save advantage and confirmed exact hostile instant-death/massive-damage-only effect removal; normal HP and ordinary failed death saves preserved."
+    },
+    {
+      "name": "Dragon Soul",
+      "source": "Compendium.n5eb.t7-subclass.Item.14oG9ToJgcgPFclY",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Owned actual attack-Ninjutsu learning choices/level replacement/limits, transient Taijutsu conversion and Finisher dice; original-item API cost preview uses converted copy. Optional native Martial Arts for Chakra Control, nonstacking half learning/development time calculator; actual learning/downtime booking manual."
+    },
+    {
+      "name": "Limit Breaking Combat",
+      "source": "Compendium.n5eb.t7-subclass.Item.OQcBCaY5Pr0ZxSou",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Instinctual Strikes confirmed additive AC exclusion and paid state; native Inversion cast ticket, ceil half base rank before discounts, shared Martial pool, saved native defense roll and confirmed raw-area reduction/save outcome/one-time damage. Map protected space manual."
+    },
+    {
+      "name": "Instinctual Defiance",
+      "source": "Compendium.n5eb.t7-subclass.Item.oNVT8dxqhOjKypMl",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Native1/2 uses, explicit actual trigger/effects, exact selected-effect removal; stored original caster and attack advantage through next own end. Movement remains manual."
+    },
+    {
+      "name": "Autonomous Ultra Instinct",
+      "source": "Compendium.n5eb.t7-subclass.Item.sWKRdF3hs9VlxPpp",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Persistent signs, native or2 Martial+5 Chakra repeats, zero-Chakra end; offensive pool/ability/margin/counter, defensive movement/THP/DEX die/attack penalty, evaluated original save plus paid bonus dice without reroll, protected critical handling. Mixed protected/unprotected target critical rolls remain manual."
+    },
+    {
+      "name": "Mystic Awakening",
+      "source": "Compendium.n5eb.t7-subclass.Item.o1i47F9T0urYC56O",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Own native use only, actual Bloodied trigger and exact triggering-effect selection; child Ultra Instinct without ordinary use/Dice payment; Finisher original die/+1 DC, molding-lock exception. Negated attacks/immediate turn manual, no retroactive HP arithmetic."
+    },
+    {
+      "name": "Kami no Ryōiki",
+      "source": "Compendium.n5eb.t7-subclass.Item.bjzJ6HvCDEVvISBO",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Both-sign activation gated by actual feature; underlying Ultra Instinct workflows integrated."
+    },
+    {
+      "name": "The Ultimate Battle",
+      "source": "Compendium.n5eb.t7-subclass.Item.Xn0eBS4MAsuQSmaz",
+      "category": "Ultimate Battle",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Two-minute Ultra duration and ceil-half Limit Breaking Martial costs for both Strikes and Inversion."
+    },
+    {
+      "name": "Technical Technique",
+      "source": "Compendium.n5eb.class.Item.0fiiTQYNOvYThIk4",
+      "category": "Choose Martial Techniques",
+      "status": "EXISTING_RETAINED",
+      "note": "Existing casting option retained; shared Martial pool."
+    },
+    {
+      "name": "Flurry Of Blows",
+      "source": "Compendium.n5eb.class.Item.1iR8tYVCIIHz5uIc",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actual Attack Action; one paid die, persistent group of 1/2/3 native unarmed attacks. Cancellation retains unused attack; interrupted roll requires review."
+    },
+    {
+      "name": "Patient Movement",
+      "source": "Compendium.n5eb.class.Item.2eopPgngkIW8sysY",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Confirmed one-die payment and persistent current-turn reminder. Reaction restrictions remain manual."
+    },
+    {
+      "name": "Brutal Taijutsu",
+      "source": "Compendium.n5eb.class.Item.3YwhTNFW1orq257S",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Explicit no-original-ability confirmation; once-per-cast first damage dice."
+    },
+    {
+      "name": "Devastating Taijutsu",
+      "source": "Compendium.n5eb.class.Item.79jyyk3MwbMyRGJq",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid casting option; exactly one recorded applied hit and original target per cast, confirmed mixed damage shares, floor half on failed native DEX save/zero on success, persistent GM target request."
+    },
+    {
+      "name": "Brutal Technique",
+      "source": "Compendium.n5eb.class.Item.JQKqSfpTfwdI1gsV",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Explicit original ability contribution; replace with STR+DEX or ceil half modifier."
+    },
+    {
+      "name": "Precise Taijutsu",
+      "source": "Compendium.n5eb.class.Item.JX0q8zvWSXSyqUw6",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Native attack bonus, merged Martial Die payment."
+    },
+    {
+      "name": "Flurry Of Guards",
+      "source": "Compendium.n5eb.class.Item.MJNrbAMKHi3FoJMb",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed original melee card; damage uses one die only, attack up to 1/2/3 by level. Effective attack result journal without overwriting original roll; full typed damage reduction before native defenses, duplicate application guard and interruption review."
+    },
+    {
+      "name": "Precise Technique",
+      "source": "Compendium.n5eb.class.Item.MpuZlqaEay6pP17c",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid keyword; explicitly confirmed numerical penalty compensation per native attack. Disadvantage retained."
+    },
+    {
+      "name": "Raw Technique",
+      "source": "Compendium.n5eb.class.Item.UzTBMAFK316zUONb",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "After single defense calculation full damage to both HP/tempHP, no extra overflow."
+    },
+    {
+      "name": "Patient Defense",
+      "source": "Compendium.n5eb.class.Item.V6C5ldzhyAE9hpfD",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Confirmed one-die payment and persistent Dodge declaration; actual visibility/movement prerequisites and Dodge rolls remain manual."
+    },
+    {
+      "name": "Step Of Darkness",
+      "source": "Compendium.n5eb.class.Item.ZNrkcGfDO3NtvZEh",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_WITH_MANUAL_BOUNDARIES_UNTESTED",
+      "note": "Confirmed own-turn payment and optional native Stealth roll. Hidden state and observer perception remain explicit manual adjudication."
+    },
+    {
+      "name": "Step Of The Wind",
+      "source": "Compendium.n5eb.class.Item.byUEOuDEhZ6JgeHU",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed own-turn Dash/Disengage choice and one die; prepared jump distance doubled through current turn end. Movement/reactions manual."
+    },
+    {
+      "name": "Patient Offence",
+      "source": "Compendium.n5eb.class.Item.e20H9695Tf5t5Bqy",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actual missed melee attack and exact source creature; one paid native unarmed counterattack, per-creature/per-turn limit with GM correction."
+    },
+    {
+      "name": "Step Of The Stars",
+      "source": "Compendium.n5eb.class.Item.gZWD36AyXUX1roTt",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed actual opportunity attack; one paid die and persistent group of two native unarmed attacks; reactions manual."
+    },
+    {
+      "name": "Furious Taijutsu",
+      "source": "Compendium.n5eb.class.Item.ovNtBrrvDzh0w75j",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "At most two paid additional attacks, two dice each, confirmed original attack count >=2. Attack/action execution remains manual."
+    },
+    {
+      "name": "Devastating Technique",
+      "source": "Compendium.n5eb.class.Item.oyBcD1TFDlBhk9J7",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid keyword and critical/reaction restriction displayed on damage card; reactions remain manual."
+    },
+    {
+      "name": "Raw Taijutsu",
+      "source": "Compendium.n5eb.class.Item.p2ictmqgqqr0tmWC",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Ranked DC increase with combined Martial pool validation."
+    },
+    {
+      "name": "Furious Technique",
+      "source": "Compendium.n5eb.class.Item.qtIG4RH3VtDcQaMJ",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Paid keyword; explicitly selected Jutsu defense effects disabled only in a transient target calculation clone, real target effects retained. Persistent full-hit request."
+    },
+    {
+      "name": "Step Of The Moon",
+      "source": "Compendium.n5eb.class.Item.w6OxrKpkdW266OCW",
+      "category": "Choose Martial Techniques",
+      "status": "SOURCE_INTEGRATED_UNTESTED",
+      "note": "Confirmed source rank, own-turn trigger and selected managed condition. E/unknown ranks not invented."
+    }
+  ],
+  "staticVerification": {
+    "modules": 317,
+    "result": "Syntax and static module linking passed, no evaluation. Subsequent guard-only edits syntax checked separately. No runtime evidence.",
+    "gameplay": "NOT_RUN_USER_REQUEST",
+    "integration": "NOT_RUN_USER_REQUEST",
+    "date": "2026-10-20"
+  },
+  "preparationSafety": "Opt-in preparation journal for Taijutsu hit, Focus and Devastating requests: each random step persisted, cancelled later dialogs reuse saved earlier rolls, interrupted random steps require GM review. Other class workflows unchanged.",
+  "statusCounts": {
+    "PARTIAL_SOURCE_UNTESTED": 22,
+    "EXISTING_RETAINED": 2,
+    "SOURCE_INTEGRATED_UNTESTED": 63,
+    "SOURCE_CORRECTION_UNTESTED": 2,
+    "NATIVE_RETAINED": 2,
+    "MANUAL_ACTION_ECONOMY": 1,
+    "NOT_YET_INTEGRATED": 43
+  },
+  "moduleVersion": "0.17.0",
+  "integrationTests": "NOT_RUN_USER_REQUEST",
+  "manualBoundaries": [
+    "Action economy; map movement/physics and contextual alliances/ranges",
+    "Confirmed actual Grapple/Trip/Shove comparisons where native rules are not structured",
+    "Base stance abilities intentionally retained as manual by agreement",
+    "Unstructured foreign/compound effects and custom weapon/summon profiles",
+    "Actual learning prerequisites and downtime bookkeeping; module exposes verified time/ability context",
+    "Mixed protected/unprotected critical rolls and mixed Psychic/Chakra Iron Heart transfers",
+    "Concurrent special-hit workflows across classes require one agreed combined GM application, not duplicate applications"
+  ]
+}

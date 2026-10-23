@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {genjutsuEnabled} from '../casting/genjutsu-context.mjs';
 import {readPendingCastingCosts,activePendingCastingCosts} from '../casting/pending-costs.mjs';
@@ -20,6 +21,6 @@ export function installGenjutsuPendingCosts(game){
   }
   const note=document.createElement('small');note.textContent='Aktive Zuschläge addieren sich ganz am Ende. Außerhalb des Kampfes oder nach geänderter Initiative beendet der GM sie manuell. Unterhalt bleibt unverändert.';card.append(note);host.prepend(card);
  };
- Hooks.on('renderCharacterActorSheet',render);Hooks.on('renderNPCActorSheet',render);
+ registerClassSheetPanel(game,'genjutsu','.n5ese-genjutsu-costs','Gespeicherte Kostenzuschläge',render);Hooks.on('renderNPCActorSheet',render);
  for(const hook of ['updateWorldTime','updateCombat','deleteCombat'])Hooks.on(hook,()=>{if(!genjutsuEnabled(game))return;for(const actor of new Set([...game.actors,...(globalThis.canvas?.tokens?.placeables??[]).map(t=>t.actor)].filter(Boolean)))if(actor.getFlag(MODULE_ID,'pendingCastingCosts')?.length)actor.sheet?.render(false);});
 }

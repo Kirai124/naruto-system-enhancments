@@ -1,3 +1,4 @@
+import {registerMedicalPanel} from './medical-window.mjs';
 import {linkMedicalCompanion} from '../foundry/medical-companions.mjs';
 import {summonSpiritualWeapon} from '../foundry/medical-spiritual-weapons.mjs';
 import {useMedicalProtector,resolveMedicalProtector} from '../foundry/medical-protector.mjs';
@@ -15,6 +16,18 @@ import {medicalForm,activateMedicalForm,endMedicalForm} from '../foundry/medical
 import {elementalEmpowerment,activateElementalEmpowerment,endElementalEmpowerment} from '../foundry/medical-elemental.mjs';
 
 const button=(host,label,fn,enabled=true)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=!enabled;b.addEventListener('click',async()=>{b.disabled=true;try{await fn();}catch(error){ui.notifications.warn(error.message);}finally{b.disabled=!enabled;}});host.append(b);return b;};
+const actionLabels={
+ 'touch-terror':'nächsten Gift-Save erschweren','poison-potency':'nächsten Einsatz verstärken',
+ 'diamond-echoes':'Deckung durch Echoes','diamond-kind-soul':'Kind Soul · stabilisieren',
+ 'restoration-mark':'Struktur markieren','restoration-collision':'Struktur bewegen / Kollision',
+ 'universal-restoration':'zerstörte Struktur wiederherstellen','unbreakable-aura':'Aura-Heilung am Zugbeginn',
+ 'hex-critical':'kritischen Treffer abwehren','shaman-hex':'Ziel mit Hex markieren',
+ 'draining-hex-death':'Tod eines Hex-Ziels','draining-counter':'Gegenangriff und Heilung',
+ 'transmuted-construct':'Construct','transmuted-demon':'Demon','transmuted-plant':'Plant',
+ 'transmuted-monstrosity':'Monstrosity','transmuted-mutant':'Mutant',
+ 'plague-envenomed':'Envenomed','plague-corroded':'Corroded'
+};
+const clinicalActionLabel=rule=>{const suffix=actionLabels[rule.id.split('.').at(-1)];return rule.name+(suffix?' · '+suffix:'');};
 function renderRequests(game,actor,host){
  const list=actor.getFlag(MODULE_ID,MEDICAL_ACTIONS)??[],workflow=medicalHealingWorkflow(game),requests=workflow.list(actor);
  for(const entry of list.filter(e=>!['applied','resolved','cancelled'].includes(e.status))){
@@ -33,12 +46,11 @@ function renderRequests(game,actor,host){
  }
 }
 export function installMedicalControls(game){
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
-  const root=html instanceof HTMLElement?html:sheet.element,actor=sheet.actor??sheet.document;root?.querySelector('.n5ese-medical')?.remove();if(!medicalEnabled(game)||!medicalLevel(actor))return;
-  const host=root?.querySelector('section[data-tab="features"]');if(!host)return;
+ registerMedicalPanel(game,'actions','Klassenaktionen & Einstellungen',actor=>{
+  if(!medicalEnabled(game)||!medicalLevel(actor))return;
   const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-medical';const h=document.createElement('h3');h.textContent='Medical-Nin';panel.append(h);
-  const counts=document.createElement('p');counts.textContent=['Chakra Scalpel','Preserve/Take Life','Channeled Healing','Natural Healing','Preserve Life: Mending Presence'].flatMap(name=>{const f=medicalFeature(actor,name);return f?[name+': '+f.system.uses.value+'/'+f.system.uses.max]:[];}).join(' · ');panel.append(counts);
   const add=(label,fn)=>button(panel,label,fn,actor.isOwner);const origin=medicalFeatureOrigin(actor);if(origin){const p=document.createElement('p');p.textContent='Medical-Feature-Ursprung: '+origin.name+'; Ressourcen beim Wirker. Tatsächliche Reichweite/Berührung vom Begleiter prüfen.';panel.append(p);add('Wieder selbst als Medical-Ursprung handeln',()=>actor.unsetFlag(MODULE_ID,'medicalFeatureOrigin'));}
+  if(medicalFeature(actor,'Never On The Front Lines')){const p=document.createElement('p');p.textContent='Never On The Front Lines: Innerhalb von 10 Fuß um einen Feind ist Dash als Bonusaktion möglich. Bewegung und Aktionsökonomie manuell bestätigen.';panel.append(p);}
   add('Medical-Attribut · '+medicalAbility(actor).toUpperCase(),async()=>{const div=document.createElement('div'),select=document.createElement('select');select.name='ability';for(const value of ['native','wis',...(medicalFeature(actor,'Fortifying Scripture','Spiritual Scribe')?['cha']:[])]){const o=document.createElement('option');o.value=value;o.textContent=value;if(value===medicalAbility(actor))o.setAttribute('selected','');select.append(o);}div.append(select);const choice=await foundry.applications.api.DialogV2.wait({window:{title:'Medical-Attribut · Vorgabe für den Castingdialog'},content:div.innerHTML,buttons:[{action:'save',label:'Vorgabe speichern',callback:(_e,b)=>b.form.elements.ability.value}],rejectClose:false});if(choice)await actor.setFlag(MODULE_ID,'medicalAbility',choice);});
   if(medicalFeature(actor,'Tainted Hands','Black Medicine'))add('Tainted Hands · 1/2 einmal neu würfeln: '+(actor.getFlag(MODULE_ID,'medicalTaintedHands')?'an':'aus'),async()=>{await actor.setFlag(MODULE_ID,'medicalTaintedHands',!actor.getFlag(MODULE_ID,'medicalTaintedHands'));});
   if(medicalFeature(actor,'Competent Combatant','Combat Medic'))add('Competent Combatant · WIS statt DEX für AC: '+(actor.getFlag(MODULE_ID,'medicalWisdomAC')?'an':'aus'),async()=>{await actor.setFlag(MODULE_ID,'medicalWisdomAC',!actor.getFlag(MODULE_ID,'medicalWisdomAC'));actor.prepareData();actor.sheet?.render(false);});
@@ -53,16 +65,16 @@ export function installMedicalControls(game){
   if(medicalFeature(actor,'Chakra Scalpel')){
    if(medicalFeature(actor,'Biological Knowledge','Chakra Scalpel Specialist'))add('Scalpel-Attribut · '+(actor.getFlag(MODULE_ID,'medicalScalpelAbility')??'wis').toUpperCase(),async()=>{const next=actor.getFlag(MODULE_ID,'medicalScalpelAbility')==='int'?'wis':'int';if(await foundry.applications.api.DialogV2.confirm({window:{title:'Biological Knowledge · Scalpel-Attribut'},content:'<p>Scalpel-Angriff und -Schaden künftig mit '+next.toUpperCase()+' berechnen? Allgemeine Medical-Jutsu bleiben bei ihrer eigenen Auswahl.</p>',rejectClose:false}))await actor.setFlag(MODULE_ID,'medicalScalpelAbility',next);});
    const state=scalpelState(game,actor),p=document.createElement('p');p.textContent=state?(state.sabre?'Chakra Sabre':'Chakra Scalpel')+' aktiv · '+Math.ceil(state.expiresAt-game.time.worldTime)+' s verbleibend':'Chakra Scalpel inaktiv';panel.append(p);
-   if(state){add('Scalpel · nativer Angriff',()=>attackMedicalScalpel(game,actor));add('Scalpel beenden',()=>endMedicalScalpel(game,actor));if(medicalLevel(actor)>=7)add('Scalpel · chirurgische Condition-Entfernung',()=>requestMedicalClinical(game,actor,'medical.scalpel-surgery'));}
+   if(state){add('Scalpel · nativer Angriff',()=>attackMedicalScalpel(game,actor));add('Scalpel beenden',()=>endMedicalScalpel(game,actor));if(medicalLevel(actor)>=7&&!game.combat?.started)add('Scalpel · chirurgische Condition-Entfernung',()=>requestMedicalClinical(game,actor,'medical.scalpel-surgery'));}
    else{add('Chakra Scalpel aktivieren',()=>activateMedicalScalpel(game,actor));if(medicalFeature(actor,'Chakra Sabre','Chakra Scalpel Specialist'))add('Chakra Sabre aktivieren · 5 Charges',()=>activateMedicalScalpel(game,actor,{sabre:true}));}
    const journal=actor.getFlag(MODULE_ID,'medicalScalpel');if(game.user.isGM&&['paying','review'].includes(journal?.status))add('GM: Scalpel-Zahlung prüfen',async()=>{if(await foundry.applications.api.DialogV2.confirm({window:{title:'Scalpel-Zahlung prüfen'},content:'<p>Charge-Verbrauch und Aktivierung manuell geprüft? Ohne erneuten Verbrauch schließen.</p>',rejectClose:false}))await actor.setFlag(MODULE_ID,'medicalScalpel',{...journal,status:'ended'});});
   }
   if(medicalFeature(actor,'Elemental Beginning','Elemental Medic'))add('Elemental Medic · Nature Releases',()=>configureMedicalReleases(game,actor));
   if(medicalFeature(actor,'Elemental Traces','Elemental Medic')&&medicalLevel(actor)>=5){const state=actor.getFlag(MODULE_ID,'medicalElementalEmpowerment');if(elementalEmpowerment(game,actor))add('Elemental Traces · aktiven Zugbonus beenden',()=>endElementalEmpowerment(game,actor));else if(['paying','review'].includes(state?.status)){if(game.user.isGM)add('GM: Elemental-Traces-Zahlung prüfen',()=>endElementalEmpowerment(game,actor));}else add('Elemental Traces · Zugverstärkung aktivieren',()=>activateElementalEmpowerment(game,actor));}
   for(const rule of MEDICAL_SELECTIONS)if(medicalFeature(actor,rule.name,rule.category))add(rule.name+' · Medical-Jutsu wählen',()=>configureMedicalSelection(game,actor,rule.id));
-  for(const rule of ownedMedicalClinicalRules(actor).filter(r=>!r.cast&&!r.preserveTrigger&&r.id!=='medical.scalpel-surgery'))add(rule.name+' · '+rule.id.split('.').at(-1),()=>requestMedicalClinical(game,actor,rule.id));
+  for(const rule of ownedMedicalClinicalRules(actor).filter(r=>!r.cast&&!r.scalpel&&!r.preserveTrigger&&r.id!=='medical.scalpel-surgery'))add(clinicalActionLabel(rule),()=>requestMedicalClinical(game,actor,rule.id));
   const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Gespeicherte Medical-Vorgänge';details.append(summary);renderRequests(game,actor,details);if(details.children.length>1)panel.append(details);
-  host.prepend(panel);
+  return panel;
  });
  Hooks.on('dnd5e.renderChatMessage',(message,html)=>{
   html.querySelector('.n5ese-medical-chat')?.remove();if(!medicalEnabled(game))return;

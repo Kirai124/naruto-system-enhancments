@@ -1,3 +1,15 @@
+# 0.17.1 · tatsächlich geprüfter Zwischenstand
+
+In test12 / Foundry 14.364 / N5eB 3.1.1 alle vier Klassenfenster gerendert: je ein Launcher, keine alten großen Aktionsflächen, Öffnen ohne Chakra-Verbrauch. Ninjutsu-Shard im Fenster bestätigt: Zähler 0 → 1, Zustand und Anzeige aktualisiert. Suche ohne Treffer geprüft, Ninjutsu-Darstellung visuell geprüft. Native Casts auf vier separaten Klassenfiguren: alle erfolgreich, je genau 5 Chakra und Chatkarte; Taijutsu-Folgeangriff und beide Heilwürfe ausgeführt. Der gemeldete Fehler der älteren Online-Version ist damit nicht online reproduziert oder nachweislich behoben.
+
+`node --test tests/class-windows.test.mjs tests/medical.test.mjs`: 17/17 bestanden. Gesamttest: 204/238 bestanden, 34 bekannte Fehlschläge; gegenüber Commit 2b02d88 keine neu fehlgeschlagenen Tests. Syntax und statische ESM-Verknüpfung: 361 Module erfolgreich. Kein vollständiger Fähigkeitstest. Details: [Zwischenstand](ZWISCHENSTAND-0.17.1.md).
+
+## Historische Prüfstände
+
+# Unveröffentlicht · Medical-QA 23.10.2026
+
+Lokale Tests sind inzwischen ausdrücklich freigegeben. Medical-Kernabläufe wurden in test12 tatsächlich geprüft und gefundene Fehler korrigiert: [Prüfbericht](MEDICAL-QA.md). 14/14 gezielte Tests erfolgreich; Gesamttest 201/235, 34 bereits im Ausgangsstand vorhandene Fehlschläge bleiben offen. Kein vollständiger Klassentest. Folgende historische Aussagen gelten für die jeweils damaligen Stände.
+
 # 0.17.0 · Taijutsu-Gruppenfassung, ausdrücklich ungeprüft
 
 358 JavaScript-Module: Syntax erfolgreich; statische Importverknüpfung erfolgreich, ohne Module auszuwerten (21.10.2026). Diff-Prüfung ohne Fehler. Ausschließlich statische Kontrollen; keine Unit-, Gameplay-, Browser-, visuellen oder Foundry-Integrationstests auf Nutzerwunsch. Keine Test-Actors oder Weltdaten verändert. Installation und Dateihashes sind kein Funktionsnachweis.

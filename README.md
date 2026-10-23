@@ -2,7 +2,9 @@
 
 Optionale Erweiterungen für **N5eB – Naruto 5e Benni**, ohne Änderungen am Originalsystem.
 
-**Version 0.17.0 · Foundry VTT 14.364 · N5eB 3.1.1**
+**Version 0.17.1 · Foundry VTT 14.364 · N5eB 3.1.1**
+
+**Zwischenversion 0.17.1:** vier farbige Klassenfenster und bestätigte lokale Basis-Casts. Enthält die Medical-Korrekturen aus 2b02d88. Vollständige Gruppenprüfung steht aus. [Prüfstand und Veröffentlichung](ZWISCHENSTAND-0.17.1.md).
 
 Die vier vereinbarten Klassen sind als Implementierungsfassung integriert. **Die gemeinsame Spielprüfung durch die Gruppe steht aus.** Automationen sind standardmäßig deaktiviert und werden gezielt in den Moduleinstellungen eingeschaltet. Bekannte Grenzen sind dokumentiert; Aktionsökonomie bleibt manuell.
 

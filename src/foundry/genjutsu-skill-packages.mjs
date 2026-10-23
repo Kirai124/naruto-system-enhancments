@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from '../ui/class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {genjutsuEnabled,ownedGenjutsuFeature} from '../casting/genjutsu-context.mjs';
 import {refreshActorPreparation} from './actor-preparation.mjs';
@@ -35,7 +36,7 @@ export function installGenjutsuSkillPackages(game,CharacterModel,EffectClass){
   }
   return prepare.apply(this,args);
  };
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
+ registerClassSheetPanel(game,'genjutsu','.n5ese-genjutsu-skill-packages','Fertigkeiten & Sprachen',(sheet,html)=>{
   const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-genjutsu-skill-packages')?.remove();if(!genjutsuEnabled(game))return;const available=packages.filter(r=>owned(actor,r)),host=root?.querySelector('section[data-tab="features"]');if(!available.length||!host)return;const panel=document.createElement('details');panel.className='n5ese-ninjutsu-card n5ese-genjutsu-skill-packages';const summary=document.createElement('summary');summary.textContent='Genjutsu · Skill-Lernentscheidungen';panel.append(summary);
   for(const rule of available){const feature=owned(actor,rule),state=selection(actor,feature),b=document.createElement('button');b.type='button';b.textContent=rule.name+' · '+(state?(state.hadAll?game.i18n.localize(CONFIG.DND5E.skills[state.skill].label)+' Mastery 1':'Proficiencies bestätigt'):'Lernstand / Skill wählen');b.disabled=!actor.isOwner||!!state&&!game.user.isGM;b.addEventListener('click',()=>configureSkillPackage(game,actor,rule.name).catch(e=>ui.notifications.warn(e.message)));panel.append(b);}host.prepend(panel);
  });

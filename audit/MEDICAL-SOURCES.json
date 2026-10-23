@@ -1,0 +1,2639 @@
+{
+  "date": "2026-10-17",
+  "system": "n5eb 3.1.1",
+  "classSource": "Compendium.n5eb.class.Item.55ZGaTkWJHT0mQmp",
+  "subclasses": [
+    {
+      "name": "Shaman",
+      "source": "Compendium.n5eb.subclass.Item.P6XHEByf4QRcPyj3"
+    },
+    {
+      "name": "Transmuter",
+      "source": "Compendium.n5eb.subclass.Item.X0PejcpG9Ao6tb3k"
+    },
+    {
+      "name": "Combat Medic",
+      "source": "Compendium.n5eb.subclass.Item.lxlPcwqaWAr3lGdJ"
+    },
+    {
+      "name": "Natural Medicine",
+      "source": "Compendium.n5eb.subclass.Item.ovRYMNkdvIrUAll1"
+    },
+    {
+      "name": "Black Medicine",
+      "source": "Compendium.n5eb.subclass.Item.rgfPmA8TKkb3pfIT"
+    },
+    {
+      "name": "Adept Medic",
+      "source": "Compendium.n5eb.subclass.Item.xoFpDb0hu4neLrfZ"
+    },
+    {
+      "name": "Elemental Medic",
+      "source": "Compendium.n5eb.t7-subclass.Item.DNSZlMimdPD5VIDQ"
+    },
+    {
+      "name": "Counselor-Nin",
+      "source": "Compendium.n5eb.t7-subclass.Item.doWDbXrZsG9rjLwi"
+    },
+    {
+      "name": "Chakra Scalpel Specialist",
+      "source": "Compendium.n5eb.t7-subclass.Item.dyQRlAK3HqpQekAm"
+    },
+    {
+      "name": "Diamond Heart",
+      "source": "Compendium.n5eb.t7-subclass.Item.f9D3dAZmPOsDjekC"
+    },
+    {
+      "name": "Spiritual Scribe",
+      "source": "Compendium.n5eb.t7-subclass.Item.oyfTXOiiW98Xqfi6"
+    }
+  ],
+  "features": [
+    {
+      "level": 1,
+      "name": "Medical Ninjutsu",
+      "source": "Compendium.n5eb.class.Item.ujnh7kWBDywvfMWl",
+      "text": "Beginning at 1st level, as a Medical Ninja you gain the ability to learn any jutsu with the Medical Keyword. Jutsu you cast with the Medical Keyword may use Wisdom for their attack and damage rolls, as well as Save DC calculation. Finally, Medicine checks you make can use Intelligence or Wisdom.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!ujnh7kWBDywvfMWl.npPReUIVXOHwTIzP",
+          "name": "Medical Ninjutsu",
+          "origin": "Compendium.n5eb.class.Item.ujnh7kWBDywvfMWl",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/life/cross-explosion-burst-green.webp",
+          "_id": "npPReUIVXOHwTIzP",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.traits.affinity.value",
+                "value": "medical",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,0,0",
+            "createdTime": 1724030812566,
+            "modifiedTime": 1728776530324,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 1,
+      "name": "Rejuvenating Rest",
+      "source": "Compendium.n5eb.class.Item.7Z1YQpJRuycomV2w",
+      "text": "Also, at Level 1 you use your medical skills to revitalize wounded allies during a short rest. When you or any friendly creatures who you can touch regain Hit points at the end of a short or long rest, they regain an extra 1d6 Hit points. This amount of extra healing increases to 2d6 at 7th level, 3d6 at 11th, and 4d6 at 17th Level.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 2,
+      "name": "Channeled Healing",
+      "source": "Compendium.n5eb.class.Item.SHqq7DBKeayB0mNL",
+      "text": "Starting at 2nd level you learn to passively enhance your Medical Jutsu to greater Lengths. Whenever you use a Jutsu with the Medical Keyword of D-Rank or higher to restore hit points, the affected creature regains +2 additional hit points. The bonus healing this feature provides increases as you grow in level, as seen in the Channeled Healing column of the class table. This healing bonus can only be applied once per turn. Additionally, jutsu with the Medical Keyword you cast that restores hit points or ends conditions, remove one failed death saving throw from an affected creature, if any. You can remove failed death saving throws in this way a number of times equal to your Proficiency Bonus per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "@prof",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 2,
+      "name": "Tenets of Medicine",
+      "source": "Compendium.n5eb.class.Item.14kyRciF5HpI9saG",
+      "text": "Starting at 2nd Level, you begin to focus on a Specific Tenet of Medicine that will enhance your abilities to support your allies. These Tenets will provide you additional features at 2nd Level, and again at 5th, 9th, 13th and 17th Levels.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 3,
+      "name": "Chakra Scalpel",
+      "source": "Compendium.n5eb.class.Item.ow4oElpp5kyEngsp",
+      "text": "Beginning at 3rd Level, you have learned to manifest a medical ninja's signature technique, the Chakra Scalpel. As a Bonus Action you coat your hands in highly condensed blades of Chakra, designed to slice muscle and flesh with surgical efficiency, for one minute while in combat or 1 hour while not in combat. Regardless of which duration is applied, while you have Chakra Scalpel active, you can add your Wisdom Modifier to all healing done as a result of a Jutsu with the Medical Keyword. You can only activate this feature a 3 times per Long Rest, you gain additional uses as you gain levels in this class as seen in the Chakra Scalpel charges column of the Medical-Nin class table. While in Combat . For the duration, when you take the attack action, you can replace attacks granted with said action with a Melee Ninjutsu Attack, as if casting a Medical Ninjutsu. This attack deals 1d4 + your Wisdom Ability Modifier in Slashing damage. This damage increases by an amount listed in the Chakra Scalpel column of the Medical- Nin class table. Beginning at 7th level, when you deal damage with Chakra scalpel, the target creature must succeed a constitution saving throw, as if casting a Ninjutsu with the medical keyword. On a failed save, creatures gain one rank of the weakened condition. Beginning at 11th level, when you would deal damage to a creature with temporary hit points with Chakra scalpel, you bypass the temporary hit points instead directly reducing their hit points. Finally, at 18th level, on a failed save the target also gains the Lacerated condition. While out of Combat : For the duration when you would make a Medicine check to stabilize a creature, you gain a +5 bonus to the result. Beginning at 7th level you can spend one use of your Chakra Scalpel to automatically end one Non-Jutsu based Condition. Beginning at 11th level, the +5 bonus is increased to a +10-bonus made to stabilize a creature. Finally, at 18th level, you can spend a use of your Chakra Scalpel to end any condition a creature is suffering from regardless of its origin.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "@scale.med-nin.chakra-scalpel-charges",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "class",
+          "key": "!items.effects!ow4oElpp5kyEngsp.YvcvreX4V0sSqOYa",
+          "name": "Chakra Scalpel",
+          "origin": "Compendium.n5eb.class.Item.ow4oElpp5kyEngsp",
+          "duration": {
+            "value": 10,
+            "units": "rounds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "systems/n5eb/assets/content/items/chakra-scalpel.webp",
+          "_id": "YvcvreX4V0sSqOYa",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "macro.createItem",
+                "value": "Compendium.n5eb.items.Item.mUFFgEYTTO5WzZLy",
+                "priority": 20,
+                "type": "custom"
+              }
+            ]
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,2",
+            "createdTime": 1728775784321,
+            "modifiedTime": 1728775826053,
+            "lastModifiedBy": "dnd5ebuilder0000",
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Base"
+    },
+    {
+      "level": 3,
+      "name": "Medical Doctrine",
+      "source": "Compendium.n5eb.class.Item.MXMmJIeo1jilceee",
+      "text": "Starting at 3rd Level your experience in medical based jutsu has ascended to a point where your jutsu has begun to slowly become infused with those beliefs, making them stronger and vice versa. Select one of the following doctrines in which you gain the doctrines effects or abilities listed. You can select a second Doctrine when you would reach 13th level. You cannot change this choice one made. LONG LIFE, SHORT DEATH You believe that your patients should benefit from a much longer life span, but when they are dying, they should not delay the process longer than it needs to be. You've seen what agony looks like and you want no parts of it. When you would heal a creatures hit points, by any amount they gain temporary hit points by an amount equal to the rank of the jutsu cast. A creature can only gain temporary hit points in this way twice per rest. (D-Rank: 5, C-Rank: 10, B-Rank: 15, A-Rank: 20, S-Rank: 25.) NEVER ON THE FRONT LINES You believe deeply that medical ninja do not belong on the front lines and so did your master or mentor. You embody this philosophy and do everything in your power to live this truth. Whenever you are within 10 feet of a hostile creature, you can take the dash or disengage actions as a bonus action. NOT ALLOWED TO DIE You believe that medical shinobi deaths should be the absolute last thing to happen on the battlefield. Beyond all other circumstances, you are not allowed to die before your team does. So long as another allied creature is initiative and they have 1 or more hit points, once per rest, you ignore effects of jutsu, features or traits from hostile creatures that would automatically kill you or reduce you to 0 hit points, instead being reduced to 1 hit point. UNTIL THEIR HEART STOPS You believe deeply that medical ninja should continue to administer healing to all members of their party, no matter how dire or how hopeless it is, until they stop breathing, even against their allies wishes. Twice per rest, a creature other than yourself, who regains hit points as a result of a jutsu you cast, who are currently under the effects of a hostile inflicted condition, makes their next saving throw or skill check to end said condition at advantage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 5,
+      "name": "Preserve/Take Life",
+      "source": "Compendium.n5eb.class.Item.cTCxsdZk9kD39laJ",
+      "text": "Starting at 5th Level you have gained the experience needed to save lives, even those in mortal danger or take them, even the ones who are furthest from death's door. You learn both @UUID[Compendium.n5eb.class.Item.Q5VGpvdrICvP2uIS]{Preserve Life} and @UUID[Compendium.n5eb.class.Item.aj2yszYTmjhWq0Ww]{Take Life} . Some Tenets grant you additional effect as you advance in this class. Regardless, you can use Preserve Life or Take Life twice between rests. You gain an additional use at 9th, 13th and 17th levels. @UUID[Compendium.n5eb.class.Item.Q5VGpvdrICvP2uIS]{PRESERVE LIFE} As an action you release a pulse of medical release Chakra, designed to safeguard creatures around you with healing energies. This energy can restore a total number of hit points equal to 5 times your Medical Nin Level and resets the count of all failed death saving throws. Choose any number of creatures within 30 feet of you and divide those hit points amongst them. This feature can restore no more than half of its hit point maximum. You cannot use this feature on an undead or construct. @UUID[Compendium.n5eb.class.Item.aj2yszYTmjhWq0Ww]{TAKE LIFE} When you deal damage to a creature using a Jutsu with the medical keyword, you release corroding energies, meant to inflict gruesome damage. Select one affected creature. That creature takes additional damage equal to 5 + twice your Medical-Nin level.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "@scale.med-nin.preserve-take-life-uses",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 5,
+      "name": "Preserve Life",
+      "source": "Compendium.n5eb.class.Item.Q5VGpvdrICvP2uIS",
+      "text": "As an action you release a pulse of medical release Chakra, designed to safeguard creatures around you with healing energies. This energy can restore a total number of hit points equal to 5 times your Medical Nin Level and resets the count of all failed death saving throws. Choose any number of creatures within 30 feet of you and divide those hit points amongst them. This feature can restore no more than half of its hit point maximum. You cannot use this feature on an undead or construct.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 5,
+      "name": "Take Life",
+      "source": "Compendium.n5eb.class.Item.aj2yszYTmjhWq0Ww",
+      "text": "When you deal damage to a creature using a Jutsu with the medical keyword, you release corroding energies, meant to inflict gruesome damage. Select one affected creature. That creature takes additional damage equal to 5 + twice your Medical-Nin level.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 6,
+      "name": "Advanced Medical Research",
+      "source": "Compendium.n5eb.class.Item.KKxP2FUeeJ7Vw3iz",
+      "text": "Starting at 6th Level, your medical knowledge is one of a select few. You can learn and create jutsu with the Medical keyword in half the time and without spending Ryo to support your lifestyle. Additionally, you can reduce the final Chakra cost of a newly created jutsu with the medical keyword by an amount equal to its rank. (D-Rank: 1, C-Rank: 2, B-Rank: 3, A-Rank: 4, S-Rank: 5)",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 10,
+      "name": "Gifted Healer",
+      "source": "Compendium.n5eb.class.Item.5s44jVibRFFd0vd1",
+      "text": "Starting at 10th Level, your Healing Jutsu are more effective. Whenever you use a jutsu of C-Rank or lower to restore hit points to a creature, you may select up to two healing die rolled, and reroll them, taking the higher result. At 14th Level, you may select up to four healing die.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 20,
+      "name": "Supreme Healer",
+      "source": "Compendium.n5eb.class.Item.i1GoBuuJgQyfGgga",
+      "text": "At 20th Level you have reached perfection in the healing arts. When you would restore hit points, by casting a jutsu with the Medical Keyword of B-Rank or lower at its base rank, you can select up to 4 healing dice rolled and treat it as its maximum result.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 4,
+      "name": "Ability Score Improvement",
+      "source": "Compendium.n5eb.class.Item.3R6ULWi6YDL3qyIf",
+      "text": "When you reach 4th and again at 8th, 12th, 16th, and 19th, level, you can increase one ability score by +1, gain 1 rank of Mastery in a skill you are proficient in, & a Feat of your choice that they qualify for. As normal you can't increase an ability score above 20 using this feature.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Base"
+    },
+    {
+      "level": 2,
+      "name": "Shaman's Hex",
+      "source": "Compendium.n5eb.subclass.Item.IohEuv4hFi4XJqot",
+      "text": "Beginning at 2nd level, you learn the secrets of psychosomatic Genjutsu, allowing you to place a hex on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is hexed for 1 minute. The hex ends early if you die or are incapacitated. You can transfer this hex as a bonus action on your turn. Until the hex ends, you gain the following benefits: • Once during each of your turns when you hit the hexed target with a melee attack, using a Jutsu with the Medical Keyword, your Spiritual Weapons or with your Chakra Scalpel you can deal extra necrotic damage to the hexed target equal to your proficiency bonus. • As a reaction when a creature you can see within 30 feet of you and the hexed target suffers a critical hit, you can turn that hit into a normal hit. Any effects triggered by a critical hit do not trigger. You can mark a creature using this feature a number of times equal to your proficiency bonus per rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "3",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 2,
+      "name": "Spiritual Weapons",
+      "source": "Compendium.n5eb.subclass.Item.9hvezCxkHe2Oxh6y",
+      "text": "Also, at 2nd level, you learn to combine Genjutsu with your Precise Chakra control. As a Bonus Action, you can conjure a Spiritual Weapon of your Design and description. You are always proficient with your Spiritual Weapon. Your Spiritual Weapon can manifest as any Simple or Martial melee weapon of your choice. You can dismiss the weapon as a Bonus Action, dispersing your Chakra. When you attack with that weapon, you can use your Wisdom, in place of Strength, for the attack and damage rolls. Starting at 5th level, you can spend a use of Chakra Scalpel to grant your Spiritual Weapon two weapon properties of your choice from the following, that it does not already have: Blocking, Critical, Deadly, Disarm, Finesse, Multiattack, Reach, Trip, Versatile (dX) where X is one step higher than its base damage die. When you do, your Spiritual Weapon retains these weapon qualities for 10 minutes or until you spend another use of Chakra Scalpel to change the properties.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 5,
+      "name": "Battle Shaman",
+      "source": "Compendium.n5eb.subclass.Item.FCpco3ggrUtGHnIL",
+      "text": "Starting at 5th level, you learn the techniques required to play a powerful role in the throes of battle. You learn the following jutsu as you gain levels in this class according to the Shaman Chart at the end of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu. Learned jutsu do not count against your jutsu known as seen on your Medical-Nin Class Chart. Additionally, when a creature hexed by you dies, you can command it to move up to its speed and make one melee or ranged weapon attack against a creature within their normal range. When you command a creature with this feature, the hex immediately ends.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Hexing Smite",
+      "source": "Compendium.n5eb.subclass.Item.Tw8ddo9rBI9eRedQ",
+      "text": "Starting at 6th level, you can enchant your Spiritual Weapon or Chakra Scalpel with your hexes, enhancing its potency when striking. Once per turn, when you score a hit with either your Spiritual Weapon or Chakra Scalpel, you can spend a use of your Take Life feature, you can cast one Ninjutsu or Genjutsu that you know that requires a saving throw when cast and can target only one creature, with a casting time of an Action or Bonus Action at no action cost, targeting the creature you hit forcing them to make their saving throw at disadvantage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 9,
+      "name": "Warrior Of The Hex",
+      "source": "Compendium.n5eb.subclass.Item.y3m5nzlPn4xJPJbZ",
+      "text": "Starting at 9th level, you can attack twice, instead of once, whenever you take the Attack action on your turn to attack with your Spiritual Weapon. Additionally, when you use your Preserve Life feature, choose a creature within 30 feet of you. That creature gains Temporary Hit Points equal to your Medical-Nin level + your Wisdom Modifier. Finally, when you use your Take Life feature, if the creature is benefiting from any bonuses such as additional damage or Temporary Hit Points, they lose those benefits.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 13,
+      "name": "Draining Hexes",
+      "source": "Compendium.n5eb.subclass.Item.RQXLvrADj7ERsB7f",
+      "text": "Starting at 13th level, when a creature hexed by you dies, you or another creature you can see within 30 feet of you regains hit points equal to your Medical-Nin level + your proficiency bonus. When a creature regains hit points with this feature, the hex immediately ends. Finally, when you fall to 0 hit points due to a melee attack, you may immediately spend 10 Chakra, doing so allows you to take make one attack with your Spiritual Weapon on a creature within range. Any damage you deal to a target, grants you hit points equal to the damage dealt. You can use this feature a twice per rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 17,
+      "name": "Master Of Hexes",
+      "source": "Compendium.n5eb.subclass.Item.uPF7KI0whWJjfp0Q",
+      "text": "Beginning at 17th level, once per turn when you would deal damage to a creature whom you have hexed, with a Bukijutsu or attack, that uses your Spiritual Weapon, you add your level to the damage rolled.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Shaman"
+    },
+    {
+      "level": 2,
+      "name": "Transfigured Technique",
+      "source": "Compendium.n5eb.subclass.Item.H30gDr0sGyX0WuuT",
+      "text": "Beginning at 2nd level, you begin to learn to alter other creatures cellular structure to their benefit or detriment. When you would deal Acid, Poison or Necrotic damage to a creature with a Jutsu with the Medical Keyword, you may force them to make a constitution saving throw vs your Jutsu's save DC. On a failed save, they gain 1 rank of Weakened. Once per casting, when you would heal a creature or grant them temporary hit points with a Medical-Nin class feature or Jutsu with the Medical keyword, you may end one rank of any condition currently affecting them caused by a jutsu of D-Rank or lower. This increases to C-Rank at 7th level, B-Rank at 11th, A-Rank at 15th, S-Rank at 20th. You can remove conditions in this way, a number of times equal to your Proficiency Bonus per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 2,
+      "name": "Altered Strength",
+      "source": "Compendium.n5eb.subclass.Item.BsgTCuCRDQGfIWeF",
+      "text": "Also, at 2nd level, you may alter a creatures physiology to strengthen them in a number of ways. As an action, you may touch a creature, giving them one of the following benefits for the next minute: • Once per turn, add your Ninjutsu ability Modifier to their damage roll. • Gain 10 Temporary Hit points at the beginning of each of your turns. While they have temporary hit points granted by this feature, they gain resistance to one damage type of your choice. • Gain a 1d4 bonus to one saving throws they don't have proficiency in. • Gain a 1d4 bonus to skill checks they don't have proficiency in. A creature can only gain one benefit from this feature at a time. You can only have two instances of this feature active on creature(s) at any given time. If you would try to use this feature a third time, while two other instances are currently active, one of the previous two instances stop at your choice. Beginning at 5th level, you can spend 1 Chakra Die. When you do, you use an enhanced version of this feature. An affected creature can gain up to two benefits of this feature this way. A creature other than you can gain the benefits of this feature twice per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 5,
+      "name": "Transmuter",
+      "source": "Compendium.n5eb.subclass.Item.opcRu4cv2z6eo8Uj",
+      "text": "Starting at 5th level, you learn the techniques required to play a powerful role in the throes of battle. You learn the following jutsu as you gain levels in this class according to the Transmuter Chart at the end of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu. Learned jutsu do not count against your jutsu known as seen on your Medical-Nin Class Chart. Also at 5th level, your Chakra Scalpel deals necrotic damage and you may tear them apart at the molecular level. Once per turn, when you deal damage with your Chakra Scalpel, you deal additional Necrotic damage equal to your Proficiency bonus.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 6,
+      "name": "Preserve Life: Transmuted",
+      "source": "Compendium.n5eb.subclass.Item.G5T0bP5N8aFoVHQU",
+      "text": "Starting at 6th level, you can, as a bonus action touch one willing creature within range. When you do, you temporarily change their biological make up into another creature type of your choice for the next minute. When you do, they gain a passive benefit based on the type chosen for the duration, but they lose the humanoid descriptor as well: • Construct: resistance to B/P/S damage. • Demon: resistance to Fire damage and Immunity to the Charmed and Fear Conditions. • Plant: Gains Temporary Hit points equal to Constitution Modifier each start of turn (Min 1.) • Monstrosity: Advantage on Strength and Constitution Saving throws. • Mutant: You gain advantage on Intelligence and Wisdom saving throws.",
+      "signals": [
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 9,
+      "name": "Rebuilt Fortitude",
+      "source": "Compendium.n5eb.subclass.Item.wgCXnYz2Jen9BRUX",
+      "text": "Starting at 9th level your ability to reinforce your allies has heightened even more. When you use your Altered Strength class feature on a creature other than yourself, they gain an additional benefit. Select one: • Once per turn, add your Ninjutsu ability modifier to their attack roll. • Once per turn, when they cast a jutsu that deals damage they roll 2 additional damage die. • +2 bonus to their AC for the duration.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 13,
+      "name": "Transmuted Self",
+      "source": "Compendium.n5eb.subclass.Item.83NHMUkhOIUgQ5Dp",
+      "text": "Starting at 13th level, your body can better handle your Chakra scalpels, allowing you to use them more aggressively. Your Chakra Scalpel's damage die increases to a d8. When a creature makes a constitution save against your Transfigured Technique class feature, they make it at disadvantage. Finally, you may also use your Altered Strength class feature as a bonus action, but when you do, you can only use it on yourself.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 17,
+      "name": "Transmogrified Biology",
+      "source": "Compendium.n5eb.subclass.Item.OjVhsV09bsNI6bdA",
+      "text": "Starting at 17th level, you have transmuted your own body into one near perfection. When you would gain the benefit of your Altered Strength class feature, you can gain 3 benefits without spending any additional Chakra.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Transmuter"
+    },
+    {
+      "level": 2,
+      "name": "Martial Competency",
+      "source": "Compendium.n5eb.subclass.Item.dqVffHTonQ5Q3Q0X",
+      "text": "Beginning at 2nd Level, you learn how to fight with the best of them. You gain proficiency with Combat Bracers and heavy armor. You also adopt a particular fighting stance. Choose one of the Taijutsu Stance located in Chapter 13: Customization Options. You can't take a stance more than once even if you gain a stance choice again. Also, you can make one unarmed attack as a bonus action.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 2,
+      "name": "Competent Combatant",
+      "source": "Compendium.n5eb.subclass.Item.jKQpAkfotyTcljbf",
+      "text": "Also 2nd Level, you may use your Wisdom in place of Dexterity when calculating Armor Class (AC). Additionally, your Chakra scalpel's damage die becomes a d6 and you can choose to make a melee taijutsu attack, in place of a ninjutsu attack. When you would deal damage with an unarmed attack, you may spend 5 Chakra. When you do, you instead, double the relevant modifier when calculating damage dealt. You may do this twice per rest. Increase the number of uses by one at 5th, 9th, 13th and 17th levels. Starting at 5th level, you can spend a use of Chakra Scalpel to increase your striking power. Your unarmed, weapon and all taijutsu attacks have their critical threat range increased by +1 until the end of your turn. This becomes +2 at 13th level. Beginning at 9th level when you would use this feature, you may instead triple your relevant modifier applied to the damage dealt.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 5,
+      "name": "Combat Medic",
+      "source": "Compendium.n5eb.subclass.Item.hpJL9ETYuDnDTvAL",
+      "text": "Starting at 5th level, you learn the techniques required to fight on the front lines next to your allies. You learn jutsu as you gain levels in this class according to the Combat Medic Chart at the end of this class section. Each Jutsu Learned also grants you an additional feature pertaining to the jutsu learned. Learned Jutsu do not count against your Jutsu known as seen on your Medical Nin Class Chart.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 5,
+      "name": "Yin Seal: Charge",
+      "source": "Compendium.n5eb.subclass.Item.52ojVm2o3sE9RKYb",
+      "text": "Also, at 5th level, you have begun to store medical release Chakra into your muscles, prepping them for when it is time for you to release it in a single bout. This stored power has the potential to unleash massive shockwaves from the strength of your punches alone. This stored power is manifested as Yin Motes. You have a number of Yin Motes, equal to your proficiency bonus per rest. You can spend these motes to do the following: • When you cast a jutsu with the medical keyword, you may spend 1 mote. When you do, as a bonus action, you can cast a Taijutsu of C-Rank or lower with a casting time of 1 action. • When you take the attack action, you can spend 2 motes to double your unarmed damage die. • When you cast a Taijutsu that deals unarmed damage, you can spend 3 motes to upcast the jutsu by 1 rank, at no additional cost, ignoring upcast limitations.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "@prof",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Combat Prowess",
+      "source": "Compendium.n5eb.subclass.Item.tErUWYKa1cB442Zg",
+      "text": "Starting at 6th level, you may use the Take Life feature with your unarmed attacks and Taijutsu that deal unarmed damage. Additionally, a creature that you use your Take Life feature on, becomes vulnerable to the next instance of damage they take until the beginning of their next turn.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 9,
+      "name": "Expert Combatant",
+      "source": "Compendium.n5eb.subclass.Item.UWcF3xQjsKKM5lsE",
+      "text": "Starting at 9th level, select one taijutsu or bukijutsu you know. The selected jutsu gains the Medical Keyword. You may select an additional taijutsu or bukijutsu at 13th and 17th level to gain the Medical Keyword this way. You may switch which jutsu this feature affects when you would complete a Long Rest. Also, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 13,
+      "name": "Passive Regeneration",
+      "source": "Compendium.n5eb.subclass.Item.oTjMBFNY4fw7R9pS",
+      "text": "At 13th Level, your constant focus on enhancing your technique to supplement your allies on the battlefield has led you to learn to passively increase your survivability in combat. As a Bonus action, you can choose to spend 1 Yin Mote to regain 5d8+ your Ninjutsu ability modifier in hit points to a willing creature you touch. You can only use this feature a number of times equal to your proficiency bonus per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "@prof",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 17,
+      "name": "Yin Seal: Release",
+      "source": "Compendium.n5eb.subclass.Item.0f5cMvLrahn4CrxO",
+      "text": "Beginning at 17th Level, you learn to unleash all of your strength into one magnificent punch. When you would spend a use of your Competent Combatant, you can spend an additional 7 Yin Motes. When you do, quadruple your relevant modifier and triple your unarmed damage die. If you do, you do not gain the benefits of Competent combatant or Yin Seal: Charges effects.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Combat Medic"
+    },
+    {
+      "level": 2,
+      "name": "Summoning Apprentice",
+      "source": "Compendium.n5eb.subclass.Item.8G4XfdwGGUMu8R6P",
+      "text": "Beginning at 2nd level, you have contacted a tribe of animals that are willing to help you in your studies, and will even fight by your side in defense of you, your comrades and your pursuit of knowledge and wisdom. You learn the Summoning Technique Ninjutsu. This does not count against your Jutsu known limit. Creatures you summon using this jutsu become able to cast Ninjutsu with the Medical Keyword as well.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 2,
+      "name": "Natural Healing",
+      "source": "Compendium.n5eb.subclass.Item.9GGNS9oAqcCF43Gb",
+      "text": "Also, at 2nd level, you learn to use the natural veins of Chakra found in the Earth itself and all through nature to heal yourself and your allies at range, though this method is less potent than direct healing. You have stored a pool of this healing energy represented by a number of d6's equal to your Medical-Nin level. As a bonus action, you can choose one creature within 60 feet of you and spend a number of those dice. Roll the spent dice and add them together. The target regains a number of Hit Points equal to the total. The target also gains 3 temporary Hit Point per die spent. You regain all expended dice when you finish a long rest. Beginning at 5th level, while you are gaining the benefits of your Chakra Scalpel Class feature, each time you would deal damage with your Chakra Scalpel, you regain hit points equal to your Chakra Scalpels damage + Your Ninjutsu ability Modifier. You can only regain hit points this way once per turn.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 5,
+      "name": "Natural Talent",
+      "source": "Compendium.n5eb.subclass.Item.cUvzPCubpFpfozfY",
+      "text": "Starting at 5th level, you learn the techniques required to play a powerful role in the throes of battle. You learn the following jutsu as you gain levels in this class according to the Natural Medicine Chart at the end of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu. Learned jutsu do not count against your jutsu known as seen on your Medical-Nin Class Chart. Additionally, you have learned to take on the qualities of a member of the tribe you selected from your Summoning Apprentice class feature for short periods of time. As an Action, you may assume the form of a D-Rank Summon of your Tribe, replacing your own Strength, Dexterity, Constitution, HP and AC with the summoned creatures. (Your Jutsu List, Chakra Point Maximum, and current Chakra point total does not change.) You also gain any traits the summoned creature you transform into would have at the appropriate rank. You may remain in this form for a number of hours equal to half of your Medical-Nin level. If your new forms hit points are reduced to 0, you immediately revert back to your normal form retaining your original hit points. You may assume the form of a C-Rank Summon at 9th level, B-Rank at 13th level, and A-Rank at 17th. You may transform using this feature twice per long rest",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 6,
+      "name": "Preserve Life: Dampen Pain",
+      "source": "Compendium.n5eb.subclass.Item.7L30TC6FG7EtxYqK",
+      "text": "Starting at 6th level, as an action, you release a greenish aura of medical Chakra, targeting one willing creature you can reach. For the next minute, each time the affected creature takes damage it regains 4d6 hit points. Once one minute has passed or the creature has had this feature trigger on them 5 times, this feature ends.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 9,
+      "name": "Guardian Summoner",
+      "source": "Compendium.n5eb.subclass.Item.0r8IVJYlDkx7ALPR",
+      "text": "Starting at 9th level your summoned creature embodies the entirety of their tribe to the fullest to further support you. You summon gains a second Role, unique to them. Guardian: Twice per Short Rest, this summon can grant all allied creatures within 20 feet of it, a number of temporary hit points equal to its rank. (D-Rank: 5, C-Rank: 10, B-Rank: 15, A-Rank: 20, S-Rank: 25)",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 13,
+      "name": "Protector Of Nature",
+      "source": "Compendium.n5eb.subclass.Item.AKi794HVJHtmoOxK",
+      "text": "Starting at 13th level, your connection to your summons have become so powerful that they stand ready to defend you even when separated by an infinite distance. If you are reduced to 0 Hit points or are Incapacitated against your will, you can, immediately as a reaction, before the effects of reaching 0 Hit points or becoming incapacitated take effect, use your Summoning Technique to summon an S-Rank Creature ignoring normal restrictions. If you do, reduce your Chakra to 0, if you have 30 or less Chakra, otherwise spend Chakra as per usual. Once summoned, the summoned creature acts in your defense, protecting you and your allies from harm, prioritizing your survival over your allies. The creature summoned this way unsummons itself 10 minutes after being summoned or when the danger has passed. Once you use this feature, you cannot use it again until you complete a long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 17,
+      "name": "Natures Avatar",
+      "source": "Compendium.n5eb.subclass.Item.WGPKXkEiYOtSsxsQ",
+      "text": "Beginning at 17th Level, you learn to embody all of your sage beasts power in your base form. You can spend a use of Natural Talent. When you do, you gain the benefit of all of your sage beast transformation features and you gain your chosen transformations ability scores if your ability scores are lower. This transformation lasts for 1 minute.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Natural Medicine"
+    },
+    {
+      "level": 2,
+      "name": "Tainted Hands",
+      "source": "Compendium.n5eb.subclass.Item.4Gc5II0vA7SY4IuA",
+      "text": "At 2nd level, when you would deal acid or poison damage as a result of a jutsu you cast, feature you use or attack you make, you may reroll all 1's and 2's. You must take the new roll, even if it is a 1 or 2.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "subclass",
+          "key": "!items.effects!4Gc5II0vA7SY4IuA.Yw2E1lX1gpTKKalT",
+          "name": "Tainted Hands",
+          "origin": "Compendium.n5eb.subclass.Item.4Gc5II0vA7SY4IuA",
+          "duration": {
+            "value": null,
+            "units": "seconds",
+            "expiry": null,
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "babonus": {
+              "bonuses": [
+                {
+                  "name": "New Babonus",
+                  "img": "icons/svg/dice-target.svg",
+                  "id": "RSmUyouI7QsQjix1",
+                  "sort": 0,
+                  "type": "damage",
+                  "enabled": true,
+                  "exclusive": false,
+                  "optional": false,
+                  "reminder": false,
+                  "description": "",
+                  "consume": {
+                    "enabled": false,
+                    "type": "",
+                    "subtype": "",
+                    "scales": false,
+                    "formula": "",
+                    "value": {
+                      "min": "",
+                      "max": "",
+                      "step": null
+                    }
+                  },
+                  "aura": {
+                    "enabled": false,
+                    "template": false,
+                    "range": "",
+                    "self": true,
+                    "disposition": 2,
+                    "blockers": [],
+                    "require": {
+                      "light": false,
+                      "sight": false,
+                      "sound": false,
+                      "move": false
+                    }
+                  },
+                  "flags": {},
+                  "bonuses": {
+                    "bonus": "",
+                    "damageType": "",
+                    "criticalBonusDice": "",
+                    "criticalBonusDamage": "",
+                    "modifiers": {
+                      "amount": {
+                        "enabled": false,
+                        "mode": 0,
+                        "value": ""
+                      },
+                      "size": {
+                        "enabled": false,
+                        "mode": 0,
+                        "value": ""
+                      },
+                      "reroll": {
+                        "enabled": true,
+                        "value": "3",
+                        "invert": false,
+                        "recursive": true,
+                        "limit": "3"
+                      },
+                      "explode": {
+                        "enabled": false,
+                        "value": "",
+                        "once": false,
+                        "limit": ""
+                      },
+                      "minimum": {
+                        "enabled": false,
+                        "value": "",
+                        "maximize": false
+                      },
+                      "maximum": {
+                        "enabled": false,
+                        "value": "",
+                        "zero": false
+                      },
+                      "config": {
+                        "first": false
+                      }
+                    }
+                  },
+                  "filters": {
+                    "actorCreatureSizes": [],
+                    "actorCreatureTypes": [],
+                    "actorLanguages": [],
+                    "arbitraryComparisons": [],
+                    "baseArmors": [],
+                    "customScripts": "",
+                    "healthPercentages": {
+                      "value": 50,
+                      "type": null
+                    },
+                    "remainingSpellSlots": {
+                      "min": null,
+                      "max": null,
+                      "size": false
+                    },
+                    "statusEffects": [],
+                    "abilities": [],
+                    "attackTypes": [],
+                    "baseWeapons": [],
+                    "creatureTypes": [],
+                    "damageTypes": [
+                      "acid",
+                      "poison"
+                    ],
+                    "featureTypes": {
+                      "subtype": ""
+                    },
+                    "itemTypes": [],
+                    "preparationModes": [],
+                    "spellComponents": {
+                      "types": [],
+                      "match": "ANY"
+                    },
+                    "spellLevels": [],
+                    "spellSchools": [],
+                    "targetArmors": [],
+                    "targetEffects": [],
+                    "tokenSizes": {
+                      "size": null,
+                      "type": 0,
+                      "self": false
+                    },
+                    "weaponProperties": []
+                  }
+                }
+              ]
+            },
+            "dae": {
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "stackable": "noneName",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "icons/magic/unholy/orb-hands-pink.webp",
+          "_id": "Yw2E1lX1gpTKKalT",
+          "type": "base",
+          "system": {
+            "changes": []
+          },
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 2,
+      "name": "Touch of Terror",
+      "source": "Compendium.n5eb.subclass.Item.Ozq11AaEftzBqJ7v",
+      "text": "Also, at 2nd Level when a creature you can see within 30 feet of you is making a saving throw to resist an effect that deals poison damage or inflicts the envenomed condition, you can give them disadvantage on their save. You can do this twice per rest. Starting at 5th level you can spend a use of Chakra Scalpel to increase your poisons potency. The next jutsu you cast or item you use, such a poison or acid vial that deals poison or acid damage inflicts 1 rank of the Corroded condition.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": false
+      },
+      "activityCount": 0,
+      "effects": [
+        {
+          "pack": "subclass",
+          "key": "!items.effects!Ozq11AaEftzBqJ7v.9yRrp8yS744ZGkYZ",
+          "name": "Poisoned/Envenomed",
+          "origin": "Compendium.n5eb.subclass.Item.Ozq11AaEftzBqJ7v",
+          "duration": {
+            "value": 99,
+            "units": "rounds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": false,
+          "flags": {
+            "dae": {
+              "enableCondition": "",
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "selfTarget": false,
+              "selfTargetAlways": false,
+              "dontApply": false,
+              "stackable": "count",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "systems/n5eb/icons/svg/statuses/poisoned.svg",
+          "_id": "9yRrp8yS744ZGkYZ",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "flags.midi-qol.OverTime",
+                "value": "turn=start,\ndamageRoll=1d6,\ndamageType=poison,\nlabel=Poisoned/Envenomed,\nchatFlavor=YUCK I feel SICK,\nfastForwardDamage=true,",
+                "priority": 20,
+                "type": "override"
+              },
+              {
+                "key": "StatusEffect",
+                "value": "poisoned",
+                "priority": 20,
+                "type": "custom"
+              },
+              {
+                "key": "system.attributes.ac.bonus",
+                "value": "-1 * @stackCount",
+                "priority": 20,
+                "type": "add"
+              }
+            ]
+          },
+          "description": "<p><strong>Max Ranks</strong>: 5</p><hr><p>A <strong>Envenomed</strong> creature (sometimes called Poisoned) has been exposed to some kind of venom or toxin, causing their vitality and immune health to drop rapidly.</p><ul><li><p>An <strong>Envenomed</strong> creature or object takes 1d6 poison damage for each rank it has, at the start of each of their turns for the duration of this condition</p></li><li><p>An <strong>Envenomed</strong> creature suffers a -1 penalty to their AC for each rank it has.</p></li><li><p>An <strong>Envenomed</strong> creature cannot gain the benefits of a rest.</p></li><li><p>Creatures that are immune to poison damage are immune to the envenomed condition.</p></li><li><p>Outside of combat, every hour a creature suffers the effects of this condition as if a turn has passed in combat.</p></li></ul>",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": "Compendium.n5eb.conditions.Item.AgEbkILgtlF5naAS.ActiveEffect.0Nf1yI2bA3D4Ftd8",
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        },
+        {
+          "pack": "subclass",
+          "key": "!items.effects!Ozq11AaEftzBqJ7v.kHcm9gZ08UACcLTy",
+          "name": "Corroded",
+          "origin": "Compendium.n5eb.subclass.Item.Ozq11AaEftzBqJ7v",
+          "duration": {
+            "value": 99,
+            "units": "rounds",
+            "expiry": "turnStart",
+            "expired": false
+          },
+          "disabled": true,
+          "flags": {
+            "dae": {
+              "enableCondition": "",
+              "disableCondition": "",
+              "disableIncapacitated": false,
+              "selfTarget": false,
+              "selfTargetAlways": false,
+              "dontApply": false,
+              "stackable": "count",
+              "showIcon": false,
+              "durationExpression": "",
+              "macroRepeat": "none",
+              "specialDuration": []
+            },
+            "core": {
+              "overlay": false
+            },
+            "ActiveAuras": {
+              "isAura": false,
+              "aura": "None",
+              "nameOverride": "",
+              "radius": "",
+              "alignment": "",
+              "type": "",
+              "customCheck": "",
+              "ignoreSelf": false,
+              "height": false,
+              "hidden": false,
+              "displayTemp": false,
+              "hostile": false,
+              "onlyOnce": false,
+              "wallsBlock": "system"
+            }
+          },
+          "img": "systems/n5eb/icons/svg/statuses/corroded.svg",
+          "_id": "kHcm9gZ08UACcLTy",
+          "type": "base",
+          "system": {
+            "changes": [
+              {
+                "key": "system.abilities.con.bonuses.check",
+                "value": "-1 * @stackCount",
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "system.abilities.con.bonuses.save",
+                "value": "-1 * @stackCount",
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "flags.midi-qol.DR.all",
+                "value": "-2 * @stackCount",
+                "priority": 20,
+                "type": "add"
+              },
+              {
+                "key": "flags.midi-qol.OverTime",
+                "value": "saveDC=15,\nlabel=Corroded,\nsaveAbility=dex|con,\nsaveRemove=true,\nrollType=check,\nchatFlavor=This shit sticky yo,\nactionSave=dialog,",
+                "priority": 20,
+                "type": "custom"
+              }
+            ]
+          },
+          "description": "<p><strong>Max Ranks</strong>: 5</p><hr><p>A <strong>Corroded</strong> creature has been exposed to some kind of acidic compound, causing their flesh and equipment to wither and deteriorate if left untreated.</p><ul><li><p>A <strong>Corroded</strong> creature gains a -2 penalty to its DR (damage reduction) for each rank it has.</p></li><li><p>A <strong>Corroded</strong> creature gains a -1 penalty to all Constitution based checks &amp; saves for each rank it has.</p></li><li><p>A creature can end the corroded condition by using their action making a DC 15 Dexterity or Constitution Ability Check or submerging themselves fully into a body of water.</p></li></ul>",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": "Compendium.n5eb.conditions.Item.TJkoBRRPODGhibDp.ActiveEffect.gXQCDxapEi50ixYD",
+            "duplicateSource": null,
+            "coreVersion": "14.364",
+            "systemId": "n5eb",
+            "systemVersion": "1,2,1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "exportSource": null
+          },
+          "start": null,
+          "showIcon": 1,
+          "folder": null
+        }
+      ],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 5,
+      "name": "Black Medicine",
+      "source": "Compendium.n5eb.subclass.Item.fmJCcW5VMkOURNjl",
+      "text": "Starting at 5th level, you learn the techniques required to utilize poisons as your tool of combat. You Learn the following jutsu as you gain levels in the class according to the Black Medicine chart at the end of this class section. Each Jutsu learned also grants you an additional feature pertaining to the jutsu learned. Learned jutsu do not count against your jutsu known as seen on your medical-nin class chart.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 5,
+      "name": "Poisonous Touch",
+      "source": "Compendium.n5eb.subclass.Item.X0iAtVKwkTI8FQAJ",
+      "text": "Also, at 5th level, when making an attack with Chakra scalpel you instead deal poison damage and can make a second attack as a bonus action. Creature's you hit with this attack must make a constitution saving throw vs your ninjutsu save DC becoming envenomed for 1 minute. with each consecutive Chakra scalpel attack that hits, against the same creature, you increase this effects save dc by +1 for the next minute and increase the envenomed rank by 1. An envenomed creature makes another save at the end of each of their turns to end this effect.",
+      "signals": [
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Plague Doctor",
+      "source": "Compendium.n5eb.subclass.Item.WN6lJSRh7tcR9SHR",
+      "text": "Starting at 6th level, as an action, you release a green mist in one of the following areas originating from you: 15-foot Cone, 20-foot cube, 30-foot long (5 foot wide) line. When you do, all creatures in the target area must succeed a constitution saving throw as if you cast a ninjutsu with the medical keyword. On a failed save creatures take poison damage equal to Xd8 + your medical nin level and gains 2 ranks of the envenomed or corroded condition for the next minute, where X equals your proficiency bonus or half as much on a success and no additional effects.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 9,
+      "name": "Toxic Tongue",
+      "source": "Compendium.n5eb.subclass.Item.amTwgvveQe8MWTrM",
+      "text": "Starting, at 9th Level, poison and acid damage you deal ignores resistance. You also, always know where poisonous plants are and how to formulate poisons from them in half the time and cost. Additionally, you gain resistance to Poison damage and immunity to the Poisoned condition.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 13,
+      "name": "Child of Venom",
+      "source": "Compendium.n5eb.subclass.Item.abiQjv5zMrJda3cA",
+      "text": "Starting at 13th level, you add your Ninjutsu ability Modifier to all Poison and Acid Damage you deal with medical Jutsu. Also, when dealing Poison or Acid Damage, you can spend a use of your Chakra Scalpel. When you do, you can maximize its damage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 17,
+      "name": "Venomous Sting",
+      "source": "Compendium.n5eb.subclass.Item.4NMAGEgY991hH1pV",
+      "text": "Starting at 17th level, when you would inflict a rank of the Envenomed or Corroded condition, the target gains 1 additional rank. Also, creatures have disadvantage to remove the listed conditions when they are inflicted by you.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Black Medicine"
+    },
+    {
+      "level": 2,
+      "name": "Breath Of Life",
+      "source": "Compendium.n5eb.subclass.Item.rZkibohVYsA1ARb8",
+      "text": "Starting at 2nd Level, when you would cast a jutsu with the Medical keyword that restores hit points or provides temporary hit points you add your Ninjutsu ability modifier to the result.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 2,
+      "name": "Talented Healer",
+      "source": "Compendium.n5eb.subclass.Item.Bg67SrYycjR2CpEN",
+      "text": "Also, at 2nd Level, the healing jutsu you cast on others heal you as well. When you cast a jutsu of D-Rank or higher that restores hit points to a creature other than you, you regain hit points equal to 4 + the Jutsu's Rank. (D-Rank = 1, C-Rank = 2, B-Rank = 3, A-Rank = 4, S-Rank = 5). Starting at 5th level, you can spend a use of Chakra Scalpel, to perform a Surgery over the course of the next minute. When you do, the target creature regains xd6 where x = your proficiency bonus. A creature which you've performed surgery on cannot have a surgery performed on them more than twice per full rest. Beginning at 9th level, when you would restore a creatures hit points, they gain temporary hit points equal to half the hit points they've regained.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 5,
+      "name": "Adept Medicine",
+      "source": "Compendium.n5eb.subclass.Item.QEtupWqLIoGLDQoi",
+      "text": "Starting at 5th level, you learn the techniques required to keep your allies alive at all costs. You Learn the following jutsu as you gain levels in the class according to the Adept Medic Chart at the end of this class section. Each Jutsu Learned also grants you an additional feature pertaining to the jutsu learned. Learned Jutsu do not count against your Jutsu known as seen on your Medical Nin Class Chart.",
+      "signals": [
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 5,
+      "name": "Healing Touch",
+      "source": "Compendium.n5eb.subclass.Item.R8QhKGU9VYbs6Miu",
+      "text": "Also, at 5th level, when you would cast a Jutsu with the Medical Keyword, Reduce the cost of the jutsu cast by the rank of the jutsu. (D-Rank = 1, C-Rank = 2, B-Rank = 3, A- Rank = 4, S-Rank = 5).",
+      "signals": [
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 6,
+      "name": "Preserve Life: Mending Presence",
+      "source": "Compendium.n5eb.subclass.Item.Uxxb37ZKoP70Z1Gv",
+      "text": "Beginning at 6th level, you can use the Preserve Life Feature a number of additional times equal to half of your proficiency bonus, per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 9,
+      "name": "Unmatched Medical Release",
+      "source": "Compendium.n5eb.subclass.Item.Shispek8DDO1BwSO",
+      "text": "Starting, at 9th Level, creatures who would recover hit points from a Jutsu you cast with the Medical Keyword or from the Rejuvenating Rest, Channeled Healing or Talented Healer class feature, you automatically end any conditions of B-Rank or lower. You can use this feature twice per short rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 13,
+      "name": "Healing Ascension",
+      "source": "Compendium.n5eb.subclass.Item.MAbePNTQvqvvIVlN",
+      "text": "Starting, at 13th Level, when you would regain hit points or would restore hit points to another creature using a jutsu or class feature, you enter a state of Ascension. This state lasts until the end of your next turn. The next time you would take damage, you recover a number of hit points equal to your level, and then the ascension state ends. You can enter the Ascension state, a number of times equal to your Ninjutsu ability modifier per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 3,
+        "max": "3",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 17,
+      "name": "Over Heal",
+      "source": "Compendium.n5eb.subclass.Item.x6ZNGk6eQ2JggC9v",
+      "text": "At 17th Level, when you restore Hit Points to a creature and they reach full Hit Points and there are still left-over points of restoration, the creature gains Temporary Hit Points equal to half of the left-over Hit Points that would be restored. Temporary Hit Points gained this way are in addition to any Temporary Hit Points they currently have that are granted by you. A creature who gains additional Temporary Hit Points as a result of this feature cannot gain additional Temporary Hit Points from this feature for the next minute.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Adept Medic"
+    },
+    {
+      "level": 2,
+      "name": "Elemental Beginning",
+      "source": "Compendium.n5eb.t7-subclass.Item.He8YHGMZrJpokwEP",
+      "text": "Starting at 2nd level, you have focused your efforts on harnessing your innate Nature Release. Select one Nature Release (Earth, Wind, Fire, Water, or Lightning Release). You gain the ability to cast Jutsu with the corresponding Keyword. If you could already cast jutsu with the selected keyword, you learn one jutsu with the corresponding keyword that you qualify for. Additionally, when you cast a jutsu of your chosen element with the medical keyword you choose to either heal yourself or your target for an amount of hp equal to the Jutsu's Rank. (D-Rank = 1, C-Rank = 2, B-Rank = 3, A-Rank = 4, S-Rank = 5) Beginning at level 9, Jutsu with your Elemental Keyword no longer require the Medical Keyword for you to heal an amount of hp equal to the Jutsu's Rank.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 2,
+      "name": "Elemental Traces",
+      "source": "Compendium.n5eb.t7-subclass.Item.KejWDKuOVyOqrdn8",
+      "text": "Also at 2nd level, Your Chosen Nature Release starts to change how your non-elemental medic jutsu perform. Non-Elemental Jutsu and Jutsu of your chosen element with the medical keyword may gain the following benefits. Earth Release: In addition to the normal effects of the jutsu the target also gains a/additional number of Temp Hp equal to the rank of the jutsu cast until the end of their next turn. (D-Rank = 4, C-Rank = 8, B-Rank = 12, A-Rank = 16, S-Rank = 25). Wind Release: In addition to the normal effects of the jutsu the target also gains +10 to their movement speed and a +2 to Dexterity Saving Throws until the end of their next turn. Fire Release: In addition to the normal effects of the jutsu the target also gains resistance to fire damage until the end of next turn and may spend and roll a hit die gaining an amount of hp equal to twice the result of the roll. Water Release: In addition to the normal effects of the jutsu the target also heals a d8 at the beginning of their turns for a number of rounds equal to the rank of the jutsu. (D-Rank = 1, C-Rank = 2, B-Rank = 3, A-Rank = 4, S-Rank = 5). Lightning Release: In addition to the normal effects of the jutsu the target also gains a +2 to their AC until the end of their next turn. Starting at 5th level, your Chakra Scalpel may now deal your chosen Nature Release's damage type instead of slashing. Additionally, you can spend a use of Chakra Scalpel to empower a jutsu of your chosen element. Jutsu you cast of your chosen element have their damage/healing dice increased by 1 or have their DC increased by 1 until the end of your current turn. This becomes 2 at level 13.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 5,
+      "name": "Elemental Adapt",
+      "source": "Compendium.n5eb.t7-subclass.Item.Xyw6tKwvu8fvCwba",
+      "text": "Starting at 5th level, you learn the techniques required to fight on the front lines next to your allies. You learn jutsu as you gain levels in this class according to the Elemental Medic Chart at the top of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu learned. Learned jutsu do not count against your jutsu known as seen on your Medical Nin Class Chart. Also, at 5th level, when you cast a jutsu with the medical keyword, you may as a bonus action cast a Jutsu with your chosen Elemental Keyword of C-Rank or lower with a casting time of 1 action.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Elemental Power",
+      "source": "Compendium.n5eb.t7-subclass.Item.CrNLR6u2bchCSn4f",
+      "text": "Starting at 6th level , you may use the Take Life feature with either your Chakra Scalpel or Jutsu with your chosen Elemental Keyword. Additionally, when you use your Take life feature on jutsu with your chosen elemental keyword that jutsu is upcasted 1 rank for free. If the jutsu is unable to be upcasted it gains 1 damage die.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 9,
+      "name": "Elemental Expert",
+      "source": "Compendium.n5eb.t7-subclass.Item.aH9G7aeapQPtw0nM",
+      "text": "Starting at 9th level, select one Jutsu with your chosen Elemental Keyword you know. The selected jutsu gains the Medical keyword. You may select an additional Jutsu with your chosen Elemental Keyword at 13th and 17th level to gain the Medical Keyword this way. You may switch which jutsu this feature affects when you would complete a Full Rest.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 13,
+      "name": "Elemental Master",
+      "source": "Compendium.n5eb.t7-subclass.Item.z8pFeZTHj7UeZpiR",
+      "text": "Starting at 13th level, your mastery of your element allows you to imbue those you have healed or supported with your element. When you would affect a creature with a Ninjutsu with your chosen Elemental Keyword you may pay 5 chakra to grant them the following benefits. The next attack that creature makes deals an additional amount of damage die equal to the Rank of the jutsu you healed or affected them with. (D-Rank = 1, C-Rank = 2, B-Rank = 3, A-Rank = 4, S-Rank = 5) You can only use this feature a number of times equal to your proficiency bonus per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "@prof",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 17,
+      "name": "Preserve Life: Elemental Regrowth",
+      "source": "Compendium.n5eb.t7-subclass.Item.STFpvZw60wKuvR5h",
+      "text": "Starting at 17th level when casting a jutsu with your chosen elemental keywords you may use Preserve Life as a part of the same action. Also, you gain a 2nd nature release of your choice. You gain two jutsu with this release's keyword and this element counts as your chosen release for this subclass.",
+      "signals": [
+        "Auswahl/Konfiguration"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Elemental Medic"
+    },
+    {
+      "level": 2,
+      "name": "Therapeutic Training",
+      "source": "Compendium.n5eb.t7-subclass.Item.fZ8DpFk96esd8Zjc",
+      "text": "Starting at 2nd level, your journey as a Counselor-Nin begins with a greater understanding of Genjutsu. You learn the Release jutsu, this doesn't count against your jutsu known, and you gain proficiency in Illusions and one Charisma skill of your choice, and you may use Wisdom instead of Charisma for this skill. At 9th level, you gain expertise in these skills. Additionally, you have advantage on checks to determine whether a Genjutsu is currently affecting a creature. Also, you select one Genjutsu you know and it gains the \"Medical\" keyword. You select another Genjutsu to gain the Medical keyword this way again at 5th, 9th, 13th, and 17th levels.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 2,
+      "name": "Consolation",
+      "source": "Compendium.n5eb.t7-subclass.Item.bvDqQCNwoIGmF4Wr",
+      "text": "Also at 2nd level, when a creature benefits from your Rejuvenating Rest , it gains temporary hit points equal to half the amount you've restored + your Wisdom modifier. Any healing granted by your Channeled Healing now becomes temporary hit points. While a creature has temporary hit points granted by either of these features, it also has advantage on rolls to resist gaining Mental conditions. At 5th level, when you damage a creature with a Genjutsu or Ninjutsu with the medical keyword, you can use your reaction to spend a use of your Chakra Scalpel to shatter the mental integrity of a target's mind. When you damage a creature with a Genjutsu or Ninjutsu you cast with the Medical Keyword, that creature must succeed a Wisdom saving throw or gain 1 rank of a Mental condition of your choice. The creature can repeat this save at the end of each of its turns to end the effect on itself with a success.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 5,
+      "name": "Therapeutic Medicine",
+      "source": "Compendium.n5eb.t7-subclass.Item.bKv7cMZKaf1iXrSP",
+      "text": "Starting at 5th level, you learn the techniques neccessary to undburden the hearts and minds of your allies. You learn the following jutsu as you gain levels in the class according to the Therapy-Nin Chart at the end of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu learned. Learned jutsu do not count against your jutsu known as seen on your Medical-Nin Class Chart.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 5,
+      "name": "Caring Touch",
+      "source": "Compendium.n5eb.t7-subclass.Item.TG0DrYvsJluLVFru",
+      "text": "Also at 5th level, once per turn, when you cast a Genjutsu or Ninjutsu you cast with the Medical Keyword on a creature, you can choose to make the target immune to the effects from a Mental condition of your choice until the end of its next turn. You can do this a number of times equal to half your proficiency bonus per long rest. Additionally, you have advantage on rolls to resist gaining Mental conditions.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "floor(@prof/2)",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 6,
+      "name": "Preserve Life: Mindful Insight",
+      "source": "Compendium.n5eb.t7-subclass.Item.N82aUyzNzoNy1YyW",
+      "text": "At 6th level, as an action you attempt to reach into the psyche of a creature you can touch to better understand the truth of the matter. You instantly are made aware of the creature's surface thoughts, then it must succeed a Charisma saving throw. Targets under the effect of a mental condition suffer a penalty to this save equal to your Wisdom modifier. On a failure, it becomes unable to attack or move until the start of your next turn. While a creature is affected this way, you can ask it one question to which it must answer truthfully. Once a target recovers from being affected with this feature, it can't be affect again for the next 24 hours. If the target remains hostile to you after using this feature, it gains 1 rank of Exhaustion for the next hour. If the target is not hostile to you after using this feature, it feels a weight lifted off its shoulders and becomes friendly to you for the next 24 hours.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 9,
+      "name": "Assisted Coping",
+      "source": "Compendium.n5eb.t7-subclass.Item.GLWgatI06MVTeLAd",
+      "text": "Starting at 9th level, when you cast a Genjutsu or Ninjutsu with the Medical Keyword that grants temporary hit points and they already have temporary hit points from another source, your temporary hit points stack in addition. Once a creature benefits from this feature they cannot benefit from it again until they lose all temporary hit points.",
+      "signals": [
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 13,
+      "name": "Psyche Healer",
+      "source": "Compendium.n5eb.t7-subclass.Item.KTEjD9u3NAtsr8U1",
+      "text": "At 13th level, you know which words to say to extinguish hostility in a person. While a creature is under the effects of a Genjutsu you cast within 30 feet of you, as an action, your words attempt to resonate in that creature as it makes a Charisma saving throw. On a failed save, it becomes non-hostile to you and all creatures you are allied with. If it takes damage from you or your allies, it becomes becomes hostile again. A creature that succeeds the saving throw is immune to this effect for the next 24 hours. This feature can be used once per long rest. At 17th level, this can be used twice per long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 17,
+      "name": "Mental Master",
+      "source": "Compendium.n5eb.t7-subclass.Item.ZwnUvQyi8SzUQ9Qc",
+      "text": "Starting at 17th level, Genjutsu or Ninjutsu you cast with the Medical Keyword ignore immunity to Mental conditions. Additionally, you can touch a creature and spend one use of Channeled Healing to cure them of one Mental or Sensory condition they are under that you are aware of. Removing all ranks of it. Finally, you are immune to the effects of all Mental conditions.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Counselor-Nin"
+    },
+    {
+      "level": 2,
+      "name": "Biological Knowledge",
+      "source": "Compendium.n5eb.t7-subclass.Item.E3NLr82vfkWXoEtF",
+      "text": "Starting when you choose this tenet at 2nd level, you have studied the anatomy of living creatures extensively. You gain expertise in Medicine. Additionally, you can spend an action studying a creature. When you do you must make a contested Intelligence (Medicine) check against the targets Charisma (Deception) check. On a success you learn the target's resistances, immunities or vulnerabilities. You can use this ability a number of times equal to your Intelligence modifier, and regain all expended uses on a long rest. Additionally, when you reach 3rd level, you can use your Intelligence in place of your Wisdom for calculating the Attack and Damage rolls of your Chakra Scalpel and your Chakra Scalpel damage becomes a d6.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "@abilities.int.mod",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 2,
+      "name": "Chakra Point Degradation",
+      "source": "Compendium.n5eb.t7-subclass.Item.HFxHnRZn1sfZsYZB",
+      "text": "Also at 2nd level, when you deal damage to a creature you have studied with your Biological Knowledge feature you can choose to split the damage between the creature's chakra and hit points. Beginning at 5th level, if you deal damage with your Chakra Scalpel to a creature with 0 chakra points, they instead take double damage. Also at 5th level, your Chakra Scalpel damage die becomes a d8. This increases to a d10 at 11th level, and a d12 at 18th level",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 5,
+      "name": "Improved Chakra Scalpel Techniques",
+      "source": "Compendium.n5eb.t7-subclass.Item.tSKflFnBf4vYaD2D",
+      "text": "Starting at 5th level, you've learned to weave your Chakra Scalpel into jutsu you cast. You learn the following jutsu as you gain levels in this class according to the Chakra Scalpel Specialist chart. Each Jutsu learned also grants you an additional feature pertaining to that jutsu. Learned Jutsu do not count against your Jutsu known as seen on your Medical-Nin class table.",
+      "signals": [
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Chakra Sever",
+      "source": "Compendium.n5eb.t7-subclass.Item.GK2Adz4MZEmvEA5y",
+      "text": "At 6th level, while your Chakra Scalpel is active, you gain an additional effect for your Take Life feature. When you use your Take Life feature, the target creature must also make a Constitution saving throw being unable to mold chakra for the next minute on a failed save. The creature may repeat this save at the end of each of its turns ending the effect on a success.",
+      "signals": [
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 9,
+      "name": "Combat Scalpel",
+      "source": "Compendium.n5eb.t7-subclass.Item.VVEuVZagnN7MpG51",
+      "text": "Starting at 9th level, when you take the attack action with your Chakra Scalpel, you may make two attacks instead of one. Additionally, your Chakra Scalpel now ignores resistance to slashing damage and treats immunity to slashing damage as resistance.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 13,
+      "name": "Surgical Precision",
+      "source": "Compendium.n5eb.t7-subclass.Item.uf2tseebnrsHTxTa",
+      "text": "Beginning at 13th level, your medical knowledge allows you to find a weak point in a creature's chakra network. When you make an attack with your Chakra Scalpel you can treat the target as Vulnerable to the damage. You can activate this ability after you roll the dice but before the outcome of the attack is determined. You can use this feature a number of times equal to your Intelligence modifier, and regain all expended uses on a long rest.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "@abilities.int.mod",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 17,
+      "name": "Chakra Sabre",
+      "source": "Compendium.n5eb.t7-subclass.Item.kijIE1uD3kfLHhOQ",
+      "text": "Finally at 17th level, your chakra scalpel is akin to master crafted blades, when you would activate your chakra scalpel you may instead spend 5 charges to activate your Chakra Sabre . Your Chakra Sabre gains all the benefits of your Crehakra Scalpel with the following changes: • Your Chakra Sabre deals Necrotic damage and ignores immunity and resistance. • When you deal damage with your Chakra Sabre to a creature's hit points, they take an equal amount of chakra damage. • Your Chakra Sabre gains the Reach 2 Property. Additonally, when you score a critical hit using your Chakra Scalpel, and roll maximum damage on a damage die you may reroll that die adding the result to the total damage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Chakra Scalpel Specialist"
+    },
+    {
+      "level": 2,
+      "name": "Stone Will",
+      "source": "Compendium.n5eb.t7-subclass.Item.tzSjfAhUsNrAgwRE",
+      "text": "Starting at 2nd level, you gain the Earth Nature Release affinity and may add jutsu with the earth release keyword to your jutsu known list. Medical jutsu and Medical-Nin class features you use that are unable to restore hit points to constructs and structures, lose this restriction. Starting at 5th level, jutsu that you cast that summons a structure or a construct are significantly reinforced, gaining an increased amount of hit points equal to your Medical-Nin level, and a +1 bonus to AC. Starting at 9th level, when a construct or structure you've summoned would take additional damage due to being classed as a structure/construct, the amount of extra damage is halved. If this extra damage would come as a result of a multiplication, the multiplication is halved, rounded down.",
+      "signals": [
+        "Wurf-/Wertebonus"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 2,
+      "name": "Diamondheart Materialization",
+      "source": "Compendium.n5eb.t7-subclass.Item.AfzJkXP5HQiDZubr",
+      "text": "Also at 2nd level, you learn a special Fuinjutsu technique to create a chakra construct known as the Diamondheart , an effigy of your soul's will. Your Diamond heart's appearance and name is up to you to decide. You can summon your Diamond heart as a bonus action, conjuring it in a space next to you. While your Diamond heart is active, you can command it as a free action, and it uses your Actions, Bonus Actions, and Reactions as needed to perform a task. Additionally, while summoned you can use Constitution instead of Dexterity for your AC calculation. Your Diamond heart follows the following rules; Your Diamond heart can cast any jutsu you know and use any Medical-Nin class features as if you had used them. If your Diamond heart moves beyond 90 feet from you, it is unsummoned. Your Diamond heart shares your chakra. If you and your Diamond heart would make a saving throw against the same effect, you make only 1 saving throw using the higher bonus, suffering the effects of a failed saving throw once, not twice. When you summon your Diamond heart, it gains proficiency in two saving throws of your choice until summoned. At 9th level, it gains proficiency in a 3rd save. Finally, as your will hardens, your Diamond heart's strength improves. For every +1 bonus you have to your Constitution modifier, you increase two of your Diamond heart's ability scores by 2, up to a maximum of 20. You can dismiss your Diamond heart as a free action on your turn or if you fall unconscious.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 5,
+      "name": "Fist of Iron",
+      "source": "Compendium.n5eb.t7-subclass.Item.scaWKdaf8r8FA4Nh",
+      "text": "Starting at 5th level, the power of your Diamondheart improves immensely. Your Diamondheart gains the Multiattack feature and one of the following features; Your Diamondheart gains an additional feature at 13th level. Platinum Strength. The damage of your Diamondheart's unarmed strikes becomes a 2d8. Kind Soul. Whenever you or your Diamondheart would deal lethal damage to a creature, you can choose to stabilize the creature and knock them Unconscious. Echoes. Whenever you or your Diamondheart would be near a structure or construct that provides cover, or as a part of a jutsu either you cast that creates such an object, your Diamondheart can strike the object (this does not deal damage) to improve its design. Creatures that would benefit from cover from this structure/construct gain an additional +1 to their AC and Dexterity saving throws.",
+      "signals": [
+        "Auswahl/Konfiguration",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 6,
+      "name": "Preserve Life: Constructive Healing",
+      "source": "Compendium.n5eb.t7-subclass.Item.MveEBg77hCJP38ZG",
+      "text": "Starting at 6th level, you learn the techniques required to fight on the front lines next to your allies. You learn jutsu as you gain levels in this class according to the Diamond Heart Chart at the top of this class section. Each jutsu learned also grants you an additional feature pertaining to the jutsu learned. Learned jutsu do not count against your jutsu known as seen on your Medical-Nin Class Chart. Additionally, whenever you would affect a creature with a Medical or Earth Release jutsu that restores hit points or gives temporary hit points, you can spend one use of your Preserve Life feature to treat this creature as a construct for the purposes of Diamond heart subclass features and Earth Release jutsu that interact with constructs. This effect lasts for 1 minute, or until the creature loses the hit points or temporary hits you gave.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 9,
+      "name": "Universal Restoration",
+      "source": "Compendium.n5eb.t7-subclass.Item.zTz0QWUC9SCMKGBl",
+      "text": "Starting at 9th level, you have developed a technique to adapt to the constantly changing pace of battle. Your Diamondheart now deals double damage to structures and constructs. When you or your Diamondheart would strike or restore hit points (including THP) to a structure or construct, you Mark it for 1 minute. While you are 120 feet of a marked structure/construct, you can as a bonus action spend 5 chakra to move it to any position, up to 60 feet away at a time. This is most useful for moving cover. You can move allies that are currently under the effects of your Constructive Healing half as much distance. If you move a marked object to a space with a hostile creature, the creature must make a Dexterity saving throw against your ninjutsu save dc. On a failed save, they take an amount of bludgeoning damage equal to the size of structure/construct. (Tiny = 1d6, Small = 2d6, Medium 3d6, Large = 5d6, Huge = 5d8, Gargantuan = 5d12) . If the structure/construct is not chakra enhanced, it shatters. Also at 9th level, once per long rest, when a construct or structure would be destroyed within your Diamondheart's range, you can use its reaction to fully restore hit points or temporary hit points, absolving all conditions. If used on an ally benefitting from your Constructive Healing feature, you can only immediately restore half their hit points.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 13,
+      "name": "Unbreakable",
+      "source": "Compendium.n5eb.t7-subclass.Item.UhFIz2iJDAsEm7XK",
+      "text": "Starting at 13th level, your spirit cannot be broken. As a reaction when you would take damage, you can summon your Diamondheart to take the damage in your place. When you use this reaction, your Diamondheart is summoned with temporary hit points equal to 5 times your Constitution modifier until the end of the current turn. If your Diamondheart takes no damage, it can move up to its movement speed and attack the triggering creature with a Multiattack , as part of the same reaction. While in combat, allied creatures other than you recover 5 hit points at the start of their respective turns while they are within 10 feet of your Diamondheart.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 17,
+      "name": "Requiem",
+      "source": "Compendium.n5eb.t7-subclass.Item.yv8NmbGGih9Bkfzd",
+      "text": "Finally at 17th level, your Diamondheart shines brighter than any diamond. Your Diamondheart adds half your proficiency bonus to any saving throws it is not proficient in, has advantage on saving throws to resist Physical and Mental conditions, and gains additional +6 ASI points.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Diamond Heart"
+    },
+    {
+      "level": 2,
+      "name": "Fortifying Scripture",
+      "source": "Compendium.n5eb.t7-subclass.Item.YpCGlAFc61uP4OWQ",
+      "text": "Beginning at 2nd level, you have learned to empower your physical body with seals that represent your willpower. You gain resistance to Chakra damage and you can use Charisma in place of Wisdom for your Medical Ninjutsu and Chakra Scalpel class features. Additionally, when you are only concentrating on jutsu with the Medical or Fuinjutsu keyword, your AC increases by +1 and the concentration cost is reduced by -1 (Min. 1). At 9th level, if you are concentrating on multiple jutsu that have both the medical and Fuinjutsu keywords, the bonus to AC and cost reduction doubles. Starting at 5th level, when you deal damage to a creature's hit points with a jutsu with both the Medical and Fuinjutsu keywords, you can halve the damage dealt to deal damage to both a creature's hit points and chakra points.",
+      "signals": [
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 2,
+      "name": "Echoes of Life",
+      "source": "Compendium.n5eb.t7-subclass.Item.aVWW8j29qAOQ4ct6",
+      "text": "Starting at 2nd level, your prowess in both medicine and sealing has led you to develop a technique to weave life into inorganic material to create constructs of artificial life known as Spiritual Golems . As an action, you can spend 5 chakra to place a seal onto a surface you can reach. Moments after the seal is placed, the surface begins to warp and mold outward, forming a Fighter , Guardian , or Swift Golem. The Golems are made out of the material you placed the seal on, and the seal you placed can be seen in the center of their chest. You can only command one Golem at a time, as a bonus action on your turn. You can use this feature a number of times equal to your Charisma modifier per long rest, and regain half your spent uses of this feature on a short rest. You can restore hit points to your Golems, even if the jutsu states it cannot heal constructs, however, the amount healed is halved.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten"
+      ],
+      "uses": {
+        "value": null,
+        "max": "@abilities.cha.mod",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 5,
+      "name": "Medicinal Litany",
+      "source": "Compendium.n5eb.t7-subclass.Item.oZV92te488g0Strk",
+      "text": "Starting at 5th level, you learn the techniques required to seal your absolute victory and triumph in battle. You learn jutsu as you gain levels in this class according to the Spiritual Scribe Medic Chart at the end of this class section. Each Jutsu learned also grants you an additional feature pertaining to the jutsu learned. Learned jutsu do not count against your jutsu known as seen on your Medical Nin Class Chart. Also at 5th level, when you heal a creature with a Fuinjutsu with the Medical keyword, you can choose to give them one of the following effects for 1 minute; You can use this feature a number of times equal to half your proficiency bonus per long rest. The ally selects one type of attack roll (Unarmed, Weapon, Ninjutsu, Genjutsu, or Taijutsu). The first attack roll the creature makes on their turn of the type they select is made at advantage. The ally selects a classification of saving throws, picking between Physical (Strength, Dexterity, Constitution) or Mental (Intelligence, Wisdom, Charisma). The first saving throw the creature makes on a turn of the classification they selected is rolled at advantage.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "floor(@prof/2)",
+        "per": "lr",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 6,
+      "name": "Take Life: Disruption",
+      "source": "Compendium.n5eb.t7-subclass.Item.uuSyrfiSTijAWE9x",
+      "text": "Starting at 6th level, as an action, you can spend a use of your Take Life feature to weave a gargantuan sign into the ground or air, bringing forth a wave of destruction. All creatures of your choice within 30 feet of you must make a Constitution saving throw against your Ninjutsu or Genjutsu Save DC. On a failed save, the creature takes 5d8 force damage and is marked with a seal that is a single word of your choosing, somewhere on their body. For 1 minute, while a creature has this seal they take 2d8 force damage which ignores temporary hit points, and 2d8 chakra damage at the start of each of their turns. Creatures can repeat their saving throw at the start of each of their turns, dispelling the seal on a success. A creature who fails 2 or more saving throws becomes Dazed for the duration. A creature who fails 4 or more saving throws becomes Weakened for the duration. A creature who fails 6 or more saving throws becomes Incapacitated for the duration.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Auswahl/Konfiguration",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 9,
+      "name": "Altered Enchantment",
+      "source": "Compendium.n5eb.t7-subclass.Item.cCfDuVyKD0giQcLY",
+      "text": "Starting at 9th level, select one Fuinjutsu you know. The jutsu selected gains the Medical keyword. You can select additional Fuinjutsu to gain the medical keyword at 13th and 17th level. You can switch the jutsu that this feature effects on a full rest.",
+      "signals": [
+        "Auswahl/Konfiguration"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 13,
+      "name": "Mastercraft",
+      "source": "Compendium.n5eb.t7-subclass.Item.OL92SwOvqfshGLgI",
+      "text": "Starting at 13th level, you have perfected the art of weaving artificial life. When you use your Echoes of Life feature to make a Spiritual Golem , you can spend increments of 5 chakra to make additional Golems at once. You can move while making these Golems, and can create a number of Golems equal 1/3rd your Medical-Nin level. Additionally, you can command up to 2 Golems at once with your bonus action, and can spend a use of your Chakra Scalpel to command 1 Golem as a free action, once per turn, for 1 minute. Golems that aren't commanded to take any action, automatically take the dodge action.",
+      "signals": [
+        "Ressourcen/Rast",
+        "Aktivierung/Dauer",
+        "Wurf-/Wertebonus",
+        "Chakra/Kosten",
+        "Ziel-/Situationsbezug"
+      ],
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "level": 17,
+      "name": "Conjourer of Life",
+      "source": "Compendium.n5eb.t7-subclass.Item.oyufKkbWrSWsbKxy",
+      "text": "Starting at 17th level, you can now use your Echoes of Life feature an infinite number of times, without ever needing a rest. You can only have a number of Spiritual Golems active equal to half your Medical-Nin level at a time. If you create another Spiritual Golem beyond this limit, one golem is destroyed.",
+      "signals": [],
+      "uses": {
+        "value": null,
+        "max": "floor(@details.level/2)",
+        "per": "charges",
+        "recovery": "",
+        "prompt": true
+      },
+      "activityCount": 0,
+      "effects": [],
+      "category": "Spiritual Scribe"
+    },
+    {
+      "name": "Long Life, Short Death",
+      "source": "Compendium.n5eb.class.Item.7piy1EW7Qc7C9GJS",
+      "category": "Choose Medical Doctrine",
+      "level": 3,
+      "text": "You believe that your patients should benefit from a much longer life span, but when they are dying, they should not delay the process longer than it needs to be. You've seen what agony looks like and you want no parts of it. When you would heal a creatures hit points, by any amount they gain temporary hit points by an amount equal to the rank of the jutsu cast. A creature can only gain temporary hit points in this way twice per rest. (D-Rank: 5, C-Rank: 10, B-Rank: 15, A-Rank: 20, S- Rank: 25.)",
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Never On The Front Lines",
+      "source": "Compendium.n5eb.class.Item.SBqVlSopleAZSwIO",
+      "category": "Choose Medical Doctrine",
+      "level": 3,
+      "text": "You believe deeply that medical ninja do not belong on the front lines and so did your master or mentor. You embody this philosophy and do everything in your power to live this truth. Whenever you are within 10 feet of a hostile creature, you can take the dash or disengage actions as a bonus action.",
+      "uses": {
+        "value": null,
+        "max": "",
+        "per": null,
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Not Allowed To Die",
+      "source": "Compendium.n5eb.class.Item.rUNMHw1KIWrv966E",
+      "category": "Choose Medical Doctrine",
+      "level": 3,
+      "text": "You believe that medical shinobi deaths should be the absolute last thing to happen on the battlefield. Beyond all other circumstances, you are not allowed to die before your team does. So long as another allied creature is initiative and they have 1 or more hit points, once per rest, you ignore effects of jutsu, features or traits from hostile creatures that would automatically kill you or reduce you to 0 hit points, instead being reduced to 1 hit point.",
+      "uses": {
+        "value": 1,
+        "max": "1",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      }
+    },
+    {
+      "name": "Until Their Heart Stops",
+      "source": "Compendium.n5eb.class.Item.HlDFgkmYFp6QB8K3",
+      "category": "Choose Medical Doctrine",
+      "level": 3,
+      "text": "You believe deeply that medical ninja should continue to administer healing to all members of their party, no matter how dire or how hopeless it is, until they stop breathing, even against their allies wishes. Twice per rest, a creature other than yourself, who regains hit points as a result of a jutsu you cast, who are currently under the effects of a hostile inflicted condition, makes their next saving throw or ability check to end said condition at advantage.",
+      "uses": {
+        "value": 2,
+        "max": "2",
+        "per": "sr",
+        "recovery": "",
+        "prompt": true
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "category": "Base",
+      "source": "Compendium.n5eb.items.Item.NijK86qNzaHagxIh",
+      "level": 1
+    },
+    {
+      "category": "Base",
+      "source": "Compendium.n5eb.items.Item.oNAY6p1RBBrDSaBH",
+      "level": 1
+    },
+    {
+      "category": "Natural Medicine",
+      "source": "Compendium.n5eb.jutsus.Item.AmYKioz6uE9BEGwQ",
+      "level": 2
+    },
+    {
+      "category": "Counselor-Nin",
+      "source": "Compendium.n5eb.jutsus.Item.Odgir3CfeTCO2Ygp",
+      "level": 2
+    }
+  ]
+}

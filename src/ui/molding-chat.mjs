@@ -23,11 +23,11 @@ export function installMoldingChat(game){
     if(cast&&message.system.deltas&&((Object.hasOwn(changes,'system.deltas')&&changes['system.deltas']===null)||changes.system?.deltas===null))changes[`flags.${MODULE_ID}.moldingCast`]={...cast,refunded:true,ended:true};
   });
   Hooks.on('dnd5e.renderChatMessage',(message,html)=>{
-    html.querySelectorAll('.n5ese-molding-chat').forEach(e=>e.remove());
+    html.querySelectorAll('.n5ese-efficient-molding-chat').forEach(e=>e.remove());
     if(!game.settings.get(MODULE_ID,'efficientMoldingAutomation')||!isMoldingPrimary(message))return;
     const record=message.getFlag(MODULE_ID,'moldingCast'),actor=message.getAssociatedActor(),activity=message.getAssociatedActivity();
     if(!record||!activity)return;
-    const panel=document.createElement('section');panel.className='n5ese-molding-chat';
+    const panel=document.createElement('section');panel.className='n5ese-molding-chat n5ese-efficient-molding-chat';
     const title=document.createElement('strong');title.textContent='Efficient Molding';panel.append(title);
     const details=document.createElement('p');details.textContent=record.ids.map(id=>MOLDINGS.find(m=>m.id===id)?.name??id).join(' · ')||'Spätere Auslöser verfügbar';panel.append(details);
     if(record.ids.includes('gigawatt')){const note=document.createElement('p');note.textContent='Gigawatt: Zusatzwürfel beim tatsächlichen Schadenswurf; gegen Aberration/Celestial/Mutant vor Verteidigungen eingerechnet. Reaktionen manuell beachten.';panel.append(note);}

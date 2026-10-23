@@ -1,3 +1,21 @@
+# 0.17.1 · 23.10.2026 · Vier Klassenfenster
+
+- Ninjutsu, Genjutsu, Medical-Nin und Taijutsu: je ein kompakter Sheet-Button mit eigenem farbigem Aktionsfenster, Ressourcen, Suche und einklappbaren Gruppen.
+- Auch Refined-/Jutsu-Auswahlen, Scrolls, Begleiter, gespeicherte Vorgänge und Unterklassenaktionen umgezogen; Chataktionen bleiben an der Jutsu-Karte.
+- Nin-Tai-Folgeaktionen prüfen Naturwahl und tatsächlich aktive Form bereits bei der Anzeige. Unpassende Wind-/Lightning-/Water-Aktionen erscheinen bei Fire nicht mehr.
+- Enthält die Medical-Korrekturen aus Commit 2b02d88.
+- Native Casts aller vier Klassen lokal erfolgreich: je eine Chatkarte und genau 5 Chakra; Fensteröffnung ohne Verbrauch. 17 gezielte Tests erfolgreich, Gesamttest weiterhin 34 bekannte Fehlschläge. Details: [Zwischenstand](ZWISCHENSTAND-0.17.1.md).
+
+## Frühere Entwicklungsnotizen
+
+# Unveröffentlicht · 23.10.2026 · Medical-QA
+
+- Kompaktes Medical-Aktionsfenster mit Ressourcen, Suche, Gruppen und gespeicherten Vorgängen.
+- Scalpel-Schadenszugang und Attributsbonus korrigiert; native Dialoge und bestätigte Zielanwendung erhalten.
+- Collection-/null-Actor-Fehler und übergreifendes Entfernen fremder Chataktionen korrigiert.
+- Fehlerhaften dauerhaften Doctrine-Dash zur Laufzeit unterdrückt; Aktionsökonomie bleibt manuell.
+- Tatsächliche lokale Kernprüfungen in test12 und 14 gezielte Unit-Tests; verbleibende Gesamttestfehler dokumentiert. [Prüfbericht](MEDICAL-QA.md).
+
 # 0.17.0 · 21.10.2026 · Taijutsu Specialist, Gruppenfassung
 
 - Grundklasse, installierte Martial Techniques und14 Unterklassen als optionale Gruppenfassung.

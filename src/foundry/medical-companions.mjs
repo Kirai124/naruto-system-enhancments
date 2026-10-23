@@ -13,7 +13,7 @@ const definition=(actor,kind)=>definitions[kind]&&medicalFeature(actor,definitio
 function owner(game,actor){if(!medicalEnabled(game)||!actor?.isOwner||!medicalLevel(actor))throw Error('Eigener Medical-Nin und aktive Automation erforderlich.');}
 export function medicalFeatureOrigin(actor){const id=actor.getFlag(MODULE_ID,'medicalFeatureOrigin'),entry=read(actor).find(e=>e.id===id&&e.kind==='diamond'&&e.status==='active');return entry&&definition(actor,'diamond')?{companionId:entry.id,actorUuid:entry.target.uuid,name:entry.name}:undefined;}
 export const activeMedicalCompanions=actor=>read(actor).filter(e=>e.status==='active'&&(!e.expiresAt||e.expiresAt>globalThis.game.time.worldTime));
-export function medicalCompanionSources(game,target){if(!target)return [];return game.actors.flatMap(source=>activeMedicalCompanions(source).filter(e=>e.target.uuid===target.uuid&&definition(source,e.kind)).map(entry=>({source,entry})));}
+export function medicalCompanionSources(game,target){if(!target)return [];return [...game.actors].flatMap(source=>activeMedicalCompanions(source).filter(e=>e.target.uuid===target.uuid&&definition(source,e.kind)).map(entry=>({source,entry})));}
 function configValid(source,target,entry){
  if(!definition(source,entry.kind)||source.uuid===target.uuid)throw Error('Quellfeature oder tatsächlich anderes Begleiterprofil fehlt.');
  if(entry.kind==='diamond'){

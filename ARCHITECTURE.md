@@ -1,3 +1,15 @@
+# Gemeinsame Klassenfenster · 0.17.1
+
+`src/ui/class-window.mjs` verwaltet eine Registry je Spiel und Klasse, eine ApplicationV2-Instanz je Actor/Klasse sowie Ressourcen und Neudarstellung. `registerClassSheetPanel` führt vorhandene Sheet-Renderer für deren native Zeilendekoration weiter aus, nimmt die Aktionsflächen aber aus dem Sheet. Das Fenster erstellt frische Panels mit denselben Besitzprüfungen und Ausführungsabläufen. NPC- und fremde Empfängerflächen bleiben erhalten. Direkte Medical-Builder verwenden dieselbe Registry; ihre bisherige interne Fassade bleibt kompatibel. `class-windows.css` liefert klassenbezogene Farbakzente.
+
+Martial-Aktionsdefinitionen können eine reine `available({actor,game})`-Bedingung registrieren. Anzeige und Ausführung beachten diese Bedingung; die eigentliche Planung validiert weiter sämtliche Regeln/Ressourcen. Keine Augen-/Release-Wahl gewährt fremde Features.
+
+## Frühere Entwicklungsnotizen
+
+# Medical-Aktionsfenster · unveröffentlicht 23.10.2026
+
+`src/ui/medical-window.mjs` verwaltet pro Spiel/Actor ein ApplicationV2-Fenster. Panels registrieren frische DOM-Builder; vorhandene Ressourcen-/Berechtigungsabläufe bleiben erhalten. Persistente Vorgänge liegen weiterhin auf Actors. Dokumentänderungen aktualisieren offene Fenster. `medical.css` wird über die bestehende Tracker-CSS importiert. `medical-weapon-damage.mjs` verbindet virtuelle Angriffe mit nativen Schadensdialogen und gespeicherten Snapshots. Die exakt begrenzte native Dash-Unterdrückung wird in `setup` vor der Actor-Vorbereitung installiert. [Nachweise](MEDICAL-QA.md).
+
 # Taijutsu Specialist · Architektur 0.17.0
 
 Native Actor-/Item-/Casting-/Damage-Pfade bleiben Grundlage. Reine Regeln in src/casting, Foundry-Adapter in src/foundry, Sheet-/Chatbedienung in src/ui und öffentliche Fassade in src/api/taijutsu-api.mjs. Persistente Journale verbinden Cast, Ressourcen, Abwehrwurf und Zielanwendung. Sondercast-Tickets geben native Casting-Locks vor dem Öffnen frei und verbuchen Kosten gemeinsam im nativen Update. Verzögerte Folgen, exakte Effektquellen, Teilbelege und GM-Prüfung verhindern blindes Wiederholen. Nachgelagerte Unlock-Aufgaben werden erst nach der aufrufenden Cast-Finalisierung eingeplant.

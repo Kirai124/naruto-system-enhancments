@@ -1,3 +1,6 @@
+@import url('./medical.css');
+@import url('./class-windows.css');
+
 .n5ese-ninjutsu {
   --n5ese-tracker-accent: #7687e8;
   margin: 0 0 12px; padding: 10px;

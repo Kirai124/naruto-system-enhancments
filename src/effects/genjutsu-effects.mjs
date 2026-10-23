@@ -9,7 +9,7 @@ export function activeGenjutsuEffect(game,effect){
  if(data.concentrationId){const source=fromUuidSync(ninjutsuEffect(effect).sourceActorUuid),concentration=source?.effects.get(data.concentrationId);if(!concentration||concentration.disabled)return false;}
  return true;
 }
-export const genjutsuEffects=(game,actor)=>actor.effects.filter(e=>activeGenjutsuEffect(game,e));
+export const genjutsuEffects=(game,actor)=>actor?.effects?.filter(e=>activeGenjutsuEffect(game,e))??[];
 export function genjutsuEffectData({name,id,actor,feature,lifetime,payload,changes=[]}){
  return ninjutsuEffectData({name,id,sourceActorUuid:actor.uuid,sourceItemUuid:feature.uuid,lifetime,changes,setting:'genjutsuClassAutomation',metadata:{genjutsu:payload}});
 }

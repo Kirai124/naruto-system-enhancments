@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {moldingFeature,ALL_MOLDINGS as MOLDINGS} from '../casting/efficient-molding.mjs';
 import {sourceOf} from '../casting/feature-rules.mjs';
@@ -53,7 +54,7 @@ export function installMoldingTracker(game){
     }
     host.prepend(panel);
   };
-  Hooks.on('renderCharacterActorSheet',render);
+  registerClassSheetPanel(game,'ninjutsu','.n5ese-molding-tracker','Efficient Molding',render);
   game.settings.settings.get(`${MODULE_ID}.efficientMoldingAutomation`).onChange=()=>{refreshMoldingEffects(game);for(const actor of game.actors){refreshActorPreparation(actor);if(actor.sheet?.rendered)actor.sheet.render(false);}};
   game.settings.settings.get(`${MODULE_ID}.subclassMoldingAutomation`).onChange=game.settings.settings.get(`${MODULE_ID}.efficientMoldingAutomation`).onChange;
 }

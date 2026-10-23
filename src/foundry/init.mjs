@@ -103,11 +103,12 @@ import {installMedicalSelections} from './medical-selections.mjs';
 import {installMedicalHealing} from './medical-healing.mjs';
 import {installMedicalScalpel} from './medical-scalpel.mjs';
 import {installMedicalTempHP} from './medical-temp-hp.mjs';
+import {installMedicalActionWindow} from '../ui/medical-window.mjs';
 import {installMedicalControls} from '../ui/medical-controls.mjs';
 import {installMedicalClinical} from './medical-clinical.mjs';
 import {installMedicalEffectEvents} from './medical-effect-events.mjs';
 import {installMedicalClinicalUI} from '../ui/medical-clinical.mjs';
-import {installMedicalPassives} from './medical-passives.mjs';
+import {installMedicalPassives,installMedicalManualDash} from './medical-passives.mjs';
 import {installMedicalForms} from './medical-forms.mjs';
 import {installElementalRolls} from './medical-elemental.mjs';
 import {installMedicalHitDefenses} from './medical-hits.mjs';
@@ -247,6 +248,7 @@ Hooks.once("init", () => {
   game.modules.get(MODULE_ID).api = createAPI(game,dojutsuManager,ninjutsuManager);
 });
 
+Hooks.once('setup',()=>{if(game.system.id==='n5eb')installMedicalManualDash(game,CONFIG.ActiveEffect.documentClass);});
 Hooks.once("ready", () => {
   installTemporaryHPAccounting(game);
   if (!game.modules.get(MODULE_ID)?.api) {
@@ -317,6 +319,7 @@ Hooks.once("ready", () => {
   installMedicalStructureUI(game);
   installMedicalRedirection(game,CONFIG.Actor.documentClass);
   installMedicalUnbreakableUI(game);
+  installMedicalActionWindow(game);
   installGenjutsuSelections(game,CONFIG.Item.dataModels.spell);
   installGenjutsuControls(game);
   installCastingAugmentation(game,CONFIG.DND5E?.activityTypes??{},CONFIG.ChatMessage?.documentClass);

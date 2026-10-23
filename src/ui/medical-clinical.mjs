@@ -1,3 +1,4 @@
+import {registerMedicalPanel} from './medical-window.mjs';
 import {finishMindfulInsight} from '../foundry/medical-counselor.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {medicalEnabled,medicalLevel,medicalFeature} from '../casting/medical-context.mjs';
@@ -5,9 +6,8 @@ import {MEDICAL_CLINICAL,medicalClinicalWorkflow,resumeMedicalClinical,resolveMe
 import {MEDICAL_EVENTS,queueMedicalEvent,applyMedicalEvent,resolveMedicalEvent} from '../foundry/medical-effect-events.mjs';
 const button=(host,label,fn,enabled)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=!enabled;b.addEventListener('click',async()=>{b.disabled=true;try{await fn();}catch(error){ui.notifications.warn(error.message);}finally{b.disabled=!enabled;}});host.append(b);};
 export function installMedicalClinicalUI(game){
- const render=(sheet,html)=>{
-  const root=html instanceof HTMLElement?html:sheet.element,actor=sheet.actor??sheet.document;root?.querySelector('.n5ese-medical-clinical')?.remove();if(!medicalEnabled(game)||!actor?.effects)return;
-  const entries=actor.getFlag(MODULE_ID,MEDICAL_CLINICAL)??[],events=actor.getFlag(MODULE_ID,MEDICAL_EVENTS)??[],effects=medicalEffects(game,actor),mindful=actor.getFlag(MODULE_ID,'medicalMindfulPending')??[],host=root?.querySelector('section[data-tab="features"]')??root?.querySelector('section[data-tab="effects"]');if(!host||!entries.length&&!events.length&&!effects.length&&!mindful.length)return;
+ const build=actor=>{if(!medicalEnabled(game)||!actor?.effects)return;
+  const entries=actor.getFlag(MODULE_ID,MEDICAL_CLINICAL)??[],events=actor.getFlag(MODULE_ID,MEDICAL_EVENTS)??[],effects=medicalEffects(game,actor),mindful=actor.getFlag(MODULE_ID,'medicalMindfulPending')??[];if(!entries.length&&!events.length&&!effects.length&&!mindful.length)return;
   const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-medical-clinical';const h=document.createElement('h3');h.textContent='Medical · Zielwirkungen und Folgeauslöser';panel.append(h);
   for(const pending of mindful)button(panel,'Mindful Insight · tatsächliche Erholung / Haltung bestätigen',()=>finishMindfulInsight(game,{parent:actor,flags:{[MODULE_ID]:{ninjutsuEffect:pending.marker}},id:pending.effectId,delete:async()=>{const effect=actor.effects.get(pending.effectId);if(effect)await effect.delete();await actor.setFlag(MODULE_ID,'medicalMindfulPending',(actor.getFlag(MODULE_ID,'medicalMindfulPending')??[]).filter(e=>e.id!==pending.id));}}),actor.isOwner);
   if(medicalLevel(actor)){
@@ -41,7 +41,9 @@ export function installMedicalClinicalUI(game){
    button(panel,'Nur diese Medical-Wirkung beenden',async()=>{if(await foundry.applications.api.DialogV2.confirm({window:{title:'Medical-Wirkung beenden'},content:'<p>Nur diesen verwalteten Effekt beenden?</p>',rejectClose:false}))await effect.delete();},actor.isOwner);
   }
   for(const entry of events.filter(e=>!['applied','resolved'].includes(e.status))){const effect=actor.effects.get(entry.effectId),p=document.createElement('p');p.textContent=(effect?.name??'Beendete Wirkung')+' · '+entry.timing+' · '+entry.status;panel.append(p);if(effect&&['pending','ready'].includes(entry.status))button(panel,'Gespeicherte Folgewirkung bestätigen und anwenden',()=>applyMedicalEvent(game,actor,entry.id),actor.isOwner);if(['rolling','applying','review'].includes(entry.status))button(panel,'GM: unterbrochene Folgewirkung prüfen',()=>resolveMedicalEvent(game,actor,entry.id),actor.isOwner&&game.user.isGM);}
-  host.prepend(panel);
+  return panel;
  };
+ registerMedicalPanel(game,'clinical','Wirkungen & gespeicherte Vorgänge',build);
+ const render=(sheet,html)=>{const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-medical-clinical')?.remove();if(medicalLevel(actor))return;const host=root?.querySelector('section[data-tab="features"]')??root?.querySelector('section[data-tab="effects"]'),panel=host&&build(actor);if(panel)host.prepend(panel);};
  for(const hook of ['renderCharacterActorSheet','renderNPCActorSheet'])Hooks.on(hook,render);
 }

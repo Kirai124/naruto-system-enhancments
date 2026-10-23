@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from '../ui/class-window.mjs';
 import {MODULE_ID} from '../settings/register.mjs';
 import {genjutsuEnabled,ownedGenjutsuFeature} from '../casting/genjutsu-context.mjs';
 import {genjutsuEffects,genjutsuPayload} from '../effects/genjutsu-effects.mjs';
@@ -29,5 +30,5 @@ export function installSensoryVisibility(game,types){
    return attack.call(this,config,dialog,message);
   };
  }
- Hooks.on('renderCharacterActorSheet',(app,html)=>{const actor=app.actor??app.document,root=html instanceof HTMLElement?html:app.element;root?.querySelector('.n5ese-sensory-allies')?.remove();if(!genjutsuEnabled(game)||!ownedGenjutsuFeature(actor,'Sensory Mode','Sensory Type'))return;const host=root?.querySelector('section[data-tab="features"]');if(!host)return;const button=document.createElement('button');button.type='button';button.className='n5ese-sensory-allies';button.textContent='Sensory Mode · tatsächliche Verbündete festlegen';button.disabled=!actor.isOwner;button.addEventListener('click',()=>configure(game,actor).catch(e=>ui.notifications.warn(e.message)));host.prepend(button);});
+ registerClassSheetPanel(game,'genjutsu','.n5ese-sensory-allies','Sensory Mode · Verbündete',(app,html)=>{const actor=app.actor??app.document,root=html instanceof HTMLElement?html:app.element;root?.querySelector('.n5ese-sensory-allies')?.remove();if(!genjutsuEnabled(game)||!ownedGenjutsuFeature(actor,'Sensory Mode','Sensory Type'))return;const host=root?.querySelector('section[data-tab="features"]');if(!host)return;const button=document.createElement('button');button.type='button';button.className='n5ese-sensory-allies';button.textContent='Sensory Mode · tatsächliche Verbündete festlegen';button.disabled=!actor.isOwner;button.addEventListener('click',()=>configure(game,actor).catch(e=>ui.notifications.warn(e.message)));host.prepend(button);});
 }

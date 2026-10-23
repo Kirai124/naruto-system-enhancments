@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {castMartialSpecial,rollMartialDefense} from '../foundry/taijutsu-special-casts.mjs';
 import {applyMartialAftermath} from '../foundry/taijutsu-aftermath.mjs';
 import {castVersatility} from '../foundry/taijutsu-versatility.mjs';
@@ -20,7 +21,7 @@ import {MODULE_ID} from '../settings/register.mjs';
 import {taijutsuEnabled,taijutsuLevel,taijutsuFeature} from '../casting/taijutsu-context.mjs';
 import {availableFeatureActions,performFeatureAction,endFeatureAction,featureActions,activeFeatureAction} from '../foundry/taijutsu-feature-actions.mjs';
 import {activeStances,selectPrimaryStance} from '../foundry/taijutsu-stancer.mjs';
-export function installFeatureActionUI(game){Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
+export function installFeatureActionUI(game){registerClassSheetPanel(game,'taijutsu','.n5ese-martial-actions','Unterklassen & aktive Wirkungen',(sheet,html)=>{
  const actor=sheet.actor??sheet.document,root=html instanceof HTMLElement?html:sheet.element;root?.querySelector('.n5ese-martial-actions')?.remove();if(!taijutsuEnabled(game)||!taijutsuLevel(actor))return;
  const host=root?.querySelector('section[data-tab="features"]');if(!host)return;const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-martial-actions';
  const button=(label,fn,enabled=actor.isOwner)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=!enabled;b.addEventListener('click',async()=>{b.disabled=true;try{await fn();}catch(e){ui.notifications.warn(e.message);}finally{b.disabled=!enabled;actor.sheet?.render(false);}});panel.append(b);};

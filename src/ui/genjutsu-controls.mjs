@@ -1,3 +1,4 @@
+import {registerClassSheetPanel} from './class-window.mjs';
 import {usePhantasmalForce,resolvePhantasmal} from '../foundry/genjutsu-phantasmal.mjs';
 import {activateMoment,resolveMoment} from '../foundry/genjutsu-moment.mjs';
 import {addIllusionaryWeaponControls} from './genjutsu-weapons.mjs';
@@ -12,7 +13,7 @@ import {actualizationPool,genjutsuAbility,genjutsuEnabled,genjutsuSourcesOwned,o
 import {rollGenjutsuSkill,recoverKeenAwareness} from '../foundry/genjutsu-skill-actions.mjs';
 
 export function installGenjutsuControls(game){
- Hooks.on('renderCharacterActorSheet',(sheet,html)=>{
+ registerClassSheetPanel(game,'genjutsu','.n5ese-genjutsu','Grundklasse & Ressourcen',(sheet,html)=>{
   const root=html instanceof HTMLElement?html:sheet.element,actor=sheet.actor??sheet.document;root?.querySelector('.n5ese-genjutsu')?.remove();
   if(!genjutsuEnabled(game)||actor.type!=='character')return;const pool=actualizationPool(actor),host=root?.querySelector('section[data-tab="features"]');if(!pool||!host)return;
   const panel=document.createElement('section');panel.className='n5ese-ninjutsu-card n5ese-genjutsu';
@@ -33,7 +34,7 @@ export function installGenjutsuControls(game){
   if(game.user.isGM&&['applying','paid','review'].includes(actor.getFlag(MODULE_ID,'genjutsuMomentJournal')?.status))button('GM: Moment-Vorgang prüfen',()=>resolveMoment(game,actor));
   const mirages=ownedCastingMirages(actor);if(mirages.length){const group=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Genjutsu-Feature-Casts · '+mirages.length;group.append(summary);for(const rule of mirages){const b=document.createElement('button');b.type='button';b.textContent=rule.name;b.disabled=!actor.isOwner;b.addEventListener('click',async()=>{b.disabled=true;try{await castMirage(game,actor,rule.name);}catch(e){ui.notifications.warn(e.message);}finally{b.disabled=!actor.isOwner;sheet.render(false);}});group.append(b);}panel.append(group);}
   if(game.user.isGM&&['applying','paid','review'].includes(actor.getFlag(MODULE_ID,'genjutsuMirageJournal')?.status))button('GM: Mirage-Cast prüfen',()=>resolveMirage(game,actor));
-  button('Fehlende Inception-Mirage ab Stufe 7 ergänzen',()=>reconcileInceptionGrants(game,actor,{explicit:true}));
+  if(ownedGenjutsuFeature(actor,'Genjutsu Inception'))button('Fehlende Inception-Mirage ab Stufe 7 ergänzen',()=>reconcileInceptionGrants(game,actor,{explicit:true}));
   const selections=genjutsuSourcesOwned(actor).filter(f=>['Choose Inception','Real World Conversions','Master of Illusion Features'].includes(f.category));
   if(selections.length){const list=document.createElement('p');list.textContent=selections.map(s=>s.name).join(' · ');panel.append(list);}
   if(game.user.isGM&&['applying','review'].includes(actor.getFlag(MODULE_ID,'genjutsuSkillJournal')?.status))button('GM: Genjutsu-Check prüfen',async()=>{if(await foundry.applications.api.DialogV2.confirm({window:{title:'Genjutsu-Check prüfen'},content:'<p>Bereits gewürfelten Check und Ressourcen manuell geprüft/korrigiert? Ohne erneute Ausführung abschließen.</p>',rejectClose:false}))await actor.setFlag(MODULE_ID,'genjutsuSkillJournal',{...actor.getFlag(MODULE_ID,'genjutsuSkillJournal'),status:'resolved'});});

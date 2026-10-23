@@ -6,11 +6,11 @@ import {ninjutsuEffectData,upsertNinjutsuEffect,ninjutsuEffect,activeNinjutsuEff
 const KEY='taijutsuFeatureActions',definitions=new Map();
 export const featureActions=actor=>structuredClone(actor?.getFlag(MODULE_ID,KEY)??[]);
 export function registerFeatureAction(definition){if(!definition.id||definitions.has(definition.id)||typeof definition.plan!=='function')throw Error('Eindeutige konkrete Martial-Aktionsdefinition erforderlich.');definitions.set(definition.id,Object.freeze(definition));}
-export const availableFeatureActions=actor=>[...definitions.values()].filter(d=>taijutsuFeature(actor,d.feature,d.category)).map(d=>({id:d.id,name:d.name,feature:d.feature,category:d.category,unique:d.unique!==false}));
+export const availableFeatureActions=(actor,game=globalThis.game)=>[...definitions.values()].filter(d=>taijutsuFeature(actor,d.feature,d.category)&&(!d.available||d.available({actor,game}))).map(d=>({id:d.id,name:d.name,feature:d.feature,category:d.category,unique:d.unique!==false}));
 export function featureActionDefinition(id){const d=definitions.get(id);if(!d)throw Error('Unbekannte Martial-Aktion.');return d;}
 export function activeFeatureAction(game,actor,id){return taijutsuEnabled(game)&&featureActions(actor).find(e=>e.ruleId===id&&e.status==='active'&&actor.effects.some(effect=>activeNinjutsuEffect(game,effect)&&ninjutsuEffect(effect)?.metadata?.taijutsuActionId===e.id))||null;}
 export async function performFeatureAction(game,actor,id){
- const d=featureActionDefinition(id),feature=taijutsuFeature(actor,d.feature,d.category);if(!taijutsuEnabled(game)||!actor.isOwner||!feature)throw Error('Tatsächlich vorhandenes eigenes Feature erforderlich.');
+ const d=featureActionDefinition(id),feature=taijutsuFeature(actor,d.feature,d.category);if(!taijutsuEnabled(game)||!actor.isOwner||!feature||d.available&&!d.available({actor,game}))throw Error('Tatsächlich vorhandenes eigenes Feature und passende Voraussetzungen erforderlich.');
  return withCastingActorLock(actor,async()=>{
   const all=featureActions(actor);if(all.some(e=>['paying','applying','review'].includes(e.status)||e.attackPending||['casting','paid'].includes(e.data?.castState)))throw Error('Unterbrochene Martial-Aktion zuerst vom GM prüfen.');if(d.unique!==false&&activeFeatureAction(game,actor,id))throw Error('Diese Wirkung ist bereits aktiv.');
   const plan=await d.plan({game,actor,feature,entries:all});if(!plan)return;
